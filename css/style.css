@@ -393,7 +393,6 @@ li.dropdown { /* главно меню - dropdown*/
   overflow: hidden;
 }
 
-/* ⭐️ Блясъкът */
 .sparkle {
   position: absolute;
   top: 0;
@@ -470,7 +469,6 @@ li.dropdown { /* главно меню - dropdown*/
   }
 }
 
-
 .star-sparkle {
   width: 10px;
   height: 10px;
@@ -490,11 +488,10 @@ li.dropdown { /* главно меню - dropdown*/
     offset-distance: 100%;
   }
 }
-
-
 /* /⭐️ тестови бар за анимирани блясъци */
 
-/* “shine” или “glow sweep” с linear-gradient и background-clip: text.
+
+/* ⭐️ “shine” или “glow sweep” с linear-gradient и background-clip: text.
  проблясване или лъскав ефект, който преминава по текста */
 .shiny-text {
   font-size: 48px;
@@ -511,7 +508,7 @@ li.dropdown { /* главно меню - dropdown*/
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  animation: shine 2.5s linear infinite;
+  animation: shine 10s linear infinite;
 }
 
 @keyframes shine {
@@ -522,18 +519,38 @@ li.dropdown { /* главно меню - dropdown*/
     background-position: -200% center;
   }
 }
+/* /⭐️ “shine” или “glow sweep” с linear-gradient и background-clip: text.
+ проблясване или лъскав ефект, който преминава по текста */
 
 
-.sparkle-star-img {
+/* ⭐️ галакси звезда */
+.galaxy-container {
+  position: relative;
+  height: 200px;
+  background: linear-gradient(to right, #1d1d3c, #3f51b5);
+  overflow: hidden;
+}
+
+.sparkle-star {
   width: 20px;
+  height: 20px;
   position: absolute;
   offset-path: path("M0,100 C300,0 500,200 700,100 C800,50 600,0 500,100");
   offset-rotate: auto;
   animation: sparklePath 6s linear infinite;
-  opacity: 0.85;
   filter: drop-shadow(0 0 5px white);
+  opacity: 0.85;
 }
 
+@keyframes sparklePath {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+/* /⭐️ галакси звезда */
 
 
 
