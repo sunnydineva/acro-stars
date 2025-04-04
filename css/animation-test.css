@@ -1,0 +1,28 @@
+.path-container {
+  position: relative;
+  width: 400px;
+  height: 300px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: gold;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: moveOnAngle 2s linear infinite;
+}
+
+@keyframes moveOnAngle {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(200px, 346px); /* 346px ≈ 200 * tan(60°) */
+  }
+}
