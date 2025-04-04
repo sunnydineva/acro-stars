@@ -383,6 +383,156 @@ li.dropdown { /* главно меню - dropdown*/
   background: linear-gradient(to bottom, #626275, #342c4d);
 }
 
+/* ⭐️ тестови бар за анимирани блясъци */
+.header-gradient-bar {
+  position: relative;
+  height: 200px;
+  /*height: 14px;*/
+  width: 100%;
+  background: linear-gradient(to right, #1d1d3c, #3f51b5);
+  overflow: hidden;
+}
+
+/* ⭐️ Блясъкът */
+.sparkle {
+  position: absolute;
+  top: 0;
+  left: -50px;
+  width: 40px;
+  height: 14px;
+  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.0) 70%);
+  animation: waveMove 3s infinite ease-in-out;
+  /*animation: sparkleAnim  3s infinite ease-in-out;*/
+  opacity: 0.8;
+}
+
+/* Анимация на преминаване отляво надясно */
+@keyframes sparkleAnim {
+  0% {
+    transform: translateX(-50px) scale(0.8);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(50vw) scale(1);
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw) scale(0.8);
+    opacity: 0;
+  }
+}
+
+/* Анимация wave за 14 px bar */
+/*@keyframes waveMove {*/
+/*  0% {*/
+/*    transform: translateX(-40px) translateY(0px);*/
+/*    opacity: 0;*/
+/*  }*/
+/*  20% {*/
+/*    opacity: 1;*/
+/*  }*/
+/*  50% {*/
+/*    transform: translateX(50vw) translateY(-5px); !* вълна нагоре *!*/
+/*  }*/
+/*  75% {*/
+/*    transform: translateX(75vw) translateY(5px);  !* вълна надолу *!*/
+/*  }*/
+/*  100% {*/
+/*    transform: translateX(100vw) translateY(0px);*/
+/*    opacity: 0;*/
+/*  }*/
+
+@keyframes waveMove {
+  0% {
+    transform: translateX(-40px) translateY(0px);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  40% {
+    transform: translateX(25vw) translateY(-40px);
+  }
+  60% {
+    transform: translateX(50vw) translateY(40px);
+  }
+  80% {
+    transform: translateX(75vw) translateY(-40px);
+  }
+  100% {
+    transform: translateX(100vw) translateY(0px);
+    opacity: 0;
+  }
+}
+
+
+.star-sparkle {
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle, white, transparent);
+  border-radius: 50%;
+  position: absolute;
+  offset-path: path("M0,100 C300,0 500,200 700,100 C800,50 600,0 500,100");
+  animation: sparklePath 5s linear infinite;
+  opacity: 0.9;
+}
+
+@keyframes sparklePath {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+
+/* /⭐️ тестови бар за анимирани блясъци */
+
+/* “shine” или “glow sweep” с linear-gradient и background-clip: text.
+ проблясване или лъскав ефект, който преминава по текста */
+.shiny-text {
+  font-size: 48px;
+  font-weight: bold;
+  color: #fff; /* резервен цвят */
+  background: linear-gradient(
+    to right,
+    #fff 20%,
+    #f3cf6e 40%,
+    #fff 60%,
+    #b89e4f 80%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shine 2.5s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+
+.sparkle-star-img {
+  width: 20px;
+  position: absolute;
+  offset-path: path("M0,100 C300,0 500,200 700,100 C800,50 600,0 500,100");
+  offset-rotate: auto;
+  animation: sparklePath 6s linear infinite;
+  opacity: 0.85;
+  filter: drop-shadow(0 0 5px white);
+}
 
 
 
