@@ -8,7 +8,6 @@
   justify-content: center;
   gap: 100px;
   margin-top: 50px;
-  background-color: pink;
 }
 
 .trainer-block{
@@ -43,9 +42,22 @@
   justify-content: center;
 }
 .main-fb-feed{
+  position: relative;
   margin-top: 50px;
-  background-color: red;
-
 }
 
+.main-fb-feed img{
+  width: 900px;
+  height: auto;
+}
 
+.acro-trails{
+  position: absolute;
+  z-index: 1;
+  top: 50%; left: 50%;
+  transform: translate(-65%, -55%);
+}
+
+.advertisement{
+  height: 200px;
+}
