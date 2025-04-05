@@ -17,6 +17,10 @@ html {
   line-height: 1.4;
 }
 
+h1{
+  font-size: 32px;
+}
+
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
@@ -168,12 +172,14 @@ textarea {
   font-optical-sizing: auto;
   font-weight: 650;
   font-style: normal;
+  font-size: 36px;
 }
 
-.montserrat-SemiBold-700{
+.montserrat-SemiBold-500{
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 700;
+  font-weight: 600;
+  padding-left: 36px;
   font-style: normal;
 }
 
@@ -182,6 +188,7 @@ textarea {
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
+  font-size: 24px;
 }
 
 .montserrat-Regular{
@@ -191,11 +198,20 @@ textarea {
   font-style: normal;
 }
 
+.montserrat-Caption{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 20px;
+}
+
 .montserrat-Light{
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: italic;
+  font-size: 20px;
 }
 
 /* Цялото тяло – фонов цвят за цял екран */
@@ -206,7 +222,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: Montserrat, sans-serif;
-  font-size: 22px;
 }
 
 /* Хедър и футър заемат цялата ширина */
@@ -224,6 +239,7 @@ header, footer {
   margin: 0 auto;
   /*padding: 20px;*/
   padding-bottom: 16px;
+  z-index: 1;
 
   /*background-color: rgb(200, 200, 202);*/
   /*background-color: rgb(198, 50, 174);*/
@@ -296,7 +312,6 @@ li.dropdown { /* главно меню - dropdown*/
   position: absolute;     /* 🟢 това е ключово — не измества околните */
   top: 100%;              /* поставя го точно под бутона */
   /*margin-top: 18px; !* = header-gradient = 16px + 2px ~white*!*/
-  font-size: 24px;
   /*background-color: #9592a4;*/
   /*box-shadow: 0 0.42vh 0.83vh 0 rgba(0, 0, 0, 0.2);*/
   z-index: 1;
@@ -333,11 +348,11 @@ li.dropdown { /* главно меню - dropdown*/
 .main-nav {
   display: flex;
   align-items: flex-end;
+  z-index: 1;
 }
 
 .main-nav a{   /* шрифт главно меню   */
   color: #21213d;
-  font-size: 36px;
 }
 
 .main-nav a:hover{
@@ -409,18 +424,10 @@ li.dropdown { /* главно меню - dropdown*/
 
 /* Контейнерът със съдържанието */
 .main-content {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 40px 20px;
   background-color: #982398;
-}
-
-.frame-circle-trainer-1{
-
-}
-
-.frame-circle-trainer-2{
-
 }
 
 /* ==================== 🔚 END: main-content ====================== */
@@ -536,8 +543,8 @@ li.dropdown { /* главно меню - dropdown*/
 
 
  /*=================== debug helper =======================*/
-* {
-    outline: 1px solid red !important;
-}
+/** {*/
+/*    outline: 1px solid red !important;*/
+/*}*/
 
 
