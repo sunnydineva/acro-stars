@@ -1,0 +1,123 @@
+.thunder-animations-container{
+    position: relative;
+    width: 100%;
+}
+
+.left-lines {
+    position: absolute;
+    left: -300px; /* това измества картинката извън екрана наляво */
+    top: -350px;  /* Вдигаме малко нагоре */
+    width: 50vw;  /* Може да коригираш размера, ако е нужно */
+    opacity: 0;
+    transform: translate(0px, 0px); /* Начална позиция - започва от центъра */
+    animation: moveOnAngleLeft 2s linear forwards;
+
+}
+.left-lines.second {
+    animation-name: moveOnAngleLeftSecond;
+    left: -190px; /* това измества картинката извън екрана наляво */
+    animation-delay: 0.9s; /* закъснение за втората лява */
+}
+
+.right-lines {
+    position: absolute;
+    right: -220px;
+    top: -300px;  /* Вдигаме и тази нагоре, за да са наравно */
+    width: 50vw;
+    opacity: 0;
+   /*transform: translate(200px, -346px); /* изходна позиция диагонално ↙️ */
+  transform: translate(0px, 0px); /* Начална позиция - започва от центъра */
+    /*animation: moveOnAngleRight 1.8s ease-out forwards; */
+    animation: moveOnAngleRight 2s linear forwards;;
+}
+.right-lines.second {
+    animation-delay: 0.9s; /* закъснение за втората дясна */
+    top: -450px;
+    right: -350px;
+    animation-name: moveOnAngleRightSecond;
+}
+@keyframes moveOnAngleLeft {
+  from {
+    opacity: 0;
+    transform: translate(0px, 0px); /* Начална позиция - започва от центъра */
+  }
+  to {
+    opacity: 1;
+    transform: translate(125.86px, 155.42px); /* Крайна позиция по ъгъл 38,67° */
+  }
+}
+
+@keyframes moveOnAngleLeftSecond {
+  from {
+    opacity: 0;
+    transform: translate(0px, 0px); /* Начална позиция - започва от центъра */
+  }
+  to {
+    opacity: 1;
+    transform: translate(125.86px, 155.42px); /* Крайна позиция по ъгъл 38,67° */
+  }
+}
+
+@keyframes moveOnAngleRightSecond {
+  from {
+    opacity: 0;
+    transform: translate(0px, 0px); /* Начална позиция - започва от центъра */
+  }
+  to {
+    opacity: 1;
+    transform: translate(-125.86px, 155.42px); /* Крайна позиция по ъгъл 38,67° */
+  }
+}
+
+@keyframes moveOnAngleRight {
+  from {
+    opacity: 0;
+    transform: translate(0px, 0px); /* Начална позиция - започва от центъра */
+  }
+  to {
+    opacity: 1;
+    transform: translate(-125.86px, 155.42px); /* Крайна позиция по ъгъл 38,67° */
+  }
+}
+ /*  @keyframes moveOnAngleLeft {
+     from {
+       opacity: 0;
+       transform: translate(-320px, -346px);
+     }
+     to {
+       opacity: 1;
+       transform: translate(0px, 0px);
+     }
+   }
+      @keyframes moveOnAngleLeftSecond {
+          from {
+            opacity: 0;
+            transform: translate(-200px, -300px); *//* по-малък vertical offset *//*
+          }
+          to {
+            opacity: 1;
+            transform: translate(0px, -90px); *//* леко по-надолу *//*
+          }
+        }
+ @keyframes moveOnAngleRightSecond {
+   from {
+       opacity: 0;
+       transform: translate(200px, -300px); *//* малко по-малък offset *//*
+     }
+     to {
+       opacity: 1;
+       transform: translate(0px, -90px); *//* леко надолу, без да пипаме top *//*
+     }
+        }
+   @keyframes moveOnAngleRight {
+     from {
+       opacity: 0;
+       transform: translate(200px, -346px);
+     }
+     to {
+       opacity: 1;
+       transform: translate(0px, 0px);
+     }
+
+
+}*/
