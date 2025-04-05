@@ -1,0 +1,86 @@
+
+.main-title{
+
+}
+.main-trainers{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  gap: 100px;
+  margin-top: 50px;
+}
+
+.trainer-block{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  width: 350px;
+  position: relative;
+}
+
+.trainer-img-wrapper{
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.trainer-circle{
+  height: 350px;
+  width: 350px;
+}
+
+.trainer-img{
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  height: 252px;
+  width: 212px;
+}
+
+.trainer-title{
+  display: flex;
+  justify-content: center;
+}
+
+.main-fb-feed{
+  position: relative;
+  margin-top: 50px;
+  /** {*/
+  /*  outline: 1px solid red !important;*/
+  /*}*/
+}
+
+.main-fb-feed img{
+  /*width: 900px;*/
+  width: 900px;
+  height: auto;
+  display: block;
+
+}
+
+.fb-box {
+  /*width: 1000px;*/
+  background: red;
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  transform: translate(-50%, 0);
+  z-index: 3;
+}
+
+.fb-page{
+  background: blue;
+  width: 400px;
+  height: 200px;
+}
+
+.acro-trails{
+  position: absolute;
+  z-index: 2;
+  top: 50%; left: 50%;
+  transform: translate(-65%, -55%);
+}
+
+.advertisement{
+  height: 200px;
+}
