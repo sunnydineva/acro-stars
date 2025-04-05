@@ -45,9 +45,9 @@
 .main-fb-feed{
   position: relative;
   margin-top: 50px;
-  * {
-    outline: 1px solid red !important;
-  }
+  /** {*/
+  /*  outline: 1px solid red !important;*/
+  /*}*/
 }
 
 .main-fb-feed img{
