@@ -1,56 +1,66 @@
-.page-section {
+.animation-wrapper {
     position: relative;
-    width: 100%;
+    max-width: 1400px; /* задаваме максимална ширина на контейнера */
+    margin: 0 auto; /* центрираме контейнера */
 }
 
 .thunder-animation-mask {
     position: relative;
-    width: 100%;
-    overflow-x: clip; /* 👈 Вместо hidden - не бута layout, но реже всичко извън */
+    overflow-x: clip; /* Вместо hidden - не бута layout, но реже всичко извън */
 }
 
 .thunder-animations-container {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 50%; /* Центрираме по хоризонтала */
+    transform: translateX(-50%); /* Центрираме */
     width: 100%;
     pointer-events: none; /* ако анимациите не трябва да пречат на съдържание */
 }
 
 .left-lines {
     position: absolute;
-    left: -390px; /* това измества картинката извън екрана наляво */
-    top: -260px;  /* Вдигаме малко нагоре */
-    width: 25vw;  /* Може да коригираш размера, ако е нужно */
+    left: -190px; /* Това измества картинката извън контейнера наляво */
+    top: -110px; /* Подравняваме спрямо контейнера (може да коригирате спрямо нуждите) */
+    width: 25vw;  /* Размер на стрелата (може да промениш според нуждите) */
     opacity: 0;
     transform: translate(0px, 0px); /* Начална позиция - започва от центъра */
     animation: moveOnAngleLeft 0.7s linear forwards;
-
 }
+
 .left-lines.second {
     animation-name: moveOnAngleLeftSecond;
-    left: -210px; /* това измества картинката извън екрана наляво */
-    top: -150px;  /* Вдигаме малко нагоре */
-    animation-delay: 0.3s; /* закъснение за втората лява */
+    left: -350px; /* Още по-надолу извън контейнера */
+    top: -160px;  /* Може да промениш, за да нагласиш точно позицията */
+    animation-delay: 0.3s; /* закъснение за втората лява линия */
 }
 
 .right-lines {
     position: absolute;
-    right: -190px;
-    top: 520px;  /* Вдигаме и тази нагоре, за да са наравно */
-    width: 30vw;
+    right: -100px;
+    top: 520px;
+    width: 30vw; /* Размер на стрелата (може да коригираш) */
     opacity: 0;
     transform: translate(0px, 0px); /* Начална позиция - започва от центъра */
-    animation: moveOnAngleRight 0.7s linear forwards;;
+    animation: moveOnAngleRight 0.7s linear forwards;
+    z-index: 1;
 }
+
 .right-lines.second {
-    animation-delay: 0.3s; /* закъснение за втората дясна */
-    top: 600px;
-    right: -390px;
+    animation-delay: 0.3s; /* закъснение за втората дясна линия */
+    right: -290px;
+    top: 550px;
+    /*top: 40%;
+    right: -350px;*/
     animation-name: moveOnAngleRightSecond;
+    z-index: 2;
 }
+
+/* Анимации */
 @keyframes moveOnAngleLeft {
   from {
     opacity: 0;
-    transform: translate(0px, 0px); /* Начална позиция - започва от центъра */
+    transform: translate(0px, 0px); /* Начална позиция */
   }
   to {
     opacity: 1;
@@ -61,7 +71,7 @@
 @keyframes moveOnAngleLeftSecond {
   from {
     opacity: 0;
-    transform: translate(0px, 0px); /* Начална позиция - започва от центъра */
+    transform: translate(0px, 0px); /* Начална позиция */
   }
   to {
     opacity: 1;
@@ -72,7 +82,7 @@
 @keyframes moveOnAngleRightSecond {
   from {
     opacity: 0;
-    transform: translate(0px, 0px); /* Начална позиция - започва от центъра */
+    transform: translate(0px, 0px); /* Начална позиция */
   }
   to {
     opacity: 1;
@@ -83,7 +93,7 @@
 @keyframes moveOnAngleRight {
   from {
     opacity: 0;
-    transform: translate(0px, 0px); /* Начална позиция - започва от центъра */
+    transform: translate(0px, 0px); /* Начална позиция */
   }
   to {
     opacity: 1;
