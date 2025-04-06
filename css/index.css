@@ -1,7 +1,8 @@
-
 .main-title{
 
 }
+
+/*=============== 🟣 START trainers ===========================*/
 .main-trainers{
   display: flex;
   align-content: center;
@@ -51,6 +52,7 @@
 .trainer-block:hover .trainer-img-wrapper{
   border: 8px solid var(--star-gold);
   /*border: 8px solid var(--star-silver);*/
+  animation: borderColorChange 2s infinite alternate;
 }
 
 .trainer-block:hover .trainer-title{
@@ -78,17 +80,14 @@
   }
 }
 
+@keyframes borderColorChange {
 
-
-
-
-/*.trainer-img-wrapper img:hover{*/
-/*  transform: scale(1.1);*/
-/*}*/
-
-
-*, ::after, ::before{
-  box-sizing: border-box;
+  0% {
+    border-color: var(--star-blue);
+  }
+  100% {
+    border-color: var(--star-gold);
+  }
 }
 
 .trainer-title{
@@ -96,16 +95,12 @@
   justify-content: center;
   color: var(--text-color);
 }
+/* ==================== 🔚 END: trainers ==================== */
 
-
-
-
+/*=============== 🟣 START fb-feed ===========================*/
 .main-fb-feed{
   position: relative;
   margin-top: 50px;
-  /** {*/
-  /*  outline: 1px solid red !important;*/
-  /*}*/
 }
 
 .main-fb-feed img{
@@ -117,8 +112,6 @@
 }
 
 .fb-box {
-  /*width: 1000px;*/
-  background: red;
   border-radius: 10px;
 
   position: absolute;
@@ -129,7 +122,6 @@
 }
 
 .fb-page{
-  background: blue;
   border-radius: 10px;
 
   width: 400px;
@@ -143,7 +135,12 @@
   top: 50%; left: 50%;
   transform: translate(-65%, -55%);
 }
+/* ==================== 🔚 END: fb-feed ====================== */
 
 .advertisement{
   height: 200px;
+}
+
+*, ::after, ::before{
+  box-sizing: border-box;
 }

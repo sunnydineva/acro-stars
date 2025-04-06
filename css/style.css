@@ -331,7 +331,7 @@ li.dropdown { /* главно меню - dropdown*/
 }
 
 .dropdown-hover-bridge {
-  height: 17px;               /* това ти е дупката */
+  height: 17px;               /* дупката */
   pointer-events: none;       /* мишката преминава през нея */
 }
 

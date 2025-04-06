@@ -106,14 +106,18 @@
 }
 
 @keyframes borderColorChange {
+
   0%{
-    border-color: #3f51b5;
+    border-color: var(--star-blue);
   }
-  50%{
-    border-color: #f50057;
-  }
+  /*90%{*/
+  /*  border-color: var(--star-silver);*/
+  /*}*/
+  /*70%{*/
+  /*  border-color: var(--star-yellow);*/
+  /*}*/
   100%{
-    border-color: #ff9800;
+    border-color: var(--star-gold);
   }
 
   /*/анимация border*/
