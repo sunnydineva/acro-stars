@@ -1,13 +1,25 @@
-.thunder-animations-container{
+.page-section {
     position: relative;
     width: 100%;
 }
 
+.thunder-animation-mask {
+    position: relative;
+    width: 100%;
+    overflow-x: clip; /* 👈 Вместо hidden - не бута layout, но реже всичко извън */
+}
+
+.thunder-animations-container {
+    position: relative;
+    width: 100%;
+    pointer-events: none; /* ако анимациите не трябва да пречат на съдържание */
+}
+
 .left-lines {
     position: absolute;
-    left: -300px; /* това измества картинката извън екрана наляво */
-    top: -350px;  /* Вдигаме малко нагоре */
-    width: 50vw;  /* Може да коригираш размера, ако е нужно */
+    left: -390px; /* това измества картинката извън екрана наляво */
+    top: -260px;  /* Вдигаме малко нагоре */
+    width: 25vw;  /* Може да коригираш размера, ако е нужно */
     opacity: 0;
     transform: translate(0px, 0px); /* Начална позиция - започва от центъра */
     animation: moveOnAngleLeft 0.7s linear forwards;
@@ -15,23 +27,24 @@
 }
 .left-lines.second {
     animation-name: moveOnAngleLeftSecond;
-    left: -190px; /* това измества картинката извън екрана наляво */
+    left: -210px; /* това измества картинката извън екрана наляво */
+    top: -150px;  /* Вдигаме малко нагоре */
     animation-delay: 0.3s; /* закъснение за втората лява */
 }
 
 .right-lines {
     position: absolute;
-    right: -220px;
-    top: -300px;  /* Вдигаме и тази нагоре, за да са наравно */
-    width: 50vw;
+    right: -190px;
+    top: 520px;  /* Вдигаме и тази нагоре, за да са наравно */
+    width: 30vw;
     opacity: 0;
     transform: translate(0px, 0px); /* Начална позиция - започва от центъра */
     animation: moveOnAngleRight 0.7s linear forwards;;
 }
 .right-lines.second {
     animation-delay: 0.3s; /* закъснение за втората дясна */
-    top: -450px;
-    right: -350px;
+    top: 600px;
+    right: -390px;
     animation-name: moveOnAngleRightSecond;
 }
 @keyframes moveOnAngleLeft {
