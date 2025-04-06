@@ -19,6 +19,7 @@ html {
 
 h1{
   font-size: 32px;
+  color:var(--text-color);
 }
 
 /*
@@ -29,12 +30,12 @@ h1{
  */
 
 ::-moz-selection {
-  background: #b3d4fc;
+  background:var(--highlight-blue);
   text-shadow: none;
 }
 
 ::selection {
-  background: #b3d4fc;
+  background: var(--highlight-blue);
   text-shadow: none;
 }
 
@@ -46,7 +47,7 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid var(--hr-line-color);
   margin: 1em 0;
   padding: 0;
 }
@@ -225,7 +226,7 @@ textarea {
 /* Цялото тяло – фонов цвят за цял екран */
 body {
   /*background-color: #342e48;*/
-  background-color: #cacacb;
+  background-color: var(--body-bg);;
   background-size: cover;
   margin: 0;
   padding: 0;
@@ -235,7 +236,7 @@ body {
 /* Хедър и футър заемат цялата ширина */
 header, footer {
   width: 100%;
-  background-color: #cacacb;
+  background-color: var(--body-bg);
 }
 
 /* Вътрешният контейнер, който центрира съдържанието */
@@ -314,7 +315,7 @@ li.dropdown { /* главно меню - dropdown*/
 .dropdown-content-inner{
   /*border-radius: 10px;*/
   position: relative;
-  background-color: #9592a4;
+  background-color: var(--dropdown-bg);
   border-radius: 10px;
 }
 
@@ -323,7 +324,7 @@ li.dropdown { /* главно меню - dropdown*/
   position: absolute;     /* 🟢 това е ключово — не измества околните */
   top: 100%;              /* поставя го точно под бутона */
   /*margin-top: 18px; !* = header-gradient = 16px + 2px ~white*!*/
-  /*background-color: #9592a4;*/
+  /*background-color: var(--dropdown-bg);*/
   /*box-shadow: 0 0.42vh 0.83vh 0 rgba(0, 0, 0, 0.2);*/
   z-index: 1;
   border-radius: 10px;
@@ -346,8 +347,8 @@ li.dropdown { /* главно меню - dropdown*/
 }
 
 .dropdown-content-wrapper a:hover {
-  background-color: #777;
-  color: #d5b46d;
+  background-color: var(--dropdown-hover-bg);
+  color: var(--dropdown-hover-text);
 }
 
 .dropdown:hover .dropdown-content-wrapper {
@@ -363,13 +364,13 @@ li.dropdown { /* главно меню - dropdown*/
 }
 
 .main-nav a{   /* шрифт главно меню   */
-  color: #21213d;
+  color: var(--text-color);
 }
 
 .main-nav a:hover{
-  /*color: #d5b46d;*/ /*todo Гери*/
-  color: #a48138;
-  text-shadow: 5px -2px 2px #1d1d3c;  /* x, y, blur, color */
+  /*color: var(--dropdown-hover-text);*/ /*todo Гери*/
+  color: var(--nav-hover-color);
+  text-shadow: 5px -2px 2px var(--nav-hover-shadow);  /* x, y, blur, color */
   transition: all 0.3s ease-in-out;
   border-radius: 5px;
 }
@@ -395,7 +396,7 @@ li.dropdown { /* главно меню - dropdown*/
 
 /*Ема*/
 /*.nav-item:hover{*/
-/*background-color: #9592a4;*/
+/*background-color: var(--dropdown-bg);*/
 /*border-radius: 5px}*/
 
 .item-1 {
@@ -449,18 +450,18 @@ li.dropdown { /* главно меню - dropdown*/
 .main-bar-gradient {
   height: 16px;
   width: 100%;
-  /*background: linear-gradient(to bottom, #beaf8d, #1d1d3c);*/
-  /*background: linear-gradient(to bottom, #a07c30, #1d1d3c);*/
-  background: linear-gradient(to bottom, #565c6d, #21213d);
+  /*background: linear-gradient(to bottom, #beaf8d, var(--nav-hover-shadow));*/
+  /*background: linear-gradient(to bottom, #a07c30, var(--nav-hover-shadow));*/
+  background: linear-gradient(to bottom,var(--gradient-mid),var(--gradient-dark));
 }
 
 /*todo Гери*/
 .advertisement-bar-gradient {
   height: 8px;
   width: 100%;
-  /*background: linear-gradient(to bottom, #beaf8d, #1d1d3c);*/
-  /*background: linear-gradient(to bottom, #a07c30, #1d1d3c);*/
-  background: linear-gradient(to bottom, #565c6d, #21213d);
+  /*background: linear-gradient(to bottom, #beaf8d, var(--nav-hover-shadow));*/
+  /*background: linear-gradient(to bottom, #a07c30, var(--nav-hover-shadow));*/
+  background: linear-gradient(to bottom, var(--gradient-mid), var(--gradient-dark));
 }
 
 
