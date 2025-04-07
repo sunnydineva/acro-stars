@@ -1,102 +1,120 @@
 .animation-wrapper {
     position: relative;
-    max-width: 1400px; /* задаваме максимална ширина на контейнера */
-    margin: 0 auto; /* центрираме контейнера */
+    max-width: 1400px;
+    margin: 0 auto;
+    overflow: visible;
 }
 
 .thunder-animation-mask {
     position: relative;
-    overflow-x: clip; /* Вместо hidden - не бута layout, но реже всичко извън */
+    overflow: visible; /* за да може да се виждат линиите извън контейнера */
+    /*overflow-x: clip; /* 👈 Вместо hidden - не бута layout, но реже всичко извън */
 }
 
 .thunder-animations-container {
     position: absolute;
     top: 0;
-    left: 50%; /* Центрираме по хоризонтала */
-    transform: translateX(-50%); /* Центрираме */
+    left: 0;
     width: 100%;
-    pointer-events: none; /* ако анимациите не трябва да пречат на съдържание */
+    height: 100%;
+    pointer-events: none;
 }
-
 .left-lines {
     position: absolute;
-    left: -190px; /* Това измества картинката извън контейнера наляво */
-    top: -110px; /* Подравняваме спрямо контейнера (може да коригирате спрямо нуждите) */
-    width: 25vw;  /* Размер на стрелата (може да промениш според нуждите) */
+    left: clamp(-250px, -15vw, -120px);
+    top: clamp(-150px, -6vw, -160px);
+    width: clamp(100px, 25vw, 250px);
     opacity: 0;
-    transform: translate(0px, 0px); /* Начална позиция - започва от центъра */
     animation: moveOnAngleLeft 0.7s linear forwards;
+    transform-origin: left center;
 }
 
 .left-lines.second {
     animation-name: moveOnAngleLeftSecond;
-    left: -350px; /* Още по-надолу извън контейнера */
-    top: -160px;  /* Може да промениш, за да нагласиш точно позицията */
-    animation-delay: 0.3s; /* закъснение за втората лява линия */
+    animation-delay: 0.3s;
+    left: clamp(-340px, -30vw, -260px);
+    top: clamp(-205px, -14vw, -260px);  /* Запазваме същото вертикално разположение */
+    width: clamp(170px, 40vw, 270px);    /* Увеличаваме ширината, за да стане по-дълга */
+    opacity: 0;
+    animation: moveOnAngleLeftSecond 0.7s linear forwards;
+    transform: scaleY(1.4); /* Увеличаваме дебелината без да пипаме ширината */
+    transform-origin: left center;
 }
 
+/* Десни линии */
 .right-lines {
     position: absolute;
-    right: -100px;
-    top: 520px;
-    width: 30vw; /* Размер на стрелата (може да коригираш) */
+    right: clamp(-350px, -20vw, -100px); /* Линията започва извън екрана от дясно */
+    top: clamp(550px, 25vh, 700px);  /* Преместваме първата линия малко по-нагоре */
+    width: clamp(270px, 90vw, 370px); /* Ширината на първата линия */
     opacity: 0;
-    transform: translate(0px, 0px); /* Начална позиция - започва от центъра */
+    transform: scaleY(1.4); /* Дебелината на първата линия като в ляво */
     animation: moveOnAngleRight 0.7s linear forwards;
     z-index: 1;
 }
 
 .right-lines.second {
-    animation-delay: 0.3s; /* закъснение за втората дясна линия */
-    right: -290px;
-    top: 550px;
-    /*top: 40%;
-    right: -350px;*/
+    animation-delay: 0.3s;
     animation-name: moveOnAngleRightSecond;
+    right: clamp(-430px, -30vw, -130px); /* Линията започва извън екрана, но по-близо до ръба */
+    top: clamp(600px, 30vh, 740px);  /* Пускаме втората линия малко по-ниско */
+    width: clamp(250px, 80vw, 330px); /* Втората линия е по-къса от първата */
+    opacity: 0;
+    transform: scaleY(1.4); /* Дебелината на втората линия като в ляво */
+    animation: moveOnAngleRightSecond 0.7s linear forwards;
     z-index: 2;
 }
+
 
 /* Анимации */
 @keyframes moveOnAngleLeft {
   from {
     opacity: 0;
-    transform: translate(0px, 0px); /* Начална позиция */
+    transform: translate(0px, 0px);
   }
   to {
     opacity: 1;
-    transform: translate(125.86px, 155.42px); /* Крайна позиция по ъгъл 38,67° */
+    transform: translate(125.86px, 155.42px);
   }
 }
 
 @keyframes moveOnAngleLeftSecond {
   from {
     opacity: 0;
-    transform: translate(0px, 0px); /* Начална позиция */
+    transform: translate(0px, 0px);
   }
   to {
     opacity: 1;
-    transform: translate(125.86px, 155.42px); /* Крайна позиция по ъгъл 38,67° */
-  }
-}
-
-@keyframes moveOnAngleRightSecond {
-  from {
-    opacity: 0;
-    transform: translate(0px, 0px); /* Начална позиция */
-  }
-  to {
-    opacity: 1;
-    transform: translate(-125.86px, 155.42px); /* Крайна позиция по ъгъл 38,67° */
+    transform: translate(125.86px, 155.42px);
   }
 }
 
 @keyframes moveOnAngleRight {
   from {
     opacity: 0;
-    transform: translate(0px, 0px); /* Начална позиция */
+    transform: translate(0px, 0px);
   }
   to {
     opacity: 1;
-    transform: translate(-125.86px, 155.42px); /* Крайна позиция по ъгъл 38,67° */
+    transform: translate(-125.86px, 155.42px);
+  }
+}
+
+@keyframes moveOnAngleRightSecond {
+  from {
+    opacity: 0;
+    transform: translate(0px, 0px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-125.86px, 155.42px);
+  }
+}
+
+ Media queries за малки екрани
+@media (max-width: 768px) {
+  .left-lines,
+  .right-lines {
+    display: none;
   }
 }
