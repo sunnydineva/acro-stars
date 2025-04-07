@@ -2,13 +2,13 @@
     position: relative;
     max-width: 1400px;
     margin: 0 auto;
-    overflow: visible;
+    overflow-x: clip; /* 👈 само това добавяме */
 }
+
 
 .thunder-animation-mask {
     position: relative;
     overflow: visible; /* за да може да се виждат линиите извън контейнера */
-    /*overflow-x: clip; /* 👈 Вместо hidden - не бута layout, но реже всичко извън */
 }
 
 .thunder-animations-container {
@@ -22,8 +22,8 @@
 .left-lines {
     position: absolute;
     left: clamp(-250px, -15vw, -120px);
-    top: clamp(-150px, -6vw, -160px);
-    width: clamp(100px, 25vw, 250px);
+    top: clamp(-260px, -6vw, -190px);
+    width: clamp(420px, 5vw, 550px);
     opacity: 0;
     animation: moveOnAngleLeft 0.7s linear forwards;
     transform-origin: left center;
@@ -32,9 +32,9 @@
 .left-lines.second {
     animation-name: moveOnAngleLeftSecond;
     animation-delay: 0.3s;
-    left: clamp(-340px, -30vw, -260px);
-    top: clamp(-205px, -14vw, -260px);  /* Запазваме същото вертикално разположение */
-    width: clamp(170px, 40vw, 270px);    /* Увеличаваме ширината, за да стане по-дълга */
+    left: clamp(-360px, -30vw, -280px);
+    top: clamp(-245px, -65vw, -310px);  /* Запазваме същото вертикално разположение */
+    width: clamp(290px, 32vw, 410px);/* Увеличаваме ширината, за да стане по-дълга */
     opacity: 0;
     animation: moveOnAngleLeftSecond 0.7s linear forwards;
     transform: scaleY(1.4); /* Увеличаваме дебелината без да пипаме ширината */
@@ -44,7 +44,7 @@
 /* Десни линии */
 .right-lines {
     position: absolute;
-    right: clamp(-350px, -20vw, -100px); /* Линията започва извън екрана от дясно */
+    right: clamp(-250px, -20vw, -80px); /* Линията започва извън екрана от дясно */
     top: clamp(550px, 25vh, 700px);  /* Преместваме първата линия малко по-нагоре */
     width: clamp(270px, 90vw, 370px); /* Ширината на първата линия */
     opacity: 0;
@@ -56,7 +56,7 @@
 .right-lines.second {
     animation-delay: 0.3s;
     animation-name: moveOnAngleRightSecond;
-    right: clamp(-430px, -30vw, -130px); /* Линията започва извън екрана, но по-близо до ръба */
+    right: clamp(-330px, -30vw, -110px); /* Линията започва извън екрана, но по-близо до ръба */
     top: clamp(600px, 30vh, 740px);  /* Пускаме втората линия малко по-ниско */
     width: clamp(250px, 80vw, 330px); /* Втората линия е по-къса от първата */
     opacity: 0;
@@ -73,7 +73,7 @@
     transform: translate(0px, 0px);
   }
   to {
-    opacity: 1;
+    opacity: 0.8;
     transform: translate(125.86px, 155.42px);
   }
 }
@@ -84,7 +84,7 @@
     transform: translate(0px, 0px);
   }
   to {
-    opacity: 1;
+    opacity: 0.8;
     transform: translate(125.86px, 155.42px);
   }
 }
@@ -95,7 +95,7 @@
     transform: translate(0px, 0px);
   }
   to {
-    opacity: 1;
+    opacity: 0.8;
     transform: translate(-125.86px, 155.42px);
   }
 }
@@ -106,7 +106,7 @@
     transform: translate(0px, 0px);
   }
   to {
-    opacity: 1;
+    opacity: 0.8;
     transform: translate(-125.86px, 155.42px);
   }
 }
