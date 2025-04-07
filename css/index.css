@@ -1,5 +1,5 @@
 .main-title{
-
+  padding-left: 50px;
 }
 
 /*=============== 🟣 START trainers ===========================*/
@@ -7,7 +7,7 @@
   display: flex;
   align-content: center;
   justify-content: center;
-  gap: 80px; /*100 - 10px outside every circle*/
+  gap: 113px; /*105 + 8- 10px outside every circle*/
   margin-top: 50px;
 }
 
@@ -16,13 +16,15 @@
   flex-direction: column;
   align-content: center;
   justify-content: center;
-  width: 370px;
+  width: 350px;
   position: relative;
 }
 
 .trainer-img-wrapper{
   padding: 12px;
   display: flex;
+  width: 350px;
+  height: 350px;
   justify-content: center;
   position: relative;
   margin-bottom: 20px;
@@ -38,7 +40,7 @@
 }
 
 .trainer-img{
-  border-radius: 100%;
+  /*border-radius: 100%;*/
   width: 350px;
   height: auto;
   transition: transform 0.5s ease;
