@@ -1,12 +1,14 @@
 .animation-wrapper {
     position: relative;
-    max-width: 1400px;
+    /*max-width: 1400px;*/
+    width: 100%;
     margin: 0 auto;
     overflow-x: clip; /* 👈 само това добавяме */
 }
 
 
 .thunder-animation-mask {
+  width: 1400px;
     position: relative;
     overflow: visible; /* за да може да се виждат линиите извън контейнера */
 }
