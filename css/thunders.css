@@ -1,72 +1,62 @@
 .animation-wrapper {
     position: relative;
-    /*max-width: 1400px;*/
     width: 100%;
-    margin: 0 auto;
-    overflow-x: clip; /* 👈 само това добавяме */
-}
-
-
-.thunder-animation-mask {
-  width: 1400px;
-    position: relative;
-    overflow: visible; /* за да може да се виждат линиите извън контейнера */
+   overflow-x: clip; /* 👈 Вместо hidden - не бута layout, но реже всичко извън */
 }
 
 .thunder-animations-container {
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1400px;
     height: 100%;
     pointer-events: none;
+    overflow: visible;
 }
+
+/* Леви линии */
 .left-lines {
     position: absolute;
-    left: clamp(-250px, -15vw, -120px);
-    top: clamp(-260px, -6vw, -190px);
-    width: clamp(420px, 5vw, 550px);
+    left: -250px; /* спрямо центъра на контейнера */
+    top: -30px;
+    width: 400px;
     opacity: 0;
-    animation: moveOnAngleLeft 0.7s linear forwards;
     transform-origin: left center;
+    animation: moveOnAngleLeft 0.7s linear forwards;
 }
 
 .left-lines.second {
-    animation-name: moveOnAngleLeftSecond;
-    animation-delay: 0.3s;
-    left: clamp(-360px, -30vw, -280px);
-    top: clamp(-245px, -65vw, -310px);  /* Запазваме същото вертикално разположение */
-    width: clamp(290px, 32vw, 410px);/* Увеличаваме ширината, за да стане по-дълга */
-    opacity: 0;
+    left: -360px;          /* по-наляво спрямо центъра */
+    top: -30px;             /* оставяме както преди */
+    width: 350px;
+    transform: scaleY(1.25);
     animation: moveOnAngleLeftSecond 0.7s linear forwards;
-    transform: scaleY(1.4); /* Увеличаваме дебелината без да пипаме ширината */
-    transform-origin: left center;
+    animation-delay: 0.3s;
 }
 
 /* Десни линии */
 .right-lines {
     position: absolute;
-    right: clamp(-250px, -20vw, -80px); /* Линията започва извън екрана от дясно */
-    top: clamp(550px, 25vh, 700px);  /* Преместваме първата линия малко по-нагоре */
-    width: clamp(270px, 90vw, 370px); /* Ширината на първата линия */
+    right: -170px;
+    top: 760px;
+    width: 370px;
     opacity: 0;
-    transform: scaleY(1.4); /* Дебелината на първата линия като в ляво */
+    transform: scaleY(1.4);
     animation: moveOnAngleRight 0.7s linear forwards;
     z-index: 1;
 }
 
 .right-lines.second {
-    animation-delay: 0.3s;
-    animation-name: moveOnAngleRightSecond;
-    right: clamp(-330px, -30vw, -110px); /* Линията започва извън екрана, но по-близо до ръба */
-    top: clamp(600px, 30vh, 740px);  /* Пускаме втората линия малко по-ниско */
-    width: clamp(250px, 80vw, 330px); /* Втората линия е по-къса от първата */
+    right: -240px;
+    top: 810px;
+    width: 330px;
     opacity: 0;
-    transform: scaleY(1.4); /* Дебелината на втората линия като в ляво */
+    transform: scaleY(1.4);
     animation: moveOnAngleRightSecond 0.7s linear forwards;
+    animation-delay: 0.3s;
     z-index: 2;
 }
-
 
 /* Анимации */
 @keyframes moveOnAngleLeft {
@@ -75,7 +65,7 @@
     transform: translate(0px, 0px);
   }
   to {
-    opacity: 0.8;
+    opacity: 1;
     transform: translate(125.86px, 155.42px);
   }
 }
@@ -86,7 +76,7 @@
     transform: translate(0px, 0px);
   }
   to {
-    opacity: 0.8;
+    opacity: 1;
     transform: translate(125.86px, 155.42px);
   }
 }
@@ -97,7 +87,7 @@
     transform: translate(0px, 0px);
   }
   to {
-    opacity: 0.8;
+    opacity: 1;
     transform: translate(-125.86px, 155.42px);
   }
 }
@@ -108,15 +98,7 @@
     transform: translate(0px, 0px);
   }
   to {
-    opacity: 0.8;
+    opacity: 1;
     transform: translate(-125.86px, 155.42px);
-  }
-}
-
- Media queries за малки екрани
-@media (max-width: 768px) {
-  .left-lines,
-  .right-lines {
-    display: none;
   }
 }
