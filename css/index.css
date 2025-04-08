@@ -145,12 +145,15 @@
 
 /* ==================== 🤝 НАЧАЛО: partner-bar =============== */
 .partners-bar {
-  margin-top: 40px;
   height: 200px;
-  width: 100%;
+  /*width: var(--main-width);*/
+  width: 1600px;
+  display: flex;
+  flex-wrap: wrap; /*align-content: center;*/
+  align-content: center;
+  position: relative;
   overflow: hidden;
-  background:var(--body-bg);
-  padding: 10px 10px;
+  background: var(--body-bg);
 }
 
 .partners-track {
@@ -164,7 +167,7 @@
 }
 
 .partners-track img {
-  width: 120px;
+  width: 100px;
   height: auto;
   flex-shrink: 0;
   border-radius: 5px;
@@ -174,6 +177,27 @@
 
 .partners-track img:hover{
   transform: scale(1.1);
+}
+
+.fade-left,
+.fade-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.fade-left {
+  left: 0;
+  width: 20px;
+  background: linear-gradient(to right, var(--body-bg), transparent);
+}
+
+.fade-right {
+  right: 0;
+  background: linear-gradient(to left, var(--body-bg), transparent);
 }
 
 @keyframes scroll-logos {

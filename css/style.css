@@ -431,17 +431,15 @@ li.dropdown { /* главно меню - dropdown*/
 /* Основната част – wrapper с ширина 100% - todo .wrapper ???*/
 {
   width: 100%;
-/*background-color: white; !* или друго *!*/
 }
 
-/* Контейнерът със съдържанието */
 .main-content {
   position: relative;
   max-width: 1400px;
-  margin: 0 auto;
-  padding: 40px 20px;
+  /*padding: 20px 20px;*/
   /*background-color: #982398;*/
   /*outline: 1px solid red !important;*/
+  margin: 0 auto 40px;
 }
 
 /* ==================== 🔚 END: main-content ====================== */
@@ -456,7 +454,7 @@ li.dropdown { /* главно меню - dropdown*/
 }
 
 /*todo Гери*/
-.advertisement-bar-gradient {
+.partners-bar-gradient {
   height: 8px;
   width: 100%;
   /*background: linear-gradient(to bottom, #beaf8d, var(--nav-hover-shadow));*/
