@@ -124,7 +124,7 @@
 
 
 /*  BEGIN анимация завъртане */
-.rotating-circle {
+.rotating-png {
   width: 350px; /* ако няма размер - обикаля в екрана*/
   animation: rotateme 3s infinite linear;
 }
@@ -146,9 +146,9 @@
 /* 🔚 END анимация завъртане */
 
 
-.gradient-circle {
-  width: 200px;
-  height: 200px;
+.rotating-png-to-circle-border {
+  width: 350px;
+  height: 350px;
   border-radius: 50%;
   padding: 8px; /* дебелината на бордъра */
   background: conic-gradient(#a07c30, #21213d); /* градиент по избор */
@@ -158,11 +158,12 @@
     radial-gradient(farthest-side, transparent calc(100% - 8px), black 0);
 }
 
-.inner-circle {
+.rotating-png-to-circle-border-inner {
   width: 100%;
   height: 100%;
   border-radius: 50%;
   background-color: white; /* или картинка, ако искаш */
+  animation: rotateme 3s infinite linear;
 }
 
 
