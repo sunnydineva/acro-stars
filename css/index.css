@@ -113,6 +113,7 @@
   position: relative;
   width: var(--main-width);
   margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .main-fb-feed img{
@@ -140,14 +141,60 @@
   position: absolute;
   z-index: 3;
   top: 40%; left: 45%;
+  color: var(--text-color);
+
+  background: linear-gradient(
+    to right,
+    var(--text-color)20%,
+    #f3cf6e 40%,
+    #fff 60%,
+    #b89e4f 80%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shine 15s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+.pulse-hover {
+  animation: pulse 10s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+}
+
+.pulse-hover:hover {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.01);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 /* ==================== 🔚 END: fb-feed ====================== */
 
 /* ==================== 🤝 НАЧАЛО: partner-bar =============== */
 .partners-bar {
   height: 200px;
-  /*width: var(--main-width);*/
-  width: 1600px;
+  width: var(--main-width);
   display: flex;
   flex-wrap: wrap; /*align-content: center;*/
   align-content: center;
@@ -159,7 +206,7 @@
 .partners-track {
   display: flex;
   gap: 40px;
-  animation: scroll-logos 20s linear infinite;
+  animation: scroll-logos 30s linear infinite;
 }
 
 .partners-bar:hover .partners-track {
@@ -191,7 +238,6 @@
 
 .fade-left {
   left: 0;
-  width: 20px;
   background: linear-gradient(to right, var(--body-bg), transparent);
 }
 

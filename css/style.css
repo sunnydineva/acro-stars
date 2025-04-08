@@ -439,7 +439,7 @@ li.dropdown { /* главно меню - dropdown*/
   /*padding: 20px 20px;*/
   /*background-color: #982398;*/
   /*outline: 1px solid red !important;*/
-  margin: 0 auto 40px;
+  margin: 0 auto;
 }
 
 /* ==================== 🔚 END: main-content ====================== */
@@ -451,6 +451,30 @@ li.dropdown { /* главно меню - dropdown*/
   /*background: linear-gradient(to bottom, #beaf8d, var(--nav-hover-shadow));*/
   /*background: linear-gradient(to bottom, #a07c30, var(--nav-hover-shadow));*/
   background: linear-gradient(to bottom,var(--gradient-mid),var(--gradient-dark));
+
+
+
+  /*background: linear-gradient(*/
+  /*  to right,*/
+  /*  var(--text-color)20%,*/
+  /*  #f3cf6e 40%,*/
+  /*  #fff 60%,*/
+  /*  #b89e4f 80%*/
+  /*);*/
+  /*background-size: 200% auto;*/
+  /*background-clip: text;*/
+  /*-webkit-background-clip: text;*/
+  /*color: transparent;*/
+  /*animation: shine 15s linear infinite;*/
+}
+
+@keyframes shine {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
 }
 
 /*todo Гери*/
