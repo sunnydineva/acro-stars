@@ -5,6 +5,7 @@
 /*=============== 🟣 START trainers ===========================*/
 .main-trainers{
   display: flex;
+  flex-wrap: wrap; /*align-content: center;*/
   align-content: center;
   justify-content: center;
   gap: 113px; /*105 + 8- 10px outside every circle*/
@@ -13,11 +14,11 @@
 
 .trainer-block{
   display: flex;
-  flex-direction: column;
+  /*flex-direction: column; - deactivated for /*align-content: center;*/
   align-content: center;
+  flex-wrap: wrap; /*align-content: center;*/
   justify-content: center;
-  width: 350px;
-  position: relative;
+  width: 370px;
 }
 
 .trainer-img-wrapper{
@@ -25,8 +26,8 @@
   display: flex;
   width: 350px;
   height: 350px;
-  justify-content: center;
-  position: relative;
+  /*justify-content: center;*/
+  /*position: relative;*/
   margin-bottom: 20px;
   border-radius: 100%;
   border: 8px solid #333366;
@@ -96,12 +97,21 @@
   display: flex;
   justify-content: center;
   color: var(--text-color);
+  width: 370px;
+}
+
+/* 🟣 mobile */
+@media (max-width: 768px) {
+  .main-trainers{
+    /*flex-direction: column; !* вероятно ще останат row, но всичко трябва да се преоразмери *!*/
+  }
 }
 /* ==================== 🔚 END: trainers ==================== */
 
 /*=============== 🟣 START fb-feed ===========================*/
 .main-fb-feed{
   position: relative;
+  width: var(--main-width);
   margin-top: 50px;
 }
 
@@ -110,38 +120,90 @@
   width: 900px;
   height: auto;
   display: block;
-
+  z-index: 2;
 }
 
 .fb-box {
-  border-radius: 10px;
-
   position: absolute;
   top: 10%;
-  left: 20%;
+  left: 25%;
   transform: translate(-50%, 0);
   z-index: 3;
 }
 
 .fb-page{
-  border-radius: 10px;
-
   width: 400px;
   height: 200px;
-
 }
 
 .acro-trails{
   position: absolute;
-  z-index: 2;
-  top: 50%; left: 50%;
-  transform: translate(-65%, -55%);
+  z-index: 3;
+  top: 40%; left: 45%;
 }
 /* ==================== 🔚 END: fb-feed ====================== */
 
-.advertisement{
+/* ==================== 🤝 НАЧАЛО: partner-bar =============== */
+.partners-bar {
+  margin-top: 40px;
   height: 200px;
+  width: 100%;
+  overflow: hidden;
+  background:var(--body-bg);
+  padding: 10px 10px;
 }
+
+.partners-track {
+  display: flex;
+  gap: 40px;
+  animation: scroll-logos 20s linear infinite;
+}
+
+.partners-bar:hover .partners-track {
+  animation-play-state: paused;
+}
+
+.partners-track img {
+  width: 120px;
+  height: auto;
+  flex-shrink: 0;
+  border-radius: 5px;
+  box-shadow: 0px 0.42vh 0.83vh 0px var(--star-blue);
+  transition: transform 0.5s ease;
+}
+
+.partners-track img:hover{
+  transform: scale(1.1);
+}
+
+@keyframes scroll-logos {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* 🟣 mobile */
+@media (max-width: 768px) {
+  .partner-slider {
+    gap: 30px;
+    animation-duration: 30s; /* по-бавно въртене */
+  }
+
+  .partner-slider img {
+    height: 40px;
+  }
+}
+/* ==================== 🔚 КРАЙ: partner-bar ================= */
+
+/* ==================== 🔚 END: fb-feed ====================== */
+
+
+
+
 
 *, ::after, ::before{
   box-sizing: border-box;
