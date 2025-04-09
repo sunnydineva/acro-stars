@@ -237,6 +237,8 @@ body {
 header, footer {
   width: 100%;
   background-color: var(--body-bg);
+  position: relative; /* thunders*/
+  z-index: 2; /* thunders*/
 }
 
 /* Вътрешният контейнер, който центрира съдържанието */
@@ -360,7 +362,6 @@ li.dropdown { /* главно меню - dropdown*/
 .main-nav {
   display: flex;
   align-items: flex-end;
-  z-index: 1;
 }
 
 .main-nav a{   /* шрифт главно меню   */
@@ -457,7 +458,8 @@ li.dropdown { /* главно меню - dropdown*/
   /*background: linear-gradient(to bottom, #beaf8d, var(--nav-hover-shadow));*/
   /*background: linear-gradient(to bottom, #a07c30, var(--nav-hover-shadow));*/
   background: linear-gradient(to bottom,var(--gradient-mid),var(--gradient-dark));
-
+  position: relative; /* thunders*/
+  z-index: 2; /* thunders*/
 
 
   /*background: linear-gradient(*/
