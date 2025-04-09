@@ -184,12 +184,12 @@ textarea {
   font-style: normal;
 }
 
-.montserrat-SemiBold-600{
+.montserrat-SemiBold-600-34{
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
-  font-size: 32px;
+  font-size: 34px;
 }
 
 .montserrat-Regular{
@@ -221,6 +221,11 @@ textarea {
   font-weight: 650;
   font-style: italic;
   font-size: 46px;
+  color: var(--text-color);
+}
+
+.montserrat-Caption .montserrat-Caption .montserrat-ExtraBold .montserrat-SemiBold-500 .montserrat-SemiBold-600 .montserrat-Regular .montserrat-Light .montserrat-ExtraBold-title{
+  color: var(--text-color);
 }
 
 /* Цялото тяло – фонов цвят за цял екран */
@@ -315,7 +320,9 @@ li.dropdown { /* главно меню - dropdown*/
 }
 
 .dropdown-content-inner{
-  width: 200px;
+  /*width: auto;*/
+  /*padding-left: 10px;*/
+  /*padding-right: 10px;*/
   position: relative;
   background-color: var(--dropdown-bg);
   border-radius: 10px;
@@ -332,6 +339,12 @@ li.dropdown { /* главно меню - dropdown*/
   border-radius: 10px;
 }
 
+.dropdown-content-wrapper .dropdown-content-inner{
+  width: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 .dropdown-hover-bridge {
   height: 17px;               /* дупката */
   pointer-events: none;       /* мишката преминава през нея */
@@ -344,13 +357,13 @@ li.dropdown { /* главно меню - dropdown*/
 .dropdown-content-wrapper a { /* главно меню - съдържание на dropdown - елементи */
   text-decoration: none;
   display: block;
-  /*text-align: left;*/
   border-radius: 10px;
 }
 
 .dropdown-content-wrapper a:hover {
-  background-color: var(--dropdown-hover-bg);
-  color: var(--dropdown-hover-text);
+  /*text-decoration: underline;*/
+  /*background-color: var(--dropdown-hover-bg);*/  /* FE препоръка */
+  /*color: var(--dropdown-hover-text);*/
 }
 
 .dropdown:hover .dropdown-content-wrapper {
@@ -366,13 +379,13 @@ li.dropdown { /* главно меню - dropdown*/
 
 .main-nav a{   /* шрифт главно меню   */
   color: var(--text-color);
-  /*transition: all 0.3s ease-in-out;*/
+  /*text-shadow: 2px -2px 2px var(--star-gold);  !* x, y, blur, color *!*/
   transition: color 0.3s ease-in-out;, box-shadow 0.4s ease-in-out;;
 }
 
 .main-nav a:hover{
   color: var(--nav-hover-color);
-  text-shadow: 2px -2px 2px var(--nav-hover-shadow);  /* x, y, blur, color */
+  /*text-shadow: 1px -1px 1px var(--nav-hover-shadow);  !* x, y, blur, color *!*/
   transition: all 0.3s ease-in-out;
   /*border-radius: 5px;*/
 }
