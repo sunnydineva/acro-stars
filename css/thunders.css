@@ -1,7 +1,10 @@
+body {
+  padding-right: 1px; /* колкото излизат пръчките вдясно */
+  overflow-x: hidden;    /* скрива скролбара */
+}
 .animation-wrapper {
     position: relative;
     width: 100%;
-   overflow-x: clip; /* 👈 Вместо hidden - не бута layout, но реже всичко извън */
 }
 
 .thunder-animations-container {
@@ -15,90 +18,95 @@
     overflow: visible;
 }
 
-/* Леви линии */
+/* === ЛЕВИ ЛИНИИ === */
 .left-lines {
     position: absolute;
-    left: -250px; /* спрямо центъра на контейнера */
-    top: -30px;
-    width: 400px;
+    left: -110px;
+    top: -160px;
+    width: 40px;
     opacity: 0;
     transform-origin: left center;
+    transform: rotate(-38.67deg);
     animation: moveOnAngleLeft 0.7s linear forwards;
 }
 
 .left-lines.second {
-    left: -360px;          /* по-наляво спрямо центъра */
-    top: -30px;             /* оставяме както преди */
-    width: 350px;
-    transform: scaleY(1.25);
+    left: -220px;
+    top: -150px;
+    width: 40px;
+    opacity: 0;
+    transform-origin: left center;
+    transform: rotate(-35.64deg);
     animation: moveOnAngleLeftSecond 0.7s linear forwards;
     animation-delay: 0.3s;
 }
 
-/* Десни линии */
+/* === ДЕСНИ ЛИНИИ === */
 .right-lines {
     position: absolute;
-    right: -170px;
-    top: 760px;
-    width: 370px;
+    right: 190px; /* променено от -40px → вътре в екрана */
+    top: 600px;
+    width: 40px;
     opacity: 0;
-    transform: scaleY(1.4);
+    transform-origin: right center;
+    transform: rotate(44.09deg);
     animation: moveOnAngleRight 0.7s linear forwards;
     z-index: 1;
 }
 
 .right-lines.second {
-    right: -240px;
-    top: 810px;
-    width: 330px;
+    right: 30px; /* променено от -180px → вътре в екрана */
+    top: 630px;
+    width: 40px;
     opacity: 0;
-    transform: scaleY(1.4);
+    transform-origin: right center;
+    transform: rotate(43.92deg);
     animation: moveOnAngleRightSecond 0.7s linear forwards;
     animation-delay: 0.3s;
     z-index: 2;
 }
 
-/* Анимации */
+/* === АНИМАЦИИ === */
 @keyframes moveOnAngleLeft {
   from {
     opacity: 0;
-    transform: translate(0px, 0px);
+    transform: translate(0px, 0px) rotate(-38.67deg);
   }
   to {
     opacity: 1;
-    transform: translate(125.86px, 155.42px);
+    transform: translate(90px, 110px) rotate(-38.67deg);
   }
 }
 
 @keyframes moveOnAngleLeftSecond {
   from {
     opacity: 0;
-    transform: translate(0px, 0px);
+    transform: translate(0px, 0px) rotate(-35.64deg);
   }
   to {
     opacity: 1;
-    transform: translate(125.86px, 155.42px);
+    transform: translate(90px, 110px) rotate(-35.64deg);
   }
 }
 
 @keyframes moveOnAngleRight {
   from {
     opacity: 0;
-    transform: translate(0px, 0px);
+    transform: translate(0px, 0px) rotate(44.09deg);
   }
   to {
     opacity: 1;
-    transform: translate(-125.86px, 155.42px);
+    transform: translate(-60px, 110px) rotate(44.09deg); /* беше -90px → вече -60px */
   }
 }
 
 @keyframes moveOnAngleRightSecond {
   from {
     opacity: 0;
-    transform: translate(0px, 0px);
+    transform: translate(0px, 0px) rotate(43.92deg);
   }
   to {
     opacity: 1;
-    transform: translate(-125.86px, 155.42px);
+    transform: translate(-60px, 110px) rotate(43.92deg);
   }
 }
