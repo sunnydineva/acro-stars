@@ -492,6 +492,8 @@ li.dropdown { /* главно меню - dropdown*/
   /*background: linear-gradient(to bottom, #beaf8d, var(--nav-hover-shadow));*/
   /*background: linear-gradient(to bottom, #a07c30, var(--nav-hover-shadow));*/
   background: linear-gradient(to bottom, var(--gradient-mid), var(--gradient-dark));
+  position: relative; /* thunders*/
+  z-index: 2; /* thunders*/
 }
 
 
