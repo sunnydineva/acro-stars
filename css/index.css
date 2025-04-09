@@ -55,7 +55,7 @@
 .trainer-block:hover .trainer-img-wrapper{
   border: 8px solid var(--star-gold);
   /*border: 8px solid var(--star-silver);*/
-  animation: borderColorChange 2s infinite alternate;
+  animation: border-color-change 2s infinite alternate;
 }
 
 .trainer-block:hover .trainer-title{

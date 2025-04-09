@@ -131,7 +131,7 @@
   justify-content: center;
 }
 
-@keyframes borderColorChange {
+@keyframes border-color-change {
 
   0%{
     border-color: var(--star-blue);
@@ -190,6 +190,22 @@
   border-radius: 50%;
   background-color: white; /* или картинка, ако искаш */
   animation: rotateme 3s infinite linear;
+}
+
+@keyframes font-color-change {
+
+  0%{
+    color: var(--star-blue);
+  }
+  /*90%{*/
+  /*  border-color: var(--star-silver);*/
+  /*}*/
+  /*70%{*/
+  /*  border-color: var(--star-yellow);*/
+  /*}*/
+  100%{
+    color: var(--star-gold);
+  }
 }
 
 

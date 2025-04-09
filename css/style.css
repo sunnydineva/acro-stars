@@ -189,7 +189,7 @@ textarea {
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
-  font-size: 24px;
+  font-size: 32px;
 }
 
 .montserrat-Regular{
@@ -313,7 +313,7 @@ li.dropdown { /* главно меню - dropdown*/
 }
 
 .dropdown-content-inner{
-  /*border-radius: 10px;*/
+  width: 200px;
   position: relative;
   background-color: var(--dropdown-bg);
   border-radius: 10px;
@@ -343,7 +343,7 @@ li.dropdown { /* главно меню - dropdown*/
   text-decoration: none;
   display: block;
   /*text-align: left;*/
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .dropdown-content-wrapper a:hover {
@@ -365,14 +365,15 @@ li.dropdown { /* главно меню - dropdown*/
 
 .main-nav a{   /* шрифт главно меню   */
   color: var(--text-color);
+  /*transition: all 0.3s ease-in-out;*/
+  transition: color 0.3s ease-in-out;, box-shadow 0.4s ease-in-out;;
 }
 
 .main-nav a:hover{
-  /*color: var(--dropdown-hover-text);*/ /*todo Гери*/
   color: var(--nav-hover-color);
-  text-shadow: 5px -2px 2px var(--nav-hover-shadow);  /* x, y, blur, color */
+  text-shadow: 2px -2px 2px var(--nav-hover-shadow);  /* x, y, blur, color */
   transition: all 0.3s ease-in-out;
-  border-radius: 5px;
+  /*border-radius: 5px;*/
 }
 
 .nav-logo {
@@ -388,6 +389,11 @@ li.dropdown { /* главно меню - dropdown*/
 .nav-logo-img {
   width:auto;
   height: 138px;
+  transition: transform 0.5s ease;
+}
+
+.nav-logo-img:hover{
+  transform: scale(1.1);
 }
 
 .nav-item {
