@@ -1,0 +1,49 @@
+/* =================== ТАБЛИЦИ =======================*/
+table {
+    position: relative;
+    top: 95px;
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: separate;
+    border-radius: 20px;
+    border-spacing: 0;
+    border-left: 1px solid  rgba(0,0,0,0.1);
+    border-right: 1px solid  rgba(0,0,0,0.1);
+    border-top: 1px solid  rgba(0,0,0,0.1);
+    border-bottom: 1px solid  rgba(0,0,0,0.1);
+    overflow: hidden; /* иначе не работи заоблянето*/
+}
+.footer-line {
+  margin-top: 150px; /* или колкото трябва, за да не се застъпва */
+}
+
+th, td {
+    border: 1px solid  rgba(0,0,0,0.1); /* ненатрапчива рамка */
+    padding: 8px; /* повече въздух */
+    text-align: center;
+    color: var(--text-color);
+    transition: color 0.3s ease-in-out; /* плавна смяна на цвета */
+    word-break: break-word; /* по-добро пренасяне при нужда */
+}
+table th:nth-child(1),
+table td:nth-child(1) {
+    width: 10%; /* Може и 18%, ако пак не стига */
+    white-space: nowrap; /* Забранява пренасяне */
+}
+
+
+tr:hover td, tr:hover th{
+  color: var(--nav-hover-color); /* цвят при ховър */
+}
+
+th {
+    background-color: #9592a4;
+}
+
+tr:hover { /* при преминаване през реда - помътнява и се уголемява плавно*/
+    background-color: #00000026;
+    transform: scale(1.02);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
