@@ -1,10 +1,25 @@
 /* =================== ТАБЛИЦИ =======================*/
+.table-wrapper {
+  position: relative;
+  width: 55%;
+  margin: 250px auto 0 auto; /* центрира и добавя разстояние */
+}
+
+.background-underlay {
+  position: absolute;
+  top: -90px;
+  left: 10%; /* или опитай с 20%, според нуждата */
+  width: 80%;
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+}
+
 table {
     position: relative;
-    top: 95px;
-    width: 65%;
-    margin-left: auto;
-    margin-right: auto;
+    z-index: 1; /* над подложката */
+    top: 0; /* премахни top: 95px; */
+    margin: 0 auto;
     border-collapse: separate;
     border-radius: 20px;
     border-spacing: 0;
@@ -13,9 +28,10 @@ table {
     border-top: 1px solid  rgba(0,0,0,0.1);
     border-bottom: 1px solid  rgba(0,0,0,0.1);
     overflow: hidden; /* иначе не работи заоблянето*/
+    z-index: 2;
 }
 .footer-line {
-  margin-top: 150px; /* или колкото трябва, за да не се застъпва */
+  margin-top: 350px; /* или колкото трябва, за да не се застъпва */
 }
 
 th, td {
@@ -46,4 +62,82 @@ tr:hover { /* при преминаване през реда - помътняв
     transform: scale(1.02);
     transition: all 0.2s ease-in-out;
     cursor: pointer;
+}
+
+/*.main-fb-feed img {
+ position: relative;
+  top: 150px; *//* зависи от височината на таблицата *//*
+  left: 50%;
+  width: 65%; *//* да съвпада с таблицата *//*
+  height: auto;
+  display: block;
+  margin: 50px auto 0 auto; *//* центрира и добавя малко отстояние от таблицата *//*
+  z-index: 1;
+  transform: translateX(-50%);
+}*/
+
+
+/*.pulse-hover {
+  animation: pulse 10s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+}*/
+.pulse-hover {
+  animation: pulse 10s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+}
+
+.table-wrapper:hover .pulse-hover {
+  animation: pulse 6s ease-in-out infinite;
+}
+.pulse-hover:hover {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05); /* по-забележимо */
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+/* Когато курсорът е върху таблицата, активира пулсацията на подложката */
+/*.hover-activator:hover ~ .pulse-hover {
+  animation: pulse 2s ease-in-out infinite;
+}*/
+
+.bar-gradient {
+  position: relative;
+  top: 134px;
+  height: 10px;
+  width: 100%;
+  background: linear-gradient(to bottom,var(--gradient-mid),var(--gradient-dark));
+  position: relative; /* thunders*/
+  z-index: 1; /* thunders*/
+}
+
+.acro-training{
+  position: absolute;
+  z-index: 3;
+  top: 30%; left: 30%;
+background: linear-gradient(
+    to right,
+    var(--text-color)20%,
+    #f3cf6e 40%,
+    #fff 60%,
+    #b89e4f 80%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shine 15s linear infinite;
 }
