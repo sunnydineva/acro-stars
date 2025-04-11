@@ -1,7 +1,7 @@
 /* =================== ТАБЛИЦИ =======================*/
 .table-wrapper {
   position: relative;
-  width: 55%;
+  width: 58%;
   margin: 250px auto 0 auto; /* центрира и добавя разстояние */
 }
 
@@ -12,7 +12,8 @@
   width: 80%;
   height: auto;
   z-index: 0;
-  pointer-events: none;
+  transition: transform 0.3s ease-in-out;
+  animation: none;
 }
 
 table {
@@ -64,34 +65,16 @@ tr:hover { /* при преминаване през реда - помътняв
     cursor: pointer;
 }
 
-/*.main-fb-feed img {
- position: relative;
-  top: 150px; *//* зависи от височината на таблицата *//*
-  left: 50%;
-  width: 65%; *//* да съвпада с таблицата *//*
-  height: auto;
-  display: block;
-  margin: 50px auto 0 auto; *//* центрира и добавя малко отстояние от таблицата *//*
-  z-index: 1;
-  transform: translateX(-50%);
-}*/
-
-
-/*.pulse-hover {
-  animation: pulse 10s ease-in-out;
-  transition: transform 0.3s ease-in-out;
-}*/
 .pulse-hover {
   animation: pulse 10s ease-in-out;
   transition: transform 0.3s ease-in-out;
 }
 
+
 .table-wrapper:hover .pulse-hover {
-  animation: pulse 6s ease-in-out infinite;
-}
-.pulse-hover:hover {
   animation: pulse 2s ease-in-out infinite;
 }
+
 
 @keyframes pulse {
   0% {
@@ -99,20 +82,14 @@ tr:hover { /* при преминаване през реда - помътняв
     opacity: 1;
   }
   50% {
-    transform: scale(1.05); /* по-забележимо */
-    opacity: 0.8;
+    transform: scale(1.01);
+    opacity: 0.75;
   }
   100% {
     transform: scale(1);
     opacity: 1;
   }
 }
-
-
-/* Когато курсорът е върху таблицата, активира пулсацията на подложката */
-/*.hover-activator:hover ~ .pulse-hover {
-  animation: pulse 2s ease-in-out infinite;
-}*/
 
 .bar-gradient {
   position: relative;
@@ -121,23 +98,166 @@ tr:hover { /* при преминаване през реда - помътняв
   width: 100%;
   background: linear-gradient(to bottom,var(--gradient-mid),var(--gradient-dark));
   position: relative; /* thunders*/
-  z-index: 1; /* thunders*/
 }
 
 .acro-training{
   position: absolute;
   z-index: 3;
   top: 30%; left: 30%;
-background: linear-gradient(
-    to right,
-    var(--text-color)20%,
-    #f3cf6e 40%,
-    #fff 60%,
-    #b89e4f 80%
+
+  background: linear-gradient(
+  to right,
+  var(--text-color)20%,
+  #f3cf6e 40%,
+  #fff 60%,
+  #b89e4f 80%
   );
+
   background-size: 200% auto;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   animation: shine 15s linear infinite;
+}
+
+body {
+  padding-right: 1px; /* колкото излизат пръчките вдясно */
+  overflow-x: hidden;    /* скрива скролбара */
+}
+.animation-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.thunder-animations-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1400px;
+    height: 100%;
+    pointer-events: none;
+    overflow: visible;
+}
+
+/* === ЛЕВИ ЛИНИИ === */
+.left-lines {
+    position: absolute;
+    left: -110px;
+    top: -33px;
+    width: 40px;
+    opacity: 0;
+    transform-origin: left center;
+    /*transform: rotate(-38.67deg);*/
+    animation: moveOnAngleLeft 0.7s linear forwards;
+    z-index: 1;
+}
+
+.left-lines.second {
+    left: -260px;
+    top: -23px;
+    width: 40px;
+    opacity: 0;
+    transform-origin: left center;
+    /*transform: rotate(-35.64deg);*/
+    animation: moveOnAngleLeft 0.7s linear forwards;
+    animation-delay: 0.3s;
+}
+
+/* === ДЕСНИ ЛИНИИ === */
+.right-lines {
+    position: absolute;
+    right: -300px; /* променено от -40px → вътре в екрана */
+    top: -250px;
+    width: 40px;
+    height: 1000px;
+    opacity: 0;
+    transform-origin: right center;
+    /*transform: rotate(44.09deg);*/
+    animation: moveOnAngleRight 0.7s linear forwards;
+    z-index: 1;
+}
+
+.right-lines.second {
+    right: -200px; /* променено от -180px → вътре в екрана */
+    top: -40px;
+    width: 40px;
+    opacity: 0;
+    transform-origin: right center;
+    /*transform: rotate(43.92deg);*/
+    animation: moveOnAngleRight 0.7s linear forwards;
+    animation-delay: 0.3s;
+    z-index: 2;
+}
+
+/* === АНИМАЦИИ === */
+@keyframes moveOnAngleLeft {
+  from {
+    opacity: 0;
+    transform: translate(0px, 0px) rotate(-38.67deg);
+  }
+  to {
+    opacity: 1;
+    transform: translate(90px, 110px) rotate(-38.67deg);
+  }
+}
+
+@keyframes moveOnAngleRight {
+  from {
+    opacity: 0;
+    transform: translate(0px, 0px) rotate(42.61deg);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-60px, 110px) rotate(42.61deg); /* беше -90px → вече -60px */
+  }
+}
+
+
+.all-categories {
+    display: flex;
+    flex-wrap: wrap; /* Позволява картичките да се разпределят по редове, ако е необходимо */
+    margin: 40px;
+    margin-top: 300px; /* Добавяме разстояние отгоре */
+    justify-content: center;
+    align-items: stretch;/*всички елементи на една височина*/
+    gap: 20px;/*разстоянието между кутийките*/
+    max-width: 1400px; /* Ограничаваме максималната ширина на контейнера */
+    width: 100%; /* Ще използваме 100% от наличната ширина */
+    box-sizing: border-box; /* Това ще гарантира, че марджинът и падингът не излизат извън контейнера */
+
+}
+
+.categories {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 300px; /* Задаваме ширина на картичките (можеш да я промениш) */
+    background: rgba(255, 255, 255, 0.2); /* Изсветлява белият фон */
+    padding: 15px;
+    border-radius: 10px; /* Заобля ъглите */
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Лека сянка за изпъкване */
+    color: var(--text-color);
+    transition: color 0.3s ease-in-out; /* плавна смяна на цвета */
+}
+
+.categories:hover {
+    color: var(--nav-hover-color); /* Цветът на текста при hover */
+    transform: scale(1.02);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
+}
+
+.categories img {
+    width: 100%; /* Ширина на изображението на 100% от ширината на картичката */
+    height: 250px; /* Фиксирана височина на картинката */
+    object-fit: cover; /* Изрязва изображението, ако е необходимо, за да запази пропорциите */
+    border-radius: 5px;
+}
+
+.categories:hover {
+    transform: scale(1.02); /* Изпъкване */
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25); /* Лека сянка при hover */
 }
