@@ -1,33 +1,4 @@
 
-.gallery-title{
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-  padding-left: 100px;
-  margin-bottom: 20px;
-
-  background: linear-gradient(
-    to right,
-    var(--text-color)20%,
-    #f3cf6e 40%,
-    #fff 120%,
-    #b89e4f 200%
-  );
-  background-size: 200% auto;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  animation: shine-once 3s linear;
-}
-
-@keyframes shine-once {
-  0% {
-    background-position: 200% center;
-  }
-  100% {
-    background-position: 0% center;
-  }
-}
 /* =========================================== BEGIN: highlight gallery ============================================= */
 .highlight-gallery-wrapper {
   width: var(--main-width);

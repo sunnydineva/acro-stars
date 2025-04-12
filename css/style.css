@@ -211,8 +211,8 @@ textarea {
 .montserrat-Light{
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: italic;
+  font-weight: 400;
+  /*font-style: italic;*/
   font-size: 20px;
 }
 
@@ -232,13 +232,16 @@ textarea {
 /* Цялото тяло – фонов цвят за цял екран */
 body {
   /*background-color: #342e48;*/
+
+  /*background-image: url("/resources/gallery/heroes/as.jpg");*/
+  /*background-position: center center;*/
+
   background-color: var(--body-bg);
   background-size: cover;
   margin: 0;
   padding: 0;
   font-family: Montserrat, sans-serif;
 }
-
 /* Хедър и футър заемат цялата ширина */
 header, footer {
   width: 100%;
@@ -254,12 +257,8 @@ header, footer {
   align-items: flex-end;
   max-width: 1400px;
   margin: 0 auto;
-  /*padding: 20px;*/
   padding-bottom: 16px;
   z-index: 1;
-
-  /*background-color: rgb(200, 200, 202);*/
-  /*background-color: rgb(198, 50, 174);*/
 }
 
 .header-wrapper{
@@ -462,6 +461,10 @@ li.dropdown { /* главно меню - dropdown*/
   /*background-color: #982398;*/
   /*outline: 1px solid red !important;*/
   margin: 0 auto;
+}
+
+.title-padding{
+  padding-left: 100px;
 }
 
 /* ==================== 🔚 END: main-content ====================== */
