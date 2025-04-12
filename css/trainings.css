@@ -1,16 +1,32 @@
 /* =================== ТАБЛИЦИ =======================*/
+.schedule-container {
+  display: flex;
+  justify-content: center; /* Центрираме съдържанието в контейнера */
+  align-items: flex-start;
+  width: 80%;  /* Пълна ширина на контейнера */
+  max-width: 1400px;  /* Ограничаваме максималната ширина на .schedule-container */
+  hidden:auto;
+  margin: 0 auto;  /* Центрираме .schedule-container по същия начин, както .main-content */
+  padding-top: 150px;  /* Разстояние отгоре */
+  box-sizing: border-box;
+  position: relative;
+ /* background: red; /* Примерен цвят, може да се премахне */
+}
+
 .table-wrapper {
   position: relative;
-  width: 58%;
-  margin: 250px auto 0 auto; /* центрира и добавя разстояние */
-  background: #a43869;
-  height: 600px;
+  width: 78%; /* Ширина на контейнера с таблицата (можеш да коригираш според нуждите) */
+  max-width: 1200px; /* Ограничаваме максималната ширина на таблицата */
+  /*background: #a43869;*/
+  height: 600px; /* Може да промениш височината */
+  box-sizing: border-box;
+  margin: 0 auto;  /* Центрираме таблицата в контейнера */
 }
 
 .background-underlay {
   position: absolute;
-  top: -90px;
-  left: 10%; /* или опитай с 20%, според нуждата */
+  top: 5px;
+  left: 10%;
   width: 80%;
   height: auto;
   z-index: 0;
@@ -20,8 +36,7 @@
 
 table {
     position: relative;
-    z-index: 1; /* над подложката */
-    top: 0; /* премахни top: 95px; */
+    top: 80px; /* премахни top: 95px; */
     margin: 0 auto;
     border-collapse: separate;
     border-radius: 20px;
@@ -33,8 +48,9 @@ table {
     overflow: hidden; /* иначе не работи заоблянето*/
     z-index: 2;
 }
+
 .footer-line {
-  margin-top: 350px; /* или колкото трябва, за да не се застъпва */
+  margin-top: 50px; /* или колкото трябва, за да не се застъпва */
 }
 
 th, td {
@@ -100,6 +116,11 @@ tr:hover { /* при преминаване през реда - помътняв
   width: 100%;
   background: linear-gradient(to bottom,var(--gradient-mid),var(--gradient-dark));
   position: relative; /* thunders*/
+}
+
+.trainings-title{
+  position: relative;
+  top: 70px;
 }
 
 .acro-training{
@@ -227,7 +248,7 @@ body {
     /*max-width: 1400px; !* Ограничаваме максималната ширина на контейнера *!*/
     /*width: 100%; !* Ще използваме 100% от наличната ширина *!*/
     box-sizing: border-box; /* Това ще гарантира, че марджинът и падингът не излизат извън контейнера */
-    background: blue;
+/*    background: blue;*/
 
 }
 
@@ -245,7 +266,7 @@ body {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Лека сянка за изпъкване */
     color: var(--text-color);
     transition: color 0.3s ease-in-out; /* плавна смяна на цвета */
-    background: pink;
+  /*  background: pink;*/
 }
 
 .categories:hover {
