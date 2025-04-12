@@ -1,0 +1,120 @@
+.contact-wrapper {
+  display: flex;
+  justify-content: center; /* Центрираме съдържанието в контейнера */
+  align-items: flex-start;
+  width: 80%;  /* Пълна ширина на контейнера */
+  max-width: 1400px;  /* Ограничаваме максималната ширина на .schedule-container */
+  hidden:auto;
+  margin: 0 auto;  /* Центрираме .schedule-container по същия начин, както .main-content */
+  padding-top: 150px;  /* Разстояние отгоре */
+  box-sizing: border-box;
+  position: relative;
+ /* background: red; /* Примерен цвят, може да се премахне*/
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;  /* Подреждаме формата вертикално */
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;  /* Занимаваме се с пълната ширина на контейнера */
+  max-width: 800px;  /* Ограничаваме максималната ширина на формата */
+  padding: 30px;  /* Отстояние около формата */
+  background-color: #cacacb;  /* Бял фон на контейнера */
+  border-radius: 8px;  /* Закръглени ръбове */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Лека сянка за по-добър контраст */
+  margin-bottom: 40px;  /* Отстояние от долната част на контейнера */
+  box-sizing: border-box;  /* Уверяваме се, че padding-а не променя ширината */
+}
+
+/* Допълнителни стилове за елементите вътре в контейнера */
+.contact-container label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #21213d;  /* Цвят на текста */
+}
+
+.contact-container input, .contact-container textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;  /* Отстояние между полетата */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #21213d;
+  background-color: #ccc;
+  box-sizing: border-box;  /* Уверяваме се, че padding не променя ширината */
+}
+
+.contact-container input[type="date"] {
+  padding: 10px;  /* Малко по-малко падинг за date полето */
+}
+
+/* Стил за бутона */
+.contact-container button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px auto; /* Автоматичен марджин за центриране */
+    padding: 20px 30px;
+    background-color: rgba(255, 255, 255, 0.2); /* или var(--star-silver) */
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+   /* box-shadow: 0 4px 8px rgba(0,0,0,0.2);*/
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.contact-container:hover {
+    transform: scale(1.03); /* Увеличаваме малко размера на формата */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);  /* Добавяме по-голяма сянка */
+    background-color: #cacacb;  /* Променяме фона при hover (може да промениш цвета) */
+    transition: all 0.3s ease-in-out;  /* Гладка анимация за трансформациите */
+    color: var(--nav-hover-color);
+}
+
+.contact-container button:hover {
+    color: var(--nav-hover-color);
+    transform: scale(1.05);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
+
+}
+
+/* Промяна на текста в input полета и textarea при ховър върху формата */
+.contact-container input:hover,
+.contact-container textarea:hover {
+   color: var(--nav-hover-color); /* Променяме цвета на текста на input полетата и textarea на например червено */
+}
+/* Ховър ефект за лейбълите */
+.contact-container label:hover {
+    color: var(--nav-hover-color);  /* Променяме цвета на текста на лейбълите при ховър на червено (или друг цвят) */
+    cursor: pointer; /* Променяме курсора при ховър върху лейбълите */
+}
+
+/* Промяна на цвета на плейсхолдърите при ховър върху input и textarea */
+.contact-container input:hover::placeholder,
+.contact-container textarea:hover::placeholder {
+    color: var(--nav-hover-color); /* Променяме цвета на плейсхолдъра на червено (може да е друг цвят) */
+}
+
+/* Промяна на плейсхолдър при фокус */
+.contact-container input:focus::placeholder,
+.contact-container textarea:focus::placeholder {
+    color: var(--nav-hover-color); /* Променяме цвета на плейсхолдъра при фокус (когато полето е активно) */
+}
+
+/* Промяна на фона на input и textarea при фокус */
+.contact-container input:focus,
+.contact-container textarea:focus {
+    background-color: #cacacb; /* Променяме на желан цвят (може да е #f0f0f0 или какъвто и да е твой цвят) */
+    border-color: #cacacb; /* Променяме рамката при фокус, може да е твоят желан цвят */
+    outline: none; /* Премахваме синия контур на фокус */
+}
+
+
+
+.footer-line {
+  margin-top: 290px; /* или колкото трябва, за да не се застъпва */
+}
