@@ -3,6 +3,8 @@
   position: relative;
   width: 58%;
   margin: 250px auto 0 auto; /* центрира и добавя разстояние */
+  background: #a43869;
+  height: 600px;
 }
 
 .background-underlay {
@@ -217,21 +219,24 @@ body {
 .all-categories {
     display: flex;
     flex-wrap: wrap; /* Позволява картичките да се разпределят по редове, ако е необходимо */
-    margin: 40px;
-    margin-top: 300px; /* Добавяме разстояние отгоре */
+    /*margin: 40px;*/
+    margin-top: 100px; /* Добавяме разстояние отгоре */
     justify-content: center;
-    align-items: stretch;/*всички елементи на една височина*/
+    /*align-items: stretch;!*всички елементи на една височина*!*/
     gap: 20px;/*разстоянието между кутийките*/
-    max-width: 1400px; /* Ограничаваме максималната ширина на контейнера */
-    width: 100%; /* Ще използваме 100% от наличната ширина */
+    /*max-width: 1400px; !* Ограничаваме максималната ширина на контейнера *!*/
+    /*width: 100%; !* Ще използваме 100% от наличната ширина *!*/
     box-sizing: border-box; /* Това ще гарантира, че марджинът и падингът не излизат извън контейнера */
+    background: blue;
 
 }
 
 .categories {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
+    flex-wrap: wrap;
+    justify-content: center;
     width: 300px; /* Задаваме ширина на картичките (можеш да я промениш) */
     background: rgba(255, 255, 255, 0.2); /* Изсветлява белият фон */
     padding: 15px;
@@ -240,6 +245,7 @@ body {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Лека сянка за изпъкване */
     color: var(--text-color);
     transition: color 0.3s ease-in-out; /* плавна смяна на цвета */
+    background: pink;
 }
 
 .categories:hover {
@@ -250,6 +256,8 @@ body {
 }
 
 .categories img {
+  /*  width: 280px;*/
+  /*  height: auto;*/
     width: 100%; /* Ширина на изображението на 100% от ширината на картичката */
     height: 250px; /* Фиксирана височина на картинката */
     object-fit: cover; /* Изрязва изображението, ако е необходимо, за да запази пропорциите */
