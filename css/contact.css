@@ -20,9 +20,9 @@
   width: 100%;  /* Занимаваме се с пълната ширина на контейнера */
   max-width: 800px;  /* Ограничаваме максималната ширина на формата */
   padding: 30px;  /* Отстояние около формата */
-  background-color: #cacacb;  /* Бял фон на контейнера */
+  background-color: #cacacb;  /* фон на контейнера */
   border-radius: 8px;  /* Закръглени ръбове */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Лека сянка за по-добър контраст */
+  box-shadow: 0 4px 10px var(--star-blue);  /* Лека сянка за по-добър контраст */
   margin-bottom: 40px;  /* Отстояние от долната част на контейнера */
   box-sizing: border-box;  /* Уверяваме се, че padding-а не променя ширината */
 }
@@ -53,32 +53,33 @@
 
 /* Стил за бутона */
 .contact-container button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 40px auto; /* Автоматичен марджин за центриране */
-    padding: 20px 30px;
-    background-color: rgba(255, 255, 255, 0.2); /* или var(--star-silver) */
-    border-radius: 8px;
+   display: block; /* за да работи margin: auto */
+    margin: 40px auto; /* центрира хоризонтално */
+    width: 140px; /* или каквото искаш */
+
+    background-color: var(--star-blue);
+    color: var(--star-silver);
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    text-decoration: none;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
     text-align: center;
-   /* box-shadow: 0 4px 8px rgba(0,0,0,0.2);*/
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 .contact-container:hover {
     transform: scale(1.03); /* Увеличаваме малко размера на формата */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);  /* Добавяме по-голяма сянка */
-    background-color: #cacacb;  /* Променяме фона при hover (може да промениш цвета) */
-    transition: all 0.3s ease-in-out;  /* Гладка анимация за трансформациите */
-    color: var(--nav-hover-color);
+    /*box-shadow: 0 8px 20px var(--star-blue);  /* Добавяме по-голяма сянка */
+   /* background-color: #cacacb;  /* Променяме фона при hover (може да промениш цвета) */
+   /* transition: all 0.3s ease-in-out;  /* Гладка анимация за трансформациите */
+    /*color: var(--nav-hover-color);*/
 }
 
 .contact-container button:hover {
     color: var(--nav-hover-color);
     transform: scale(1.05);
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
+   /* box-shadow: 0px 8px 15px var(--star-blue);*/
 
 }
 
