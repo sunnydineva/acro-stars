@@ -59,15 +59,14 @@
   overflow: hidden;
 }
 
-.sparkle {
+.line-sparkle {
   position: absolute;
   top: 0;
   left: -50px;
   width: 40px;
   height: 14px;
   background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.0) 70%);
-  animation: waveMove 3s infinite ease-in-out;
-  /*animation: sparkleAnim  3s infinite ease-in-out;*/
+  animation: line 3s infinite ease-in-out;
   opacity: 0.8;
 }
 
@@ -92,7 +91,7 @@
   }
 }
 
-/* Анимация wave за 14 px bar */
+ /*Анимация wave за 14 px bar */
 /*@keyframes waveMove {*/
 /*  0% {*/
 /*    transform: translateX(-40px) translateY(0px);*/
@@ -112,7 +111,7 @@
 /*    opacity: 0;*/
 /*  }*/
 
-@keyframes waveMove {
+@keyframes line {
   0% {
     transform: translateX(-40px) translateY(0px);
     opacity: 0;
@@ -120,20 +119,12 @@
   20% {
     opacity: 1;
   }
-  40% {
-    transform: translateX(25vw) translateY(-40px);
-  }
-  60% {
-    transform: translateX(50vw) translateY(40px);
-  }
-  80% {
-    transform: translateX(75vw) translateY(-40px);
-  }
   100% {
     transform: translateX(100vw) translateY(0px);
     opacity: 0;
   }
 }
+
 
 .star-sparkle {
   width: 10px;
@@ -141,7 +132,8 @@
   background: radial-gradient(circle, white, transparent);
   border-radius: 50%;
   position: absolute;
-  offset-path: path("M0,100 C300,0 500,200 700,100 C800,50 600,0 500,100");
+  /*offset-path: path("M0,100 C600,0 500,200 700,100 C800,50 600,0 500,100");*/
+  offset-path: path("M0,100 C600,0 500,200 700,100 C800,50 600,0 500,100");
   animation: sparklePath 5s linear infinite;
   opacity: 0.9;
 }

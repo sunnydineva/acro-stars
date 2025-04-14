@@ -107,6 +107,7 @@
 }
 
 .hero-content {
+  top: 30%;
   animation: fadeInUp 1s ease-out;
 }
 
