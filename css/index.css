@@ -30,7 +30,7 @@
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("resources/gallery/heroes/as-2.jpg");
+  background-image: url("../resources/gallery/heroes/as-2.jpg");
   background-position: top center;
   opacity: 0.21;
 }
