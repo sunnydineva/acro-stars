@@ -4,12 +4,13 @@
   align-items: flex-start;
   width: 80%;  /* Пълна ширина на контейнера */
   max-width: 1400px;  /* Ограничаваме максималната ширина на .schedule-container */
-  hidden:auto;
+  hidden:100%;
   margin: 0 auto;  /* Центрираме .schedule-container по същия начин, както .main-content */
   padding-top: 150px;  /* Разстояние отгоре */
   box-sizing: border-box;
   position: relative;
  /* background: red; /* Примерен цвят, може да се премахне*/
+ z-index: 1;
 }
 
 .contact-container {
@@ -17,14 +18,18 @@
   flex-direction: column;  /* Подреждаме формата вертикално */
   justify-content: flex-start;
   align-items: center;
+  background-color: rgba(202, 202, 203, 0.6); /* същият цвят, но с прозрачност */
+  backdrop-filter: blur(5px); /* по избор: замъгляване за по-як ефект */
   width: 100%;  /* Занимаваме се с пълната ширина на контейнера */
   max-width: 800px;  /* Ограничаваме максималната ширина на формата */
   padding: 30px;  /* Отстояние около формата */
-  background-color: #cacacb;  /* фон на контейнера */
+  /*background-color: #cacacb;  /* фон на контейнера */
   border-radius: 8px;  /* Закръглени ръбове */
   box-shadow: 0 4px 10px var(--star-blue);  /* Лека сянка за по-добър контраст */
   margin-bottom: 40px;  /* Отстояние от долната част на контейнера */
   box-sizing: border-box;  /* Уверяваме се, че padding-а не променя ширината */
+  z-index: 2;
+  position: relative;
 }
 
 /* Допълнителни стилове за елементите вътре в контейнера */
@@ -56,7 +61,6 @@
    display: block; /* за да работи margin: auto */
     margin: 40px auto; /* центрира хоризонтално */
     width: 140px; /* или каквото искаш */
-
     background-color: var(--star-blue);
     color: var(--star-silver);
     padding: 0.75rem 1.5rem;
@@ -113,6 +117,37 @@
     border-color: #cacacb; /* Променяме рамката при фокус, може да е твоят желан цвят */
     outline: none; /* Премахваме синия контур на фокус */
 }
+
+.thank-you-message-container {
+  display: none;
+  position: relative;
+  margin: 40px auto;
+  max-width: 300px;
+  background-color: var(--star-blue);
+  color: var(--star-silver);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.background-underlay {
+  position: absolute;
+  top: 80px;
+  left: 65%;
+  transform: translateX(-65%);
+  width: 80%;
+  height: 100%;
+  max-width: 1400px;
+  object-fit: cover;
+  /*opacity: 0.2;*/
+  /*filter: blur(3px);*/
+  z-index: 0;
+  pointer-events: none;
+}
+
 
 
 

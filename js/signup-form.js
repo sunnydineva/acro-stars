@@ -21,3 +21,37 @@ window.onload = function() {
         document.getElementById('message').value = 'Запис за пробна тренировка: Моля, свържете се с нас за повече информация и потвърждение на записването.';
     }
 };
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("contact-form");
+  const thankYou = document.getElementById("thank-you");
+  const contactContainer = document.querySelector(".contact-container"); // 🆕 Добавено
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault(); // предотвратява стандартното поведение
+
+    fetch(form.action, {
+      method: "POST",
+      body: new FormData(form),
+      headers: {
+        Accept: "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success === true || data.success === "true") {
+          form.reset();
+          form.style.display = "none";
+          contactContainer.style.display = "none"; // 🆕 Скрива и контейнера
+          thankYou.style.display = "block";
+          history.replaceState(null, "", location.pathname);
+        } else {
+          alert("Грешка при изпращане на формата. Опитайте отново.");
+        }
+      })
+      .catch((error) => {
+        alert("Грешка при свързване със сървъра.");
+        console.error("Error:", error);
+      });
+  });
+});

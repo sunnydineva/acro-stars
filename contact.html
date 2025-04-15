@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/animation-general.css">
-  <link rel="stylesheet" href="css/trainings.css">
+  <!-- <link rel="stylesheet" href="css/trainings.css">-->
   <link rel="stylesheet" href="css/contact.css">
 </head>
 
@@ -54,8 +54,13 @@
 
   <div class="main-content">
     <div class="contact-wrapper">
+      <img alt="©" class="background-underlay" src="resources/resourcesWeb3/graphic-background-web3.png" />
       <div class="contact-container montserrat-SemiBold-500">
-        <form id="contact-form">
+
+        <form id="contact-form" action="https://formsubmit.co/ajax/64a7218238bc094e631a53a771e9f89c"
+              method="POST">
+          <input type="hidden" name="_captcha" value="false">
+
           <label for="name">Име:</label>
           <input type="text" id="name" name="name" placeholder="Име">
 
@@ -72,8 +77,11 @@
             Изпрати
           </button>
         </form>
-
       </div>
+    </div>
+    <!-- Място за съобщението -->
+    <div id="thank-you" class="thank-you-message-container">
+      ✅ Съобщението е изпратено! Очакваме Ви!
     </div>
   </div>
 
