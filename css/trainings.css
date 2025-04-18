@@ -25,10 +25,10 @@
 
 .background-underlay {
   position: absolute;
-  top: 15px;
-  left: 10%;
-  width: 90%;
-  height: auto;
+  top: 105px;
+  left: -5%;
+  width: 110%;
+  height: 120%;
   z-index: 0;
   transition: transform 0.3s ease-in-out;
   animation: none;
@@ -36,7 +36,7 @@
 
 table {
     position: relative;
-    top: 85px; /* премахни top: 95px; */
+    top: 325px; /* премахни top: 95px; */
     margin: 0 auto;
     border-collapse: separate;
     border-radius: 20px;
@@ -109,39 +109,41 @@ tr:hover { /* при преминаване през реда - помътняв
   }
 }
 
-.bar-gradient {
+/*.bar-gradient {
   position: relative;
   top: 134px;
   height: 10px;
   width: 100%;
   background: linear-gradient(to bottom,var(--gradient-mid),var(--gradient-dark));
-  position: relative; /* thunders*/
+  position: relative; *//* thunders*//*
+}*/
+
+.trainings-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px; /* вместо top: 30px */
+  width: 100%;
+  text-align: center;
 }
 
-.trainings-title{
-  position: relative;
-  top: 70px;
-}
-
-.acro-training{
-  position: absolute;
-  z-index: 3;
-  top: 30%; left: 30%;
-
+.acro-training {
   background: linear-gradient(
-  to right,
-  var(--text-color)20%,
-  #f3cf6e 40%,
-  #fff 60%,
-  #b89e4f 80%
+    to right,
+    var(--text-color) 20%,
+    #f3cf6e 40%,
+    #fff 60%,
+    #b89e4f 80%
   );
-
   background-size: 200% auto;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   animation: shine 15s linear infinite;
+  font-size: 2.5rem;
+  font-family: "Montserrat", sans-serif;
 }
+
 
 body {
   padding-right: 1px; /* колкото излизат пръчките вдясно */
@@ -241,7 +243,7 @@ body {
     display: flex;
     flex-wrap: wrap; /* Позволява картичките да се разпределят по редове, ако е необходимо */
     /*margin: 40px;*/
-    margin-top: 120px; /* Добавяме разстояние отгоре */
+    margin-top: 380px; /* Добавяме разстояние отгоре */
     justify-content: center;
     /*align-items: stretch;!*всички елементи на една височина*!*/
     gap: 20px;/*разстоянието между кутийките*/
@@ -286,10 +288,11 @@ body {
 }
 
 .signup-button-wrapper {
-  position: absolute;
-  top: 330px;
-  right: 40px;
-  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto; /* центрира вертикално и хоризонтално */
+  width: 100%;
 }
 
 .signup-button {
