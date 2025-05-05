@@ -122,9 +122,10 @@
 
 .thank-you-message-container {
   display: none;
-  position: relative;
-  margin: 40px auto;
-  max-width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: var(--star-blue);
   color: var(--star-silver);
   padding: 1rem 1.5rem;
