@@ -1,10 +1,11 @@
 .contact-wrapper {
   display: flex;
   justify-content: center; /* Центрираме съдържанието в контейнера */
-  align-items: flex-start;
+  align-items: center;
   width: 80%;  /* Пълна ширина на контейнера */
   max-width: 1400px;  /* Ограничаваме максималната ширина на .schedule-container */
-  hidden:100%;
+  /*hidden:100%;*/
+  min-height: 100vh; /* гарантира, че винаги заема поне височината на екрана */
   margin: 0 auto;  /* Центрираме .schedule-container по същия начин, както .main-content */
   padding-top: 150px;  /* Разстояние отгоре */
   box-sizing: border-box;
@@ -131,6 +132,7 @@
   text-align: center;
   font-weight: bold;
   font-size: 1rem;
+  z-index: 3;
   box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 
