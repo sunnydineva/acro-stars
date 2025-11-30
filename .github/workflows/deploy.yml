@@ -18,13 +18,18 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd nextjs-app
+          npm install
 
       - name: Build and export
-        run: npm run build
+        run: |
+          cd nextjs-app
+          npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
+          # publish_branch: gh-pages   <-- това е дефолтния

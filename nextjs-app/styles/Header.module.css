@@ -1,0 +1,231 @@
+/* Header and navigation styles */
+
+.header {
+  width: 100%;
+  background-color: var(--body-bg);
+  position: relative;
+  z-index: 10;
+}
+
+.headerWrapper {
+  display: flex;
+  align-items: flex-end;
+  max-width: var(--main-width);
+  margin: 0 auto;
+  padding-bottom: 16px;
+  height: 138px;
+}
+
+/* Logo styles */
+.navLogo {
+  width: 200px;
+  box-sizing: border-box;
+  height: 139px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+}
+
+.navLogoImg {
+  width: auto;
+  height: 138px;
+  transition: transform 0.5s ease;
+}
+
+.navLogoImg:hover {
+  opacity: 0.8;
+}
+
+/* Main navigation */
+.mainNav {
+  display: flex;
+  align-items: flex-end;
+}
+
+.navMenu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: flex-end;
+  gap: 1.75rem;              /* разстояние между точките от менюто */
+}
+
+.navItem {
+  text-align: center;
+}
+
+/* основните линкове в менюто (Начало, Тренировки, Галерия, За нас, Треньори, Контакти, Още) */
+.navItem a {
+  display: block;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.3s ease-in-out;
+
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 700;                          /* bold */
+  font-size: clamp(0.9rem, 1.05vw, 1.05rem); /* малко по-фин и равномерен размер */
+  letter-spacing: 0.04em;                    /* леко разредени букви */
+  text-transform: uppercase;                      /* ако искаш ГЛАВНИ: text-transform: uppercase; */
+
+  padding: 0.4rem 0.2rem;                    /* вертикално „дишане“ */
+}
+
+.navItem a:hover {
+  color: var(--nav-hover-color);
+  transition: all 0.3s ease-in-out;
+}
+
+/* --- Dropdown „Още“: по-малък и лек шрифт вътре --- */
+
+.dropdownContentInner a {
+  text-decoration: none;
+  display: block;
+  border-radius: 10px;
+  padding: 8px 12px;
+  margin: 4px 0;
+
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 600;          /* една идея по-леко от главното меню */
+  font-size: 0.9rem;
+}
+
+.dropdownContentInner a:hover {
+  background-color: var(--dropdown-hover-bg);
+  color: var(--dropdown-hover-text);
+}
+
+/* Dropdown menu */
+.dropdown {
+  position: relative;
+}
+
+.dropdownContentWrapper {
+  display: none;
+  position: absolute;
+  top: 100%;
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.dropdown:hover .dropdownContentWrapper,
+.dropdownContentWrapper.open {
+  display: block;
+}
+
+.dropdownHoverBridge {
+  height: 17px;
+  pointer-events: none;
+}
+
+.dropdownContentInner {
+  position: relative;
+  background-color: var(--dropdown-bg);
+  border-radius: 10px;
+  width: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  z-index: 3;
+}
+
+.dropdownContentInner a {
+  text-decoration: none;
+  display: block;
+  border-radius: 10px;
+  padding: 8px 12px;
+  margin: 4px 0;
+}
+
+.dropdownContentInner a:hover {
+  background-color: var(--dropdown-hover-bg);
+  color: var(--dropdown-hover-text);
+}
+
+.dropdownContentFirst {
+  border-radius: 5px;
+}
+
+/* Hamburger menu for mobile */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 20;
+}
+
+.hamburger span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  margin: 6px 0;
+  background-color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 1024px) {
+  .headerWrapper {
+    height: auto;
+    padding: 10px 0;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navLogo {
+    height: auto;
+    margin: 0 0 0 15px;
+    padding: 0;
+  }
+
+  .navLogoImg {
+    height: 80px;
+  }
+
+  .hamburger {
+    display: block;
+    margin-right: 15px;
+  }
+
+  .navMenu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--body-bg);
+    padding: 20px 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    gap: 1.75rem;
+  }
+
+  .navMenu.open {
+    display: flex;
+  }
+
+  .navItem {
+    text-align: center;
+  }
+
+  .dropdownContentWrapper {
+    position: static;
+    display: none;
+    margin-top: 10px;
+  }
+
+  .dropdownContentWrapper.open {
+    display: block;
+  }
+
+  .dropdownHoverBridge {
+    display: none;
+  }
+
+  .dropdownContentInner {
+    width: 90%;
+    margin: 0 auto;
+  }
+}

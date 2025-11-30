@@ -1,0 +1,145 @@
+/* About page styles */
+
+.aboutSection {
+  padding: 40px 0;
+  margin-bottom: 40px;
+}
+
+.aboutContent {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  line-height: 1.6;
+  font-size: 18px;
+  color: var(--text-color);
+}
+
+.aboutTitle {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.titleShiny {
+  background: linear-gradient(
+    to right,
+    var(--text-color) 20%,
+    var(--star-yellow) 40%,
+    #fff 60%,
+    var(--star-gold) 80%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shine 15s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+.aboutParagraph {
+  margin-bottom: 20px;
+}
+
+/* Thunder animations */
+.thunderAnimationWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.thunderAnimationsContainer {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1400px;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.leftLines {
+  position: absolute;
+  left: -110px;
+  top: -160px;
+  width: 40px;
+  opacity: 0;
+  transform-origin: left center;
+  animation: moveOnAngleLeft 0.7s linear forwards;
+  z-index: 1;
+}
+
+.leftLinesSecond {
+  left: -260px;
+  top: -150px;
+  width: 40px;
+  opacity: 0;
+  transform-origin: left center;
+  animation: moveOnAngleLeft 0.7s linear forwards;
+  animation-delay: 0.3s;
+}
+
+.rightLines {
+  position: absolute;
+  right: -100px;
+  top: 100px;
+  width: 40px;
+  height: 1000px;
+  opacity: 0;
+  transform-origin: right center;
+  animation: moveOnAngleRight 0.7s linear forwards;
+  z-index: 1;
+}
+
+.rightLinesSecond {
+  right: -150px;
+  top: 200px;
+  width: 40px;
+  opacity: 0;
+  transform-origin: right center;
+  animation: moveOnAngleRight 0.7s linear forwards;
+  animation-delay: 0.3s;
+  z-index: 2;
+}
+
+@keyframes moveOnAngleLeft {
+  from {
+    opacity: 0;
+    transform: translate(0px, 0px) rotate(-38.67deg);
+  }
+  to {
+    opacity: 1;
+    transform: translate(90px, 110px) rotate(-38.67deg);
+  }
+}
+
+@keyframes moveOnAngleRight {
+  from {
+    opacity: 0;
+    transform: translate(0px, 0px) rotate(44.09deg);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-60px, 110px) rotate(44.09deg);
+  }
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+  .aboutContent {
+    padding: 15px;
+    font-size: 16px;
+  }
+
+  .aboutTitle {
+    font-size: 28px;
+  }
+}

@@ -1,0 +1,349 @@
+/* Trainings page styles */
+
+/* Schedule container */
+.scheduleContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 80%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 150px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.tableWrapper {
+  position: relative;
+  width: 78%;
+  max-width: 1200px;
+  height: 600px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.backgroundUnderlay {
+  position: absolute;
+  top: 140px;
+  width: 120%;
+  height: 70%;
+  z-index: 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.scheduleTable {
+  position: relative;
+  top: 85px;
+  margin: 0 auto;
+  border-collapse: separate;
+  border-radius: 20px;
+  border-spacing: 0;
+  border: 1px solid rgba(0,0,0,0.1);
+  overflow: hidden;
+  z-index: 2;
+}
+
+.scheduleTable th,
+.scheduleTable td {
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 8px;
+  text-align: center;
+  color: var(--text-color);
+  transition: color 0.3s ease-in-out;
+  word-break: break-word;
+}
+
+.scheduleTable th:first-child,
+.scheduleTable td:first-child {
+  width: 10%;
+  white-space: nowrap;
+}
+
+.scheduleTable tr:hover td,
+.scheduleTable tr:hover th {
+  color: var(--nav-hover-color);
+}
+
+.scheduleTable th {
+  background-color: #9592a4;
+}
+
+.scheduleTable tr:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+  transform: scale(1.02);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.pulseHover {
+  transition: transform 0.3s ease-in-out;
+}
+
+.tableWrapper:hover .pulseHover {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.01);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.footerLine {
+  margin-top: 90px;
+}
+
+/* Trainings title */
+.trainingsTitle {
+  position: relative;
+  top: 70px;
+}
+
+.acroTraining {
+  position: absolute;
+  z-index: 3;
+  top: 30%;
+  left: 30%;
+  background: linear-gradient(
+    to right,
+    var(--text-color) 20%,
+    #f3cf6e 40%,
+    #fff 60%,
+    #b89e4f 80%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shine 15s linear infinite;
+}
+
+/* Thunder animations */
+.thunderAnimationWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.thunderAnimationsContainer {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1400px;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.leftLines {
+  position: absolute;
+  left: -110px;
+  top: -33px;
+  width: 40px;
+  opacity: 0;
+  transform-origin: left center;
+  animation: moveOnAngleLeft 0.7s linear forwards;
+  z-index: 1;
+}
+
+.leftLinesSecond {
+  left: -260px;
+  top: -23px;
+  width: 40px;
+  opacity: 0;
+  transform-origin: left center;
+  animation: moveOnAngleLeft 0.7s linear forwards;
+  animation-delay: 0.3s;
+}
+
+.rightLines {
+  position: absolute;
+  right: -300px;
+  top: -250px;
+  width: 40px;
+  height: 1000px;
+  opacity: 0;
+  transform-origin: right center;
+  animation: moveOnAngleRight 0.7s linear forwards;
+  z-index: 1;
+}
+
+.rightLinesSecond {
+  right: -200px;
+  top: -40px;
+  width: 40px;
+  opacity: 0;
+  transform-origin: right center;
+  animation: moveOnAngleRight 0.7s linear forwards;
+  animation-delay: 0.3s;
+  z-index: 2;
+}
+
+@keyframes moveOnAngleLeft {
+  from {
+    opacity: 0;
+    transform: translate(0px, 0px) rotate(-38.67deg);
+  }
+  to {
+    opacity: 1;
+    transform: translate(90px, 110px) rotate(-38.67deg);
+  }
+}
+
+@keyframes moveOnAngleRight {
+  from {
+    opacity: 0;
+    transform: translate(0px, 0px) rotate(42.61deg);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-60px, 110px) rotate(42.61deg);
+  }
+}
+
+/* Categories section */
+.allCategories {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 120px;
+  margin-bottom: 120px;
+  justify-content: center;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 300px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 4px 8px var(--star-blue);
+  color: var(--text-color);
+  transition: color 0.3s ease-in-out;
+}
+
+.category:hover {
+  color: var(--nav-hover-color);
+  transform: scale(1.02);
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0px 8px 15px var(--star-blue);
+}
+
+.categoryImage {
+  width: 100%;
+  height: 280px;
+
+  /*object-fit: contain;*/
+  border-radius: 5px;
+}
+.categoryImage image{
+  /*width: 100%;*/
+  /*height: 250px;*/
+  /*object-fit: contain;*/
+  border-radius: 5px;
+}
+
+/* Signup button */
+.signupButtonWrapper {
+  position: absolute;
+  top: 330px;
+  right: 40px;
+  z-index: 10;
+}
+
+.signupButtonWrapperCentered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 140px;
+  left: 480px;
+  width: 100%;
+  z-index: 10;
+}
+
+.signupButton {
+  background-color: var(--star-blue);
+  color: var(--star-silver);
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  border: none;
+  cursor: pointer;
+}
+
+.signupButton:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 1200px) {
+  .scheduleContainer {
+    width: 95%;
+    padding-top: 100px;
+  }
+
+  .tableWrapper {
+    width: 90%;
+  }
+
+  .signupButtonWrapperCentered {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .scheduleContainer {
+    padding-top: 50px;
+  }
+
+  .acroTraining {
+    position: relative;
+    top: 0;
+    left: 0;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .tableWrapper {
+    height: auto;
+    overflow-x: auto;
+  }
+
+  .scheduleTable {
+    top: 0;
+    width: 100%;
+  }
+
+  .allCategories {
+    margin-top: 50px;
+  }
+
+  .category {
+    width: 100%;
+    max-width: 300px;
+  }
+}

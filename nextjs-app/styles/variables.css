@@ -1,0 +1,22 @@
+:root {
+  --highlight-blue: #b3d4fc; /* Selection background */
+  --hr-line-color: #ccc; /* Horizontal rule line */
+  /*--body-bg: rgb(203, 202, 203); !* Page background *!*/
+  --body-bg: rgb(215, 215, 221); /* Page background */
+  --dropdown-bg: #9592a4; /* Dropdown background */
+  --dropdown-hover-bg: #777; /* Hover background for dropdown items */
+  --dropdown-hover-text: #d5b46d; /* Hover text color for dropdown items */
+  --text-color: #21213d; /* Navigation text */
+  /*--text-color: #3d212c; !* Navigation text *!*/
+  --nav-hover-color: #a48138; /* Navigation hover text */
+  --nav-hover-shadow: #1d1d3c; /* Navigation hover text-shadow */
+  --gradient-dark: #21213d; /* Gradient end color */
+  --gradient-mid: #565c6d; /* Gradient start color */
+
+  --star-silver: #b1b3b3;
+  --star-yellow: #d5b46d;
+  --star-blue: #21213d;
+  --star-gold: #a48138;
+
+  --main-width: 1400px;
+}

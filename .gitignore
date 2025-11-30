@@ -5,3 +5,10 @@ node_modules
 dist
 .cache
 .idea
+/nextjs-app/.next/
+
+.contentlayer/
+.gitignore
+.env.local
+.env.*.local
+

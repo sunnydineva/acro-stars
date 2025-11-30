@@ -1,0 +1,170 @@
+/* Footer styles */
+
+.footer {
+  width: 100%;
+  background-color: var(--body-bg);
+  color: var(--text-color);
+  padding: 40px 0 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.footerWrapper {
+  max-width: var(--main-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footerContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.footerSection {
+  flex: 1;
+  min-width: 250px;
+  margin-bottom: 20px;
+  padding-right: 20px;
+}
+
+.footerSection h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: var(--text-color);
+  position: relative;
+}
+
+.footerSection h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 50px;
+  height: 2px;
+  background-color: var(--star-gold);
+}
+
+.footerLinks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerLinks li {
+  margin-bottom: 10px;
+}
+
+.footerLinks a {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.footerLinks a:hover {
+  color: var(--nav-hover-color);
+}
+
+.socialLinks {
+  display: flex;
+  gap: 15px;
+}
+
+.socialLinks a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--text-color);
+  color: var(--body-bg);
+  transition: all 0.3s ease;
+}
+
+.socialLinks a:hover {
+  background-color: var(--star-gold);
+  transform: translateY(-3px);
+}
+
+.footerWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 1.5rem;
+}
+
+.copyright {
+  position: relative;
+  padding: 0.6rem 0 0.9rem;
+  text-align: center;
+  gap: 0.35rem;
+}
+
+.separator {
+  opacity: 0.5;
+}
+
+.copyright p {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+  font-size: 0.72rem;
+  opacity: 0.8;
+}
+
+.copyright::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height:1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(0, 0, 0, 0.08),
+    rgba(0, 0, 0, 0.18),
+    rgba(0, 0, 0, 0.08),
+
+    /*rgba(0, 0, 0, 0.25),*/
+    /*rgba(0, 0, 0, 0.4),*/
+    /*rgba(0, 0, 0, 0.25),*/
+    transparent
+  );
+  pointer-events: none;
+}
+
+.designerName {
+  font-weight: 500;
+}
+
+/* placeholder за логото – кръгче колкото фавикон */
+.designerLogo {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  background: #111827; /* или основния цвят на Софт Протект */
+  display: inline-block;
+}
+
+@media (max-width: 600px) {
+  .copyright p {
+    font-size: 0.68rem;
+  }
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+  .footerContent {
+    flex-direction: column;
+  }
+
+  .footerSection {
+    width: 100%;
+    padding-right: 0;
+  }
+}

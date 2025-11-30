@@ -1,0 +1,279 @@
+/* Coaches page styles */
+
+.mainTitle {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.mainTitle h1 {
+  font-size: 32px;
+  color: var(--text-color);
+}
+
+.titleShiny {
+  background: linear-gradient(
+    to right,
+    var(--text-color) 20%,
+    var(--star-yellow) 40%,
+    #fff 60%,
+    var(--star-gold) 80%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shine 15s linear infinite;
+}
+
+.mainTrainers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.trainerBlock {
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 370px;
+  cursor: pointer;
+}
+
+/* Removed translateY to prevent border movement on hover */
+.trainerBlock:hover {
+  /* No transform here to prevent the entire block from moving */
+}
+
+.trainerImgWrapper {
+  padding: 12px;
+  display: flex;
+  width: 350px;
+  height: 350px;
+  margin-bottom: 20px;
+  border-radius: 100%;
+  border: 8px solid #333366;
+}
+
+.trainerImgInner {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.trainerImg {
+  width: 350px;
+  height: auto;
+  transition: transform 0.5s ease;
+  object-fit: cover;
+}
+
+.trainerBlock:hover .trainerImg {
+  transform: scale(1.1);
+}
+
+.trainerBlock:hover .trainerImgWrapper {
+  border: 8px solid var(--star-gold);
+  animation: borderColorChange 2s infinite alternate;
+}
+
+.trainerBlock:hover .trainerTitle {
+  color: var(--star-gold); /* резервен цвят */
+  background: linear-gradient(
+    to right,
+    var(--text-color) 20%,
+    #fff 60%,
+    var(--star-silver) 63%,
+    #b89e4f 90%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shine 10s linear infinite;
+}
+
+.trainerTitle {
+  display: flex;
+  justify-content: center;
+  color: var(--text-color);
+  width: 370px;
+}
+
+.accordionContent {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.accordionContent.open {
+  opacity: 1;
+  height: auto;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+
+.accordionContent.open {
+  max-height: 500px;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+.accordionContent h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+.accordionContent p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.accordionContent ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.accordionContent li {
+  margin-bottom: 10px;
+  padding-left: 25px;
+  position: relative;
+}
+
+.accordionContent li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--star-gold);
+  font-size: 20px;
+}
+
+/* Thunder animations */
+.thunderAnimationWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.thunderAnimationsContainer {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1400px;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.leftLines {
+  position: absolute;
+  left: -110px;
+  top: -160px;
+  width: 40px;
+  opacity: 0;
+  transform-origin: left center;
+  animation: moveOnAngleLeft 0.7s linear forwards;
+  z-index: 1;
+}
+
+.leftLinesSecond {
+  left: -260px;
+  top: -150px;
+  width: 40px;
+  opacity: 0;
+  transform-origin: left center;
+  animation: moveOnAngleLeft 0.7s linear forwards;
+  animation-delay: 0.3s;
+}
+
+.rightLines {
+  position: absolute;
+  right: -100px;
+  top: 100px;
+  width: 40px;
+  height: 1000px;
+  opacity: 0;
+  transform-origin: right center;
+  animation: moveOnAngleRight 0.7s linear forwards;
+  z-index: 1;
+}
+
+.rightLinesSecond {
+  right: -150px;
+  top: 200px;
+  width: 40px;
+  opacity: 0;
+  transform-origin: right center;
+  animation: moveOnAngleRight 0.7s linear forwards;
+  animation-delay: 0.3s;
+  z-index: 2;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+@keyframes moveOnAngleLeft {
+  from {
+    opacity: 0;
+    transform: translate(0px, 0px) rotate(-38.67deg);
+  }
+  to {
+    opacity: 1;
+    transform: translate(90px, 110px) rotate(-38.67deg);
+  }
+}
+
+@keyframes moveOnAngleRight {
+  from {
+    opacity: 0;
+    transform: translate(0px, 0px) rotate(44.09deg);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-60px, 110px) rotate(44.09deg);
+  }
+}
+
+@keyframes borderColorChange {
+  0% {
+    border-color: var(--star-blue);
+  }
+  100% {
+    border-color: var(--star-gold);
+  }
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+  .mainTrainers {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .trainerBlock {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .accordionContent h2 {
+    font-size: 20px;
+  }
+}

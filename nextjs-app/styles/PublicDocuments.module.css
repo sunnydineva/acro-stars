@@ -1,0 +1,181 @@
+/* Public Documents page styles */
+
+.documentsContainer {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pageTitle {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--text-color);
+}
+
+.titleShiny {
+  background: linear-gradient(
+    to right,
+    var(--text-color) 20%,
+    var(--star-yellow) 40%,
+    #fff 60%,
+    var(--star-gold) 80%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shine 15s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+.pageDescription {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px;
+  line-height: 1.6;
+  font-size: 18px;
+  color: var(--text-color);
+}
+
+.documentSection {
+  margin-bottom: 50px;
+}
+
+.sectionTitle {
+  font-size: 28px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--star-gold);
+  color: var(--text-color);
+}
+
+.documentsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.documentCard {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.documentCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.documentHeader {
+  margin-bottom: 15px;
+}
+
+.documentTitle {
+  font-size: 18px;
+  margin: 0 0 10px;
+  color: var(--text-color);
+}
+
+.documentDate {
+  display: block;
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.documentDescription {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #444;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.documentFooter {
+  margin-top: auto;
+}
+
+.downloadButton {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: var(--text-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.downloadButton:hover {
+  background-color: var(--star-gold);
+}
+
+.downloadIcon {
+  margin-left: 8px;
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.downloadButton:hover .downloadIcon {
+  transform: translateY(3px);
+}
+
+.contactInfo {
+  margin-top: 60px;
+  text-align: center;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.emailLink {
+  color: var(--star-gold);
+  text-decoration: none;
+  margin-left: 5px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.emailLink:hover {
+  color: var(--text-color);
+  text-decoration: underline;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+  .documentsContainer {
+    padding: 30px 15px;
+  }
+
+  .pageTitle {
+    font-size: 32px;
+  }
+
+  .pageDescription {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .sectionTitle {
+    font-size: 24px;
+  }
+
+  .documentsList {
+    grid-template-columns: 1fr;
+  }
+}

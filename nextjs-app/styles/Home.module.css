@@ -1,0 +1,625 @@
+/* Homepage styles */
+
+/* Hero Section */
+.heroSection {
+  position: relative;
+  height: 80vh;
+  min-height: 600px;
+  overflow: hidden;
+  width: 100%;
+  max-width: var(--main-width);
+}
+
+.heroBackgroundSlider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bgSlide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: slideShow 15s infinite;
+}
+
+.slide1 {
+  animation-delay: 0s;
+}
+
+.slide2 {
+  animation-delay: 5s;
+}
+
+.slide3 {
+  animation-delay: 10s;
+}
+
+@keyframes slideShow {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+  }
+  38% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  /*padding: 20px;*/
+  padding: 2.5rem 3rem;
+  /*width: clamp(320px, 55vw, 820px);*/
+  max-width: min(860px, 70vw);
+  /*background-color: var(--body-bg);*/
+  /*background-color: transparent;*/
+  /*border-radius: 10px;*/
+  /*box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);*/
+  /*min-height: 80vh;*/
+  background: rgba(255,255,255,0.35);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  border-radius: 24px;
+}
+
+.heroElement {
+  /*opacity: 0;*/
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.heroElement1 {
+  animation-delay: 0.2s;
+}
+
+.heroElement2 {
+  animation-delay: 0.4s;
+}
+
+.heroElement3 {
+  animation-delay: 0.6s;
+}
+
+.heroElement4 {
+  animation-delay: 0.8s;
+}
+
+.heroElement5 {
+  animation-delay: 1s;
+}
+
+.featuresSection {
+  max-width: 1100px;
+  margin: 4.5rem auto 4rem auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.featuresTitle {
+  margin-top: 6rem;
+  margin-bottom: 4rem;
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.75rem;
+}
+
+.featureCard {
+  /*background: rgba(255, 255, 255, 0.96);*/
+  background:
+    radial-gradient(circle at top left,
+    rgb(172, 142, 80),
+    rgb(242, 242, 244) 80%,
+    rgb(150, 151, 164) 99%);
+      /*!*rgba(255, 255, 255, 0.97) 70%);*! rgb(54, 54, 104) 99.9%);*/
+  border-radius: 20px;
+  padding: 1.75rem 1.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.featureCard::before {
+  content: none;
+}
+
+.featureHeading {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  color: #1e2345;  /* тъмно синьо от логото/хедъра */
+}
+
+.featureText {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-muted, #444);
+}
+
+/* лек hover ефект */
+.featureCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.followSection {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 2.5rem;
+  margin-block: 4rem;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .followSection {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.titleShiny {
+  background: linear-gradient(
+    to right,
+    var(--text-color) 20%,
+    var(--star-yellow) 40%,
+    #fff 60%,
+    var(--star-gold) 80%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shine 15s linear infinite;
+}
+
+.fancyBtn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: var(--text-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.fancyBtn:hover {
+  background-color: var(--star-gold);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.fancyBtn span {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.fancyBtn:hover span {
+  transform: translateX(5px);
+}
+
+/* Facebook Feed Section */
+.mainFbFeed {
+  margin: 5rem auto 6rem auto;
+  padding: 3rem 1.5rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 175%;
+  MAX-width: var(--main-width);
+}
+
+.mainFbFeed::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/images/fb-feed-background.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;   /* или cover, ако искаш да изпълва */
+  opacity: 0.95;
+  z-index: -1;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.mainFbFeed::after {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: 0;
+  right: 0;
+  height: 140px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.05),
+    transparent
+  );
+  z-index: -1;
+  pointer-events: none;
+}
+
+.fbOverlay {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  /*gap: 1.6rem;*/
+  align-items: center;
+}
+
+.fbBox {
+  background: #d5d5dc;
+  border-radius: 24px;
+  opacity: 0.9;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+  padding: 1.2rem;
+  width: 100%;
+  max-width: 520px;
+  overflow: hidden;
+  margin: 1.5rem auto 0;   /* <-- ТОВА я центрира хоризонтално */
+}
+
+.fbInner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.heroBackgroundSlider {
+  position: relative; /* за да можем да позиционираме mini card вътре */
+  overflow: hidden;
+}
+
+/* MINI FB card в хиро-то */
+.heroFbCard {
+  position: absolute;
+  right: 2.5rem;
+  bottom: 2.7rem;
+  max-width: 320px;
+  padding: 1.1rem 1.3rem;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 18px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.heroFbHeaderRow {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.heroFbLogoCircle {
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  min-height: 26px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #1877f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroFbLogoLetter {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.heroFbPunchline {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0.2rem 0 0;
+  color: #22232a;
+}
+
+.heroFbLink {
+  margin-top: 0.15rem;
+  align-self: flex-end;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  color: #1877f2;
+  display: inline-flex;
+  gap: 0.3rem;
+}
+
+.heroFbLink span {
+  transition: transform 0.15s ease-out;
+}
+
+.heroFbLink:hover span {
+  transform: translateX(3px);
+}
+
+
+.facebookSection {
+  margin-top: 3rem;
+}
+
+.fbFeedImageWrapper {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
+  animation: slideInRight 1s ease-out 1.1s both;
+}
+
+.fbFeedImage {
+  max-width: 100%;
+  height: auto;
+}
+
+.pulseHover {
+  transition: transform 0.3s ease;
+  animation: pulse 2s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.pulseHover:hover {
+  transform: scale(1.05);
+  animation-play-state: paused;
+}
+
+.acroTrails {
+  position: absolute;
+  top: 0;
+  left: 440px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: clamp(1.4rem, 2vw, 1.7rem);
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(
+    to right,
+    var(--text-color) 20%,
+    #f3cf6e 40%,
+    #fff 60%,
+    #b89e4f 80%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shine 15s linear infinite, slideInRight 1s ease-out 0.9s both;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .mainFbFeed {
+    padding: 3rem 1.5rem;
+  }
+
+  .fbOverlay {
+    max-width: 100%;
+  }
+
+  .fbBox {
+    max-width: 100%;
+  }
+
+  .heroFbCard {
+    position: static;
+    margin: 1rem auto 0 auto;
+    max-width: 320px;
+  }
+}
+
+/* Partners Section */
+.partnersBar {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+  animation: fadeIn 1s ease-out 1.3s both;
+}
+
+.fadeLeft, .fadeRight {
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 1;
+}
+
+.fadeLeft {
+  left: 0;
+  background: linear-gradient(to right, var(--body-bg), transparent);
+}
+
+.fadeRight {
+  right: 0;
+  background: linear-gradient(to left, var(--body-bg), transparent);
+}
+
+.partnersTrack {
+  display: flex;
+  animation: scroll 30s linear infinite;
+  width: max-content;
+}
+
+.partnersTrack img {
+  height: 50px;
+  width: auto;
+  margin: 0 20px;
+  object-fit: contain;
+  animation: fadeInScale 0.5s ease-out 1.5s both;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 900px) {
+  .featuresGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .featureCard {
+    text-align: left;
+  }
+}
+
+  /* Responsive styles */
+  @media only screen and (max-width: 768px) {
+    .heroSection {
+      height: auto;
+      min-height: 400px;
+    }
+
+    .heroContent {
+      padding: 15px;
+      max-width: 90%;
+    }
+
+    .mainFbFeed {
+      padding: 2.5rem 1.25rem;
+      background-size: cover;  /* за по-малки екрани да запълва */
+    }
+
+    .fbBox {
+      max-width: 100%;
+    }
+    /*.heroFbCard {*/
+    /*  position: static;*/
+    /*  margin: 1rem auto 0 auto;*/
+    /*  max-width: 320px;*/
+    /*}*/
+    .acroTrails {
+      position: static;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .fbFeedImageWrapper {
+      position: static;
+      margin: 20px auto;
+      text-align: center;
+    }
+  }
+
+
