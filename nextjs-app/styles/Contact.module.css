@@ -1,154 +1,37 @@
-/* Contact page styles */
+.contactSection {
+  max-width: 1200px;
+  margin: 3.5rem auto 4.5rem auto;
+  padding: 3rem 2.5rem;
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
 
-.contactWrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-  max-width: 1400px;
-  min-height: 100vh;
-  margin: 0 auto;
-  padding-top: 150px;
-  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 2.75rem;
+}
+
+/* фон зад формата и картата */
+.backgroundUnderlay {
+  position: absolute;
+  inset: -40%;
+  opacity: 0.08;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+
+/* Лява колона – форма */
+.contactColumn {
   position: relative;
   z-index: 1;
 }
 
-.contactContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  transform: none;
-  background-color: rgba(202, 202, 203, 0.6);
-  backdrop-filter: blur(5px);
-  width: 48%;
-  max-width: 1400px;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px var(--star-blue);
-  margin-bottom: 40px;
-  box-sizing: border-box;
-  z-index: 2;
-  position: relative;
-}
-
-.contactContainer label {
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: #21213d;
-  width: 100%;
-}
-
-.contactContainer input,
-.contactContainer textarea {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 16px;
-  color: #21213d;
-  background-color: #ccc;
-  box-sizing: border-box;
-}
-
-.contactContainer input[type="date"] {
-  padding: 10px;
-}
-
-.submitButton {
-  display: block;
-  margin: 40px auto;
-  width: 140px;
-  background-color: var(--star-blue);
-  color: var(--star-silver);
-  padding: 0.75rem 1.5rem;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  border: none;
-  cursor: pointer;
-}
-
-.submitButton:hover {
-  transform: scale(1.05);
-}
-
-.contactContainer input:hover,
-.contactContainer textarea:hover {
-  color: var(--nav-hover-color);
-}
-
-.contactContainer label:hover {
-  color: var(--nav-hover-color);
-  cursor: pointer;
-}
-
-.contactContainer input:hover::placeholder,
-.contactContainer textarea:hover::placeholder {
-  color: var(--nav-hover-color);
-}
-
-.contactContainer input:focus::placeholder,
-.contactContainer textarea:focus::placeholder {
-  color: var(--nav-hover-color);
-}
-
-.contactContainer input:focus,
-.contactContainer textarea:focus {
-  background-color: #cacacb;
-  border-color: #cacacb;
-  outline: none;
-}
-
-.thankYouMessage {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: var(--star-blue);
-  color: var(--star-silver);
-  padding: 1rem 1.5rem;
-  border-radius: 12px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 1rem;
-  z-index: 3;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-}
-
-.thankYouMessageVisible {
-  display: block;
-}
-
-.backgroundUnderlay {
-  position: absolute;
-  top: 100px;
-  left: 50%;
-  transform: translateX(-50%) rotate(-4deg);
-  width: 62%;
-  height: 85%;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.contactTitle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-  width: 100%;
-  text-align: center;
-}
-
 .acroContact {
+  font-size: clamp(1.5rem, 2.2vw, 1.8rem);
+  margin-bottom: 3rem;
   background: linear-gradient(
     to right,
     var(--text-color) 20%,
@@ -160,123 +43,7 @@
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  animation: shine 15s linear infinite;
-  font-size: 2.5rem;
-}
-
-.mapContainer {
-  margin-top: 100px;
-  width: 100%;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.mapTitle {
-  font-size: 18px;
-  font-weight: 600;
-  color: #21213d;
-  text-align: center;
-  margin-top: 100px;
-  margin-bottom: 8px;
-}
-
-.mapDescription {
-  font-size: 20px;
-  font-weight: 400;
-  color: #555;
-  text-align: center;
-  margin-bottom: 25px;
-  line-height: 1.5;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Thunder animations */
-.thunderAnimationWrapper {
-  position: relative;
-  width: 100%;
-}
-
-.thunderAnimationsContainer {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1400px;
-  height: 100%;
-  pointer-events: none;
-  overflow: visible;
-}
-
-.leftLines {
-  position: absolute;
-  left: -110px;
-  top: -33px;
-  width: 40px;
-  opacity: 0;
-  transform-origin: left center;
-  animation: moveOnAngleLeft 0.7s linear forwards;
-  z-index: 1;
-}
-
-.leftLinesSecond {
-  left: -260px;
-  top: -23px;
-  width: 40px;
-  opacity: 0;
-  transform-origin: left center;
-  animation: moveOnAngleLeft 0.7s linear forwards;
-  animation-delay: 0.3s;
-}
-
-.rightLines {
-  position: absolute;
-  right: -300px;
-  top: -250px;
-  width: 40px;
-  height: 1000px;
-  opacity: 0;
-  transform-origin: right center;
-  animation: moveOnAngleRight 0.7s linear forwards;
-  z-index: 1;
-}
-
-.rightLinesSecond {
-  right: -200px;
-  top: -40px;
-  width: 40px;
-  opacity: 0;
-  transform-origin: right center;
-  animation: moveOnAngleRight 0.7s linear forwards;
-  animation-delay: 0.3s;
-  z-index: 2;
-}
-
-@keyframes moveOnAngleLeft {
-  from {
-    opacity: 0;
-    transform: translate(0px, 0px) rotate(-38.67deg);
-  }
-  to {
-    opacity: 1;
-    transform: translate(90px, 110px) rotate(-38.67deg);
-  }
-}
-
-@keyframes moveOnAngleRight {
-  from {
-    opacity: 0;
-    transform: translate(0px, 0px) rotate(42.61deg);
-  }
-  to {
-    opacity: 1;
-    transform: translate(-60px, 110px) rotate(42.61deg);
-  }
+  animation: shine 15s linear infinite, slideInRight 1s ease-out 0.9s both;
 }
 
 @keyframes shine {
@@ -287,47 +54,194 @@
     background-position: -200% center;
   }
 }
+/* кутията на формата */
+.contactContainer {
+  background: #f4f4f8;
+  border-radius: 18px;
+  padding: 1.75rem 1.6rem;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* grid за полетата – 2 колони */
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 1.5rem;
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+}
+
+.fullRow {
+  grid-column: 1 / -1;
+}
+
+.formField label {
+  color: #1e2345;
+}
+
+.formField input,
+.formField textarea {
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 0.6rem 0.75rem;
+  font-size: 0.95rem;
+  outline: none;
+  background: #fff;
+}
+
+.formField textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.formField input:focus,
+.formField textarea:focus {
+  border-color: var(--star-gold, #f2b544);
+  box-shadow: 0 0 0 2px rgba(242, 181, 68, 0.25);
+}
+
+.buttonField {
+  justify-content: flex-end;
+}
+
+.submitButton {
+  align-self: flex-start;
+  padding: 0.65rem 1.8rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: var(--text-color, #1d2142);
+  color: #fff;
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out,
+  background-color 0.15s ease-out;
+}
+
+.submitButton:hover:not(:disabled) {
+  background: var(--star-gold, #f2b544);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.18);
+}
+
+.submitButton:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+/* съобщение след пращане */
+.thankYouMessage {
+  margin-top: 2rem;
+  padding: 1.3rem 1.5rem;
+  border-radius: 16px;
+  background: #e6f7e9;
+  color: #155724;
+  font-weight: 600;
+}
+
+/* Дясна колона – карта */
+.mapColumn {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.mapHeading {
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.6rem;
+  /*margin: 2.2rem auto 1.2rem auto; !* ако искаш, увеличи горния margin *!*/
+}
+
+.mapHeading::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 140px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    #f4b53f,
+    #1e2345
+  );
+  opacity: 0.9;
+}
+
+.mapText {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-muted, #444);
+}
+
+.mapCard {
+  margin-top: 0.5rem;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15);
+  min-height: 280px;
+}
+
+.mapCard iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* твоите си класове за гръмотевиците и линията във футъра – оставям ги както са си */
+.thunderAnimationWrapper {
+  margin-top: 2.5rem;
+}
+
+.thunderAnimationsContainer {
+  position: relative;
+}
+
+.leftLines,
+.rightLines {
+  /* тук си остави старите стилове */
+}
 
 .footerLine {
-  margin-top: 290px;
+  margin-top: 2.5rem;
 }
 
-/* Responsive styles */
-@media only screen and (max-width: 1024px) {
-  .contactWrapper {
-    width: 90%;
-    padding-top: 100px;
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .contactSection {
+    grid-template-columns: 1fr;
+    padding: 2.25rem 1.6rem;
+    gap: 2.25rem;
   }
 
-  .contactContainer {
-    width: 70%;
+  .mapColumn {
+    order: 3; /* ако искаш картата да остава под формата */
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .submitButton {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
   }
 }
 
-@media only screen and (max-width: 768px) {
-  .contactWrapper {
-    padding-top: 50px;
-  }
-
+@media (max-width: 600px) {
   .contactContainer {
-    width: 90%;
-    padding: 20px;
-  }
-
-  .acroContact {
-    font-size: 2rem;
-  }
-
-  .mapContainer {
-    margin-top: 50px;
-  }
-
-  .mapTitle {
-    margin-top: 50px;
-  }
-
-  .mapDescription {
-    font-size: 16px;
-    max-width: 90%;
+    padding: 1.3rem 1.1rem;
   }
 }

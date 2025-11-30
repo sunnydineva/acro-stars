@@ -6,7 +6,7 @@ const nextConfig = {
   images: {
     unoptimized: true,       // нужно за GitHub Pages (без image optimization)
   },
-  // repo-то ти в GitHub  URL ще е https://username.github.io/Acro-Stars/
+  // repo-то ти в GitHub  URL ще е https://username.github.io/acro-stars/
   // тогава basePath и assetPrefix трябва да са "/acro-stars"
   basePath: isProd ? "/acro-stars" : "",
   assetPrefix: isProd ? "/acro-stars" : "",

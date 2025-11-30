@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../styles/Header.module.css';
+import AcroStarsLogo from "@/public//images/logo-ksa-acro-stars.png";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,7 +20,7 @@ const Header: React.FC = () => {
         <div className={styles.navLogo}>
           <Link href="/">
             <Image
-              src="/images/logo-ksa-acro-stars.png"
+              src={AcroStarsLogo}
               alt="Акро Старс Лого"
               width={138}
               height={138}
