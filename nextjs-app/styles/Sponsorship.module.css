@@ -1,0 +1,141 @@
+.sponsorshipTitle {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.acroSponsorship {
+  font-size: clamp(1.6rem, 2.2vw, 1.9rem);
+  color: var(--text-color);
+  margin-top: 5rem;
+}
+
+/* Основен контейнер за текста */
+.sponsorshipSection {
+  max-width: 960px;
+  margin: 2.5rem auto 5rem auto;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 24px;
+  padding: 2.5rem 2.25rem;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+  line-height: 1.7;
+  color: var(--text-muted, #333);
+}
+
+.mainHeading {
+  font-size: 1.6rem;
+  margin-bottom: 1.25rem;
+}
+
+.sponsorshipSection h2 {
+  font-size: 1.2rem;
+  margin-top: 1.8rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-color);
+}
+
+.sponsorshipSection p {
+  margin-bottom: 1rem;
+}
+
+.sponsorshipSection ul {
+  margin: 0 0 1rem 1.25rem;
+  padding: 0;
+}
+
+.sponsorshipSection li {
+  margin-bottom: 0.4rem;
+}
+
+/* Линк към писмото */
+.sponsorshipCta {
+  margin-top: 3.5rem;
+  text-align: center;
+}
+
+.sponsorshipLink {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
+  background: var(--text-color);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out,
+  background-color 0.2s ease-out;
+}
+
+.sponsorshipLink:hover {
+  background-color: var(--star-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.16);
+}
+
+/* Мълнии – копие на логиката от Contact.module.css */
+
+.thunderAnimationWrapper {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.thunderAnimationsContainer {
+  position: relative;
+  max-width: var(--main-width);
+  width: 100%;
+}
+
+.leftLines,
+.rightLines {
+  position: absolute;
+  opacity: 0.5;
+}
+
+.leftLines {
+  left: 0;
+  bottom: 0;
+}
+
+.leftLinesSecond {
+  left: 60px;
+  bottom: 20px;
+}
+
+.rightLines {
+  right: 0;
+  bottom: 0;
+}
+
+.rightLinesSecond {
+  right: 60px;
+  bottom: 20px;
+}
+
+.footerLine {
+  margin-top: 3.5rem;
+}
+
+/* Малко адаптация за мобилно */
+
+@media (max-width: 900px) {
+  .sponsorshipSection {
+    padding: 2rem 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .thunderAnimationsContainer {
+    max-width: 100%;
+  }
+
+  .leftLines,
+  .leftLinesSecond,
+  .rightLines,
+  .rightLinesSecond {
+    display: none;
+  }
+
+  .footerLine {
+    margin-top: 2.5rem;
+  }
+}
