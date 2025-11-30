@@ -251,7 +251,7 @@
   position: absolute;
   inset: 0;
   /*background-image: url("/images/fb-feed-background.png");*/
-background-image: var(--fb-bg-image);;
+background-image: var(--fb-bg-image);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;   /* или cover, ако искаш да изпълва */

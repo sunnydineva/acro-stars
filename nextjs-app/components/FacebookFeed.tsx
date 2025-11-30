@@ -3,14 +3,14 @@
 import Script from "next/script";
 import React from "react";
 import styles from "../styles/Home.module.css";
-import ThunderRightSecond from "@/public/images/fb-feed-background.png";
+import Bg from "@/public/images/fb-feed-background.png";
 
 export default function FacebookFeed() {
   return (
     <>
-      <section className={styles.mainFbFeed}>
-        <div className={`montserrat-ExtraBold-title ${styles.acroTrails}`}
-             style={{ "--fb-bg-image": `url(${ThunderRightSecond.src})` } as React.CSSProperties}>
+      <section className={styles.mainFbFeed}
+               style={{ "--fb-bg-image": `url(${Bg.src})` } as React.CSSProperties}>
+        <div className={`montserrat-ExtraBold-title ${styles.acroTrails}`}>
           По следите <br/>
           на отбора
         </div>
