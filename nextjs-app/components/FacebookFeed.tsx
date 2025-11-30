@@ -8,7 +8,8 @@ export default function FacebookFeed() {
   return (
     <>
       <section className={styles.mainFbFeed}>
-        <div className={`montserrat-ExtraBold-title ${styles.acroTrails}`}>
+        <div className={`montserrat-ExtraBold-title ${styles.acroTrails}`}
+             style={{ "--fb-bg-image": `url(${ThunderRightSecond.src})` } as React.CSSProperties}>
           По следите <br/>
           на отбора
         </div>
