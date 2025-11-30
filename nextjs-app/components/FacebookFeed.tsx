@@ -3,6 +3,7 @@
 import Script from "next/script";
 import React from "react";
 import styles from "../styles/Home.module.css";
+import ThunderRightSecond from "@/public/images/resourcesWeb2/thunder-right-second-web2.png";
 
 export default function FacebookFeed() {
   return (
