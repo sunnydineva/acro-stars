@@ -2,7 +2,7 @@
   --highlight-blue: #b3d4fc; /* Selection background */
   --hr-line-color: #ccc; /* Horizontal rule line */
   /*--body-bg: rgb(203, 202, 203); !* Page background *!*/
-  --body-bg: rgb(215, 215, 221); /* Page background */
+  --body-bg: #f1f0f4; /* Page background */
   --dropdown-bg: #9592a4; /* Dropdown background */
   --dropdown-hover-bg: #777; /* Hover background for dropdown items */
   --dropdown-hover-text: #d5b46d; /* Hover text color for dropdown items */

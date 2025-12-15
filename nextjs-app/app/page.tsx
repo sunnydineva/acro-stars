@@ -21,6 +21,30 @@ import Partner8 from "@/public/images/partners/S.png";
 import Partner9 from "@/public/images/partners/biskvitka-2.jpg";
 import Partner10 from "@/public/images/partners/star-text.png";
 
+// Например в Home.tsx
+const announcements = [
+  {
+    id: 1,
+    title: 'Записване за нови групи',
+    text: 'Свободни места за деца 6–9 г. – понеделник и сряда от 18:00 ч.',
+    isImportant: false,
+    href: '/trainings', // по желание
+  },
+  {
+    id: 2,
+    title: 'За състезателите',
+    text: 'Напомняме за медицинските прегледи до 15 ноември.',
+    isImportant: true
+  },
+  {
+    id: 3,
+    title: 'Пробна тренировка',
+    text: 'Първата тренировка за нови деца е безплатна – запишете се от формата.',
+    href: '/contact',
+  },
+];
+
+
 const FacebookFeed = dynamic(
   () => import("../components/FacebookFeed"),
   { ssr: false }      // <-- НЯМА SSR за този компонент
@@ -37,7 +61,7 @@ export default function Home() {
               src={Hero1}
               alt="Hero Background 1"
               fill
-              style={{ objectFit: 'cover', opacity: 0.21 }}
+              style={{objectFit: 'cover', opacity: 0.21}}
               priority
             />
           </div>
@@ -46,7 +70,7 @@ export default function Home() {
               src={Hero2}
               alt="Hero Background 2"
               fill
-              style={{ objectFit: 'cover', opacity: 0.21 }}
+              style={{objectFit: 'cover', opacity: 0.21}}
               priority
             />
           </div>
@@ -55,21 +79,24 @@ export default function Home() {
               src={Hero3}
               alt="Hero Background 3"
               fill
-              style={{ objectFit: 'cover', opacity: 0.21 }}
+              style={{objectFit: 'cover', opacity: 0.21}}
               priority
             />
           </div>
 
           <div className={styles.heroContent}>
             <p className={`montserrat-SemiBold-600-34 ${styles.heroElement} ${styles.heroElement1}`}>Добре дошли в</p>
-            <h1 className={`montserrat-ExtraBold-title ${styles.titleShiny} ${styles.heroElement} ${styles.heroElement2}`}>"Акро Старс"</h1>
-            <p className={`subtitle montserrat-SemiBold-600-34 ${styles.heroElement} ${styles.heroElement3}`}>Клуб по спортна акробатика с голямо сърце</p>
+            <h1
+              className={`montserrat-ExtraBold-title ${styles.titleShiny} ${styles.heroElement} ${styles.heroElement2}`}>"Акро
+              Старс"</h1>
+            <p className={`subtitle montserrat-SemiBold-600-34 ${styles.heroElement} ${styles.heroElement3}`}>Клуб по
+              спортна акробатика с голямо сърце</p>
             <p className={`subtitle montserrat-ExtraBold-title welcome ${styles.heroElement} ${styles.heroElement4}`}>
               Заповядайте в нашето семейство – нека децата ви се докоснат до
-              <br />
+              <br/>
               красотата на акробатиката и намерят своето вдъхновение!
             </p>
-            <br />
+            <br/>
             <Link href="/about" className={`${styles.fancyBtn} ${styles.heroElement} ${styles.heroElement5}`}>
               Научи повече <span>→</span>
             </Link>
@@ -139,7 +166,7 @@ export default function Home() {
       <section id="facebook" className={styles.facebookSection}>
         <section className={styles.followSection}>
           <div className={styles.followLeft}>
-            <FacebookFeed />
+            <FacebookFeed/>
           </div>
           <div className={styles.followRight}>
             {/* снимка с децата или кратък текст */}
@@ -147,64 +174,38 @@ export default function Home() {
         </section>
       </section>
 
-      {/*<div className={styles.mainFbFeed}>*/}
-      {/*  <div className={styles.fbBox}>*/}
-      {/*    <div id="fb-root"></div>*/}
-      {/*    <div*/}
-      {/*      className="fb-page"*/}
-      {/*      data-href="https://www.facebook.com/profile.php?id=100063250867590"*/}
-      {/*      data-tabs="timeline"*/}
-      {/*      data-width="600"*/}
-      {/*      data-height="480"*/}
-      {/*      data-small-header="true"*/}
-      {/*      data-adapt-container-width="true"*/}
-      {/*      data-hide-cover="false"*/}
-      {/*      data-show-facepile="false"*/}
-      {/*    >*/}
-      {/*      <blockquote cite="https://www.facebook.com/profile.php?id=100063250867590" className="fb-xfbml-parse-ignore">*/}
-      {/*        <a href="https://www.facebook.com/profile.php?id=100063250867590">СКА "Акро Старс"</a>*/}
-      {/*      </blockquote>*/}
-      {/*    </div>*/}
-      {/*  </div>*/}
-      {/*  <div className={`montserrat-ExtraBold-title ${styles.acroTrails}`}>*/}
-      {/*    По следите <br />*/}
-      {/*    на отбора*/}
-      {/*  </div>*/}
-      {/*  <div className={styles.fbFeedImageWrapper}>*/}
-      {/*    <Image*/}
-      {/*      src="/images/fb-feed-background.png"*/}
-      {/*      alt="Следи отбора във Facebook"*/}
-      {/*      width={400}*/}
-      {/*      height={400}*/}
-      {/*      className={`${styles.fbFeedImage} ${styles.pulseHover}`}*/}
-      {/*    />*/}
-      {/*  </div>*/}
-      {/*</div>*/}
 
-      {/* Partners Section */}
-      <div className="partners-bar-gradient"></div>
-      <div className="main-content">
-        <div className={styles.partnersBar}>
-          <div className={styles.fadeLeft}></div>
-          <div className={styles.partnersTrack}>
-            {[...Array(2)].map((_, repeatIndex) => (
-              <React.Fragment key={repeatIndex}>
-                <Image src={Partner1} alt="partner 1" width={100} height={50} />
-                <Image src={Partner2} alt="partner 2" width={100} height={50} />
-                <Image src={Partner3} alt="partner 3" width={100} height={50} />
-                <Image src={Partner4} alt="partner 4" width={100} height={50} />
-                <Image src={Partner5} alt="partner 5" width={100} height={50} />
-                <Image src={Partner6} alt="partner 6" width={100} height={50} />
-                <Image src={Partner7} alt="partner 7" width={100} height={50} />
-                <Image src={Partner8} alt="partner 8" width={100} height={50} />
-                <Image src={Partner9} alt="partner 9" width={100} height={50} />
-                <Image src={Partner10} alt="partner 10" width={100} height={50} />
-              </React.Fragment>
-            ))}
-          </div>
-          <div className={styles.fadeRight}></div>
+      {/* Important Announcements Section */}
+      <div className="announcement-bar-gradient"></div>
+
+      <p className={styles.announcementsTitle}>Съобщения</p>
+
+      <section aria-label="Съобщения" className={styles.announcementsBar}>
+
+        <div className={styles.fadeLeft}></div>
+
+        <div className={styles.announcementsTrack}>
+          {[...announcements, ...announcements].map((item, index) => (
+            <div key={index} className={styles.announcementCard}>
+              {item.isImportant && (
+                <div className={styles.badge}>ВАЖНО</div>
+              )}
+              <div className={styles.announcementContent}>
+                <p className={styles.announcementTitle}>{item.title}</p>
+                <p className={styles.announcementText}>{item.text}</p>
+                {item.href && (
+                  <a href={item.href} className={styles.announcementLink}>
+                    Научи повече →
+                  </a>
+                )}
+              </div>
+            </div>
+          ))}
         </div>
-      </div>
+
+        <div className={styles.fadeRight}></div>
+      </section>
+
 
       {/* Facebook SDK Script */}
       {/*<script*/}

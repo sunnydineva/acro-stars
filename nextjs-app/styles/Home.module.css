@@ -3,11 +3,16 @@
 /* Hero Section */
 .heroSection {
   position: relative;
-  height: 80vh;
+  height: 70vh;
+  /*height: 80vh;*/
   min-height: 600px;
   overflow: hidden;
-  width: 100%;
-  max-width: var(--main-width);
+  /*width: 100%;*/
+  /* full-bleed трик – да излезе от централния контейнер */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  /*max-width: var(--main-width);*/
 }
 
 .heroBackgroundSlider {
@@ -442,6 +447,105 @@ background-image: var(--fb-bg-image);
   }
   100% {
     background-position: -200% center;
+  }
+}
+
+.announcement-bar-gradient {
+  height: 8px;
+  width: 100%;
+  background: linear-gradient(to bottom, var(--gradient-mid), var(--gradient-dark));
+  position: relative;
+  z-index: 2;
+}
+
+/* Home.module.css (примерно) */
+
+.announcementsBar {
+  position: relative;
+  overflow: hidden;
+  max-width: 1000px;
+  margin: 1.5rem auto 1.5rem;  /* повече въздух отгоре, по-малко до футъра */
+
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  padding: 0.5rem 0;           /* тънка „лента“ вместо масивен блок */
+}
+
+.announcementsTrack {
+  display: flex;
+  justify-content: flex-start;
+  /*gap: 1.5rem;*/
+  width: max-content;
+  animation: scrollAnnouncements 70s linear infinite;
+}
+
+.announcementCard {
+  min-width:480px;
+  max-width: 600px;
+  /*background: rgba(255, 255, 255, 0.7);*/
+  background: rgba(255, 255, 255, 0.6);
+  /*backdrop-filter: blur(px);*/
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+
+  /*border: 1px solid rgba(35, 50, 83, 0.06);*/
+  border-top: 2px solid #d7b15f;  /* или твоето златно */
+  border-radius: 18px;
+  /*padding: 0.75rem 1.5rem;*/
+  font-size: 0.85rem;
+  padding: 0.6rem 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-right: 1rem;
+}
+
+.badge {
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.3rem 0.6rem;
+  border-radius: 9999px;
+  border: 1px solid #233253; /* примерно тъмносиньото ти */
+}
+
+.announcementContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.announcementsTitle {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #55556a;  /* по-мек тон от чисто черно */
+}
+
+.announcementTitle { font-weight: 500; font-size: 0.9rem; }
+
+.announcementText {
+  font-size: 0.85rem;
+}
+
+.announcementLink {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* Можеш да ползваш същите fadeLeft / fadeRight, които вече имаш */
+
+@keyframes scrollAnnouncements {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
 
