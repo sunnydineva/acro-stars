@@ -394,6 +394,10 @@
   transform: translateX(5px);
 }
 
+.mobileSchedule {
+  display: none;
+}
+
 /* Responsive styles */
 @media only screen and (max-width: 1200px) {
   .scheduleContainer {
@@ -432,6 +436,8 @@
   .category h3 {
     font-size: 1.25rem;
   }
+  /* Mobile schedule cards (hidden on desktop) */
+
 }
 
 @media only screen and (max-width: 768px) {
@@ -467,14 +473,28 @@
   }
 
   .allCategories {
-    margin-top: 30px;
-    margin-bottom: 40px;
-    gap: 40px;
-    max-width: 90%;
+    /*margin-top: 30px;*/
+    /*margin-bottom: 40px;*/
+    /*gap: 40px;*/
+    /*max-width: 90%;*/
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;   /* ключово */
+
+    width: 100%;
+    max-width: 520px;       /* същото като mobileSchedule */
+    margin: 40px auto 60px;
+    /*margin-right: 300px;*/
+    padding: 0 12px;        /* същия страничен padding като графика */
+    box-sizing: border-box;
+    gap: 28px;
   }
 
   .category,
   .category:nth-child(even) {
+    max-width: none;
+    margin: 0;
+    box-sizing: border-box;
     flex-direction: column;
     width: 100%;
     padding: 25px 20px;
@@ -517,5 +537,110 @@
   .signupButton {
     padding: 12px 24px;
     font-size: 1rem;
+  }
+}
+
+/* =========================
+   MOBILE: <= 768px
+========================= */
+@media (max-width: 768px) {
+  /* скриваме таблицата на мобилно */
+  .tableWrapper {
+    display: none;
+  }
+
+  .scheduleContainer {
+    width: 100%;
+    padding-top: 16px;
+  }
+
+  /* показваме card-овете */
+  .mobileSchedule {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 0 12px;
+    box-sizing: border-box;
+  }
+
+  .dayCard {
+    background: var(--accent-light);
+    border-radius: 18px;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-top: 3px solid var(--accent-gold);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+
+  .dayTitle {
+    margin: 0;
+    padding: 12px 14px;
+    background: rgba(15, 20, 45, 0.08);
+    color: var(--text-color);
+    font-size: 1.05rem;
+    font-weight: 800;
+    text-align: center;
+  }
+
+  .dayList {
+    list-style: none;
+    margin: 0;
+    padding: 10px 12px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .dayList li {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 10px;
+    align-items: center;
+    padding: 10px 10px;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.55);
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .dayList li span {
+    font-weight: 700;
+    font-size: 0.92rem;
+    color: var(--text-color);
+    white-space: nowrap;
+  }
+
+  .dayList li b {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    font-weight: 700;
+  }
+
+  /* да не е огромен хедърът */
+  .acroTraining {
+    font-size: 1.35rem;
+    padding: 0.9rem 0.8rem;
+  }
+
+  /* CTA бутона на мобилно */
+  .signupButton {
+    width: calc(100% - 24px);
+    justify-content: center;
+    padding: 12px 14px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .dayList li {
+    grid-template-columns: 105px 1fr;
+  }
+  .dayList li span {
+    font-size: 0.88rem;
+  }
+  .dayList li b {
+    font-size: 0.92rem;
   }
 }

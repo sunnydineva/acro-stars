@@ -24,58 +24,109 @@ export default function TrainingsPage() {
         <div className={styles.tableWrapper}>
           <table className={styles.scheduleTable}>
             <thead>
-              <tr className="montserrat-SemiBold-500">
-                <th>Часове</th>
-                <th>Понеделник</th>
-                <th>Вторник</th>
-                <th>Сряда</th>
-                <th>Четвъртък</th>
-                <th>Петък</th>
-              </tr>
+            <tr className="montserrat-SemiBold-500">
+              <th>Часове</th>
+              <th>Понеделник</th>
+              <th>Вторник</th>
+              <th>Сряда</th>
+              <th>Четвъртък</th>
+              <th>Петък</th>
+            </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>10:30 - 12:00</td>
-                <td>Състезатели</td>
-                <td>Състезатели</td>
-                <td>-</td>
-                <td>Състезатели</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td>14:30 - 17:00</td>
-                <td>Състезатели</td>
-                <td>Състезатели</td>
-                <td>-</td>
-                <td>Състезатели</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td>17:00 - 18:00</td>
-                <td>Начинаещи <br /> (5-7г.)</td>
-                <td>-</td>
-                <td>Начинаещи <br /> (5-7г.)</td>
-                <td>-</td>
-                <td>Начинаещи <br /> (5-7г.)</td>
-              </tr>
-              <tr>
-                <td>17:00 - 20:00</td>
-                <td>Състезатели</td>
-                <td>-</td>
-                <td>Състезатели</td>
-                <td>-</td>
-                <td>Състезатели</td>
-              </tr>
-              <tr>
-                <td>18:00 - 19:30</td>
-                <td>Начинаещи <br /> (8-13г.)</td>
-                <td>Подготвителна група</td>
-                <td>Начинаещи <br /> (8-13г.)</td>
-                <td>Подготвителна група</td>
-                <td>Начинаещи <br /> (8-13г.)</td>
-              </tr>
+            <tr>
+              <td>10:30 - 12:00</td>
+              <td>Състезатели</td>
+              <td>Състезатели</td>
+              <td>-</td>
+              <td>Състезатели</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>14:30 - 17:00</td>
+              <td>Състезатели</td>
+              <td>Състезатели</td>
+              <td>-</td>
+              <td>Състезатели</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>17:00 - 18:00</td>
+              <td>Начинаещи <br/> (5-7г.)</td>
+              <td>-</td>
+              <td>Начинаещи <br/> (5-7г.)</td>
+              <td>-</td>
+              <td>Начинаещи <br/> (5-7г.)</td>
+            </tr>
+            <tr>
+              <td>17:00 - 20:00</td>
+              <td>Състезатели</td>
+              <td>-</td>
+              <td>Състезатели</td>
+              <td>-</td>
+              <td>Състезатели</td>
+            </tr>
+            <tr>
+              <td>18:00 - 19:30</td>
+              <td>Начинаещи <br/> (8-13г.)</td>
+              <td>Подготвителна група</td>
+              <td>Начинаещи <br/> (8-13г.)</td>
+              <td>Подготвителна група</td>
+              <td>Начинаещи <br/> (8-13г.)</td>
+            </tr>
             </tbody>
           </table>
+        </div>
+
+      </div>
+
+      {/* Mobile-friendly schedule (shown only on small screens) */}
+      <div className={styles.mobileSchedule}>
+        <div className={styles.dayCard}>
+          <h3 className={styles.dayTitle}>Понеделник</h3>
+          <ul className={styles.dayList}>
+            <li><span>10:30 – 12:00</span><b>Състезатели</b></li>
+            <li><span>14:30 – 17:00</span><b>Състезатели</b></li>
+            <li><span>17:00 – 18:00</span><b>Начинаещи (5–7г.)</b></li>
+            <li><span>17:00 – 20:00</span><b>Състезатели</b></li>
+            <li><span>18:00 – 19:30</span><b>Начинаещи (8–13г.)</b></li>
+          </ul>
+        </div>
+
+        <div className={styles.dayCard}>
+          <h3 className={styles.dayTitle}>Вторник</h3>
+          <ul className={styles.dayList}>
+            <li><span>10:30 – 12:00</span><b>Състезатели</b></li>
+            <li><span>14:30 – 17:00</span><b>Състезатели</b></li>
+            <li><span>18:00 – 19:30</span><b>Подготвителна група</b></li>
+          </ul>
+        </div>
+
+        <div className={styles.dayCard}>
+          <h3 className={styles.dayTitle}>Сряда</h3>
+          <ul className={styles.dayList}>
+            <li><span>17:00 – 18:00</span><b>Начинаещи (5–7г.)</b></li>
+            <li><span>17:00 – 20:00</span><b>Състезатели</b></li>
+            <li><span>18:00 – 19:30</span><b>Начинаещи (8–13г.)</b></li>
+          </ul>
+        </div>
+
+        <div className={styles.dayCard}>
+          <h3 className={styles.dayTitle}>Четвъртък</h3>
+          <ul className={styles.dayList}>
+            <li><span>10:30 – 12:00</span><b>Състезатели</b></li>
+            <li><span>14:30 – 17:00</span><b>Състезатели</b></li>
+            <li><span>18:00 – 19:30</span><b>Подготвителна група</b></li>
+          </ul>
+        </div>
+
+        <div className={styles.dayCard}>
+          <h3 className={styles.dayTitle}>Петък</h3>
+          <ul className={styles.dayList}>
+            <li><span>17:00 – 18:00</span><b>Начинаещи (5–7г.)</b></li>
+            <li><span>17:00 – 20:00</span><b>Състезатели</b></li>
+            <li><span>18:00 – 19:30</span><b>Начинаещи (8–13г.)</b></li>
+          </ul>
         </div>
       </div>
 
