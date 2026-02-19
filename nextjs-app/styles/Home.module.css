@@ -570,26 +570,6 @@
   }
 }
 
-/* responsive */
-@media (max-width: 900px) {
-  .mainFbFeed {
-    padding: 3rem 1.5rem;
-  }
-
-  .fbOverlay {
-    max-width: 100%;
-  }
-
-  .fbBox {
-    max-width: 100%;
-  }
-
-  .heroFbCard {
-    position: static;
-    margin: 1rem auto 0 auto;
-    max-width: 320px;
-  }
-}
 
 /* Partners Section */
 .partnersBar {
@@ -700,50 +680,318 @@
 
 
 /* Responsive */
-@media (max-width: 900px) {
+/*@media (max-width: 900px) {*/
+/*  .featuresGrid {*/
+/*    grid-template-columns: 1fr;*/
+/*  }*/
+
+/*  .featureCard {*/
+/*    text-align: left;*/
+/*  }*/
+/*}*/
+
+/*  !* Responsive styles *!*/
+/*  @media only screen and (max-width: 768px) {*/
+/*    .heroSection {*/
+/*      height: auto;*/
+/*      min-height: 400px;*/
+/*    }*/
+
+/*    .heroContent {*/
+/*      padding: 15px;*/
+/*      max-width: 90%;*/
+/*    }*/
+
+/*    .mainFbFeed {*/
+/*      padding: 2.5rem 1.25rem;*/
+/*      background-size: cover;  !* за по-малки екрани да запълва *!*/
+/*    }*/
+
+/*    .fbBox {*/
+/*      max-width: 100%;*/
+/*    }*/
+/*    !*.heroFbCard {*!*/
+/*    !*  position: static;*!*/
+/*    !*  margin: 1rem auto 0 auto;*!*/
+/*    !*  max-width: 320px;*!*/
+/*    !*}*!*/
+/*    .acroTrails {*/
+/*      position: static;*/
+/*      text-align: center;*/
+/*      margin: 20px 0;*/
+/*    }*/
+
+/*    .fbFeedImageWrapper {*/
+/*      position: static;*/
+/*      margin: 20px auto;*/
+/*      text-align: center;*/
+/*    }*/
+/*  }*/
+
+
+/* default: показва се */
+.heroFbCardMobileHidden {}
+
+/* =========================
+   MOBILE: <= 768px (single source of truth)
+========================= */
+@media (max-width: 768px) {
+
+  .mainFbFeed {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    /* центровка */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.9rem;
+
+    padding: 1.25rem 1rem;
+    box-sizing: border-box;
+  }
+
+  /* HERO */
+  .heroSection {
+    height: auto;
+    min-height: unset;
+    padding: 1.25rem 0 1.75rem;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .heroContent {
+    max-width: 85vw;
+    padding: 1.1rem 1rem;
+    border-radius: 18px;
+
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  .heroElement1,
+  .heroElement3 {
+    font-size: 1.05rem !important;
+    line-height: 1.35;
+    margin-bottom: 0.25rem;
+  }
+
+  .heroElement2 {
+    font-size: 0.65rem !important;
+    line-height: 1.05;
+    margin: 0.2rem 0 0.6rem;
+  }
+
+  .heroElement4 {
+    font-size: 0.98rem !important;
+    line-height: 1.5;
+  }
+
+  /* Primary CTA */
+  .fancyBtn {
+    width: 50%;
+    text-align: center;
+    padding: 12px 16px;
+    border-radius: 999px;
+    margin-top: 0.9rem;
+  }
+
+  .heroFbCardMobileHidden {
+    display: none !important;
+  }
+
+  /* Secondary CTA (новия бутон Facebook) */
+  .heroSecondaryBtn {
+    width: 50%;
+    text-align: center;
+    padding: 12px 16px;
+    border-radius: 999px;
+    margin-top: 0.55rem;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+
+    background: rgba(24, 119, 242, 0.12);
+    border: 1px solid rgba(24, 119, 242, 0.28);
+    color: #1877f2;
+  }
+
+  .heroSecondaryBtn span {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+
+  .heroSecondaryBtn:hover span {
+    transform: translateX(4px);
+  }
+
+  /* FB CARD: махаме floating и го правим под бутоните (ако още го държиш в JSX) */
+  .heroFbCard {
+    position: static;
+    margin: 0.85rem auto 0;
+    max-width: 92vw;
+    width: 92vw;
+    border-radius: 16px;
+  }
+
+  /* FEATURES */
+  .featuresSection {
+    margin: 2.75rem auto 2.25rem;
+    padding: 0 1rem;
+  }
+
+  .featuresTitle {
+    margin-top: 2.2rem;
+    margin-bottom: 1.6rem;
+    font-size: 1.2rem;
+    line-height: 1.25;
+  }
+
   .featuresGrid {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .featureCard {
-    text-align: left;
+    padding: 1.15rem 1.05rem;
+    border-radius: 16px;
+  }
+
+  .featureHeading {
+    font-size: 1.12rem;
+  }
+
+  .featureText {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* FACEBOOK SECTION */
+  .mainFbFeed {
+    width: 100%;
+    max-width: 100%;
+    margin: 2rem auto 2.5rem;
+    padding: 1.25rem 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.9rem;
+  }
+
+  /* заглавието да е горе, центрирано */
+  .acroTrails {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    margin: 0 auto !important;
+
+    width: 100%;
+    height: auto;
+
+    display: block;
+    text-align: center;
+
+
+    font-size: 1.15rem;
+    line-height: 1.25;
+  }
+
+  .facebookSection {
+    width: 100%;
+  }
+
+  .fbBox {
+    width: 100% !important;
+    max-width: 520px !important;
+    padding: 0.9em;
+    margin: 0 0 !important;
+  }
+
+  .followSection {
+    grid-template-columns: 1fr;
+    /*gap: 1.15rem;*/
+    width: 100%;
+    margin-left: 0;
+    margin-right: 30px;
+    padding: 0 0;
+  }
+
+  .followLeft {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box;
+  }
+
+  /* критично: махаме 175% */
+  .mainFbFeed {
+    width: 100%;
+    max-width: 100%;
+    /*margin: 2.25rem auto 2.75rem;*/
+    /*padding: 1.25rem 1rem;*/
+  }
+
+  .acroTrails {
+    position: static;
+    left: auto;
+    top: auto;
+    width: auto;
+    height: auto;
+    margin: 0 0 0.65rem 0;
+    text-align: center;
+    font-size: 1.15rem;
+  }
+
+  /* ANNOUNCEMENTS */
+  .announcementsBar {
+    max-width: 100%;
+    margin: 1rem 1rem 1.25rem;
+    border-radius: 18px;
+  }
+
+  .announcementCard {
+    min-width: 280px;
+    max-width: 320px;
+    padding: 0.7rem 0.85rem;
+    border-radius: 16px;
+  }
+
+  .announcementTitle {
+    font-size: 0.92rem;
+  }
+
+  .announcementText {
+    font-size: 0.85rem;
+    line-height: 1.35;
+  }
+
+  .fadeLeft,
+  .fadeRight {
+    width: 40px;
   }
 }
 
-  /* Responsive styles */
-  @media only screen and (max-width: 768px) {
-    .heroSection {
-      height: auto;
-      min-height: 400px;
-    }
+/* =========================
+   SMALL PHONES: <= 390px
+========================= */
+@media (max-width: 390px) {
+  .heroElement2 { font-size: 1.8rem !important; }
+  .heroContent { padding: 1.05rem 0.9rem; }
 
-    .heroContent {
-      padding: 15px;
-      max-width: 90%;
-    }
-
-    .mainFbFeed {
-      padding: 2.5rem 1.25rem;
-      background-size: cover;  /* за по-малки екрани да запълва */
-    }
-
-    .fbBox {
-      max-width: 100%;
-    }
-    /*.heroFbCard {*/
-    /*  position: static;*/
-    /*  margin: 1rem auto 0 auto;*/
-    /*  max-width: 320px;*/
-    /*}*/
-    .acroTrails {
-      position: static;
-      text-align: center;
-      margin: 20px 0;
-    }
-
-    .fbFeedImageWrapper {
-      position: static;
-      margin: 20px auto;
-      text-align: center;
-    }
+  .announcementCard {
+    min-width: 250px;
+    max-width: 280px;
   }
+}

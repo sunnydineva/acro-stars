@@ -113,10 +113,15 @@ export default function Home() {
             <Link href="/about" className={`${styles.fancyBtn} ${styles.heroElement} ${styles.heroElement5}`}>
               Научи повече <span>→</span>
             </Link>
+
+            <Link href="#facebook" className={styles.heroSecondaryBtn}>
+              Facebook <span>→</span>
+            </Link>
+
           </div>
 
           {/* MINI Facebook card в хиро-то */}
-          <div className={`${styles.heroFbCard} ${styles.heroElement} ${styles.heroElement6}`}>
+          <div className={`${styles.heroFbCard} ${styles.heroElement} ${styles.heroElement6} ${styles.heroFbCardMobileHidden}`}>
             <div className={styles.heroFbHeaderRow}>
               <div className={styles.heroFbLogoCircle}>
                 <span className={styles.heroFbLogoLetter}>f</span>
