@@ -43,7 +43,7 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.name || !formData.email || !formData.message || !formData.date) {
+    if (!formData.name || !formData.message || !formData.date) {
       alert('Моля, попълнете всички полета преди да изпратите формата.');
       return;
     }
@@ -143,19 +143,19 @@ export default function ContactPage() {
                   />
                 </div>
 
-                <div className={styles.formField}>
-                  <label htmlFor="date">Предпочитана дата</label>
-                  <input
-                    type="date"
-                    id="date"
-                    name="date"
-                    value={formData.date}
-                    onChange={handleChange}
-                    min={minDate}
-                    max={maxDate}
-                    required
-                  />
-                </div>
+                {/*<div className={styles.formField}>*/}
+                {/*  <label htmlFor="date">Предпочитана дата</label>*/}
+                {/*  <input*/}
+                {/*    type="date"*/}
+                {/*    id="date"*/}
+                {/*    name="date"*/}
+                {/*    value={formData.date}*/}
+                {/*    onChange={handleChange}*/}
+                {/*    min={minDate}*/}
+                {/*    max={maxDate}*/}
+                {/*    required*/}
+                {/*  />*/}
+                {/*</div>*/}
 
                 <div
                   className={`${styles.formField} ${styles.buttonField} ${styles.fullRow}`}
