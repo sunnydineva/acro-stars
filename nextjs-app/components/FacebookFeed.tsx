@@ -3,13 +3,14 @@
 import Script from "next/script";
 import React from "react";
 import styles from "../styles/Home.module.css";
-import Bg from "@/public/images/fb-feed-background.png";
+// import Bg from "@/public/images/fb-feed-background.png";
 
 export default function FacebookFeed() {
   return (
     <>
       <section className={styles.mainFbFeed}
-               style={{ "--fb-bg-image": `url(${Bg.src})` } as React.CSSProperties}>
+               style={{ "--fb-bg-image": "url('/images/fb-feed-background.png')" } as React.CSSProperties}
+      >
         <div className={`montserrat-ExtraBold-title ${styles.acroTrails}`}>
           По следите <br/>
           на отбора

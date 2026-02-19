@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import styles from '../../styles/Contact.module.css';
-import BackgroundImage from "@/public/images/resourcesWeb3/graphic-background-web3.png";
+// import BackgroundImage from "@/public/images/resourcesWeb3/graphic-background-web3.png";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -90,7 +90,7 @@ export default function ContactPage() {
         <Image
           alt="Decorative background"
           className={styles.backgroundUnderlay}
-          src={BackgroundImage}
+          src="/images/resourcesWeb3/graphic-background-web3.png"
           width={800}
           height={800}
         />

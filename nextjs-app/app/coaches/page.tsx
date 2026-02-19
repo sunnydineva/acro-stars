@@ -4,8 +4,8 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import styles from '../../styles/Coaches.module.css';
 
-import GeriImg from "@/public/images/draft/geri.jpg";
-import DesiImg from "@/public/images/draft/desi.jpg";
+// import GeriImg from "@/public/images/draft/geri.jpg";
+// import DesiImg from "@/public/images/draft/desi.jpg";
 import ThunderLeftFirst from "@/public/images/resourcesWeb2/thunder-left-first-web2.png";
 import ThunderLeftSecond from "@/public/images/resourcesWeb2/thunder-left-second-web2.png";
 import ThunderRightFirst from "@/public/images/resourcesWeb2/thunder-right-first-web2.png";
@@ -64,7 +64,7 @@ export default function CoachesPage() {
                 <Image
                   alt="Гергана Калоянова"
                   className={styles.trainerImg}
-                  src={GeriImg}
+                  src="/public/images/draft/geri.jpg"
                   width={250}
                   height={250}
                 />
@@ -84,7 +84,7 @@ export default function CoachesPage() {
                 <Image
                   alt="Десислава Иванова"
                   className={styles.trainerImg}
-                  src={DesiImg}
+                  src="/public/images/draft/desi.jpg"
                   width={250}
                   height={250}
                 />
