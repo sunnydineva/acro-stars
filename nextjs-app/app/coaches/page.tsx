@@ -64,7 +64,7 @@ export default function CoachesPage() {
                 <Image
                   alt="Гергана Калоянова"
                   className={styles.trainerImg}
-                  src="/public/images/draft/geri.jpg"
+                  src="/images/draft/geri.jpg"
                   width={250}
                   height={250}
                 />
@@ -84,7 +84,7 @@ export default function CoachesPage() {
                 <Image
                   alt="Десислава Иванова"
                   className={styles.trainerImg}
-                  src="/public/images/draft/desi.jpg"
+                  src="/images/draft/desi.jpg"
                   width={250}
                   height={250}
                 />
