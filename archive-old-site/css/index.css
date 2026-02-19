@@ -1,0 +1,468 @@
+.main-title{
+  padding-left: 86px;
+}
+
+/*.fancy-btn svg {*/
+/*  margin-left: 8px;*/
+/*  transition: transform 0.3s ease;*/
+/*}*/
+
+/*.fancy-btn:hover svg {*/
+/*  transform: translateX(4px);*/
+/*}*/
+
+.hero-section img{
+  opacity: 0.21;
+}
+
+.hero-section {
+  position: relative;
+  display: flex;
+  height: 800px;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-section::before{
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../resources/gallery/heroes/as-2.jpg");
+  background-position: top center;
+  opacity: 0.21;
+}
+
+.hero-bg img {
+  position: absolute;
+  /*height: 100%;*/
+  /*object-fit: cover;*/
+  filter: brightness(60%); /* прави снимката по-тъмна за контраст */
+  z-index: 1;
+}
+
+.hero-background-slider {
+  /*display: flex;*/
+  /*flex-direction: row;*/
+  /*position: relative;*/
+  /*z-index: 1;*/
+  width: 100%;
+
+  position: relative;
+  /*height: 100vh;*/
+  overflow: hidden;
+  color: white;
+}
+
+.bg-slide {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: top center;
+  opacity: 0;
+  animation: fadeSlider 15s infinite;
+}
+
+.slide1 {
+  background-image: url("../resources/gallery/heroes/as-2.jpg");
+  animation-delay: 0s;
+}
+
+.slide2 {
+  background-image: url("../resources/gallery/heroes/medals.jpg");
+  animation-delay: 5s;
+}
+
+.slide3 {
+  background-image: url("../resources/gallery/heroes/certificate.jpg");
+  animation-delay: 10s;
+}
+
+.slide1 .slide2 .slide3{
+  opacity: 0.21;
+}
+
+@keyframes fadeSlider {
+  0% { opacity: 0; }
+  5% { opacity: 1; }
+  30% { opacity: 1; }
+  35% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/*.hero-content {*/
+/*  position: relative;*/
+/*  z-index: 10;*/
+/*  text-align: center;*/
+/*  top: 50%;*/
+/*  transform: translateY(-50%);*/
+/*  padding: 2rem;*/
+/*}*/
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  /*width: 100%;*/
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-content .subtitle {
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.hero-content .tagline {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.fancy-btn {
+  background-color: var(--star-blue);
+  color: var(--star-silver);
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.fancy-btn:hover {
+  /*background-color: var(--star-gold);*/
+  transform: scale(1.05);
+  /*animation: shine-once 3s linear;*/
+}
+
+.hero-content {
+  top: 30%;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*=============== 🟣 START trainers ===========================*/
+.main-trainers{
+  display: flex;
+  flex-wrap: wrap; /*align-content: center;*/
+  align-content: center;
+  justify-content: center;
+  gap: 113px; /*105 + 8- 10px outside every circle*/
+  margin-top: 50px;
+}
+
+.trainer-block{
+  display: flex;
+  /*flex-direction: column; - deactivated for /*align-content: center;*/
+  align-content: center;
+  flex-wrap: wrap; /*align-content: center;*/
+  justify-content: center;
+  width: 370px;
+}
+
+.trainer-img-wrapper{
+  padding: 12px;
+  display: flex;
+  width: 350px;
+  height: 350px;
+  /*justify-content: center;*/
+  /*position: relative;*/
+  margin-bottom: 20px;
+  border-radius: 100%;
+  border: 8px solid #333366;
+}
+
+.trainer-img-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.trainer-img{
+  /*border-radius: 100%;*/
+  width: 350px;
+  height: auto;
+  transition: transform 0.5s ease;
+  object-fit: cover;
+}
+
+.trainer-block:hover .trainer-img{
+  transform: scale(1.1);
+}
+
+.trainer-block:hover .trainer-img-wrapper{
+  border: 8px solid var(--star-gold);
+  /*border: 8px solid var(--star-silver);*/
+  animation: border-color-change 2s infinite alternate;
+}
+
+.trainer-block:hover .trainer-title{
+  color: var(--star-gold); /* резервен цвят */
+  background: linear-gradient(
+    to right,
+    var(--text-color) 20%,
+    #fff 60%,
+    var(--star-silver)  63%,
+    #b89e4f 90%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shine 10s linear;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.3s ease;
+  padding: 0 20px;
+  background-color: #f9f9f9;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+.accordion-content.open {
+  max-height: 500px; /* Достатъчно място за текста */
+  padding: 20px;
+}
+
+.accordion-content h2 {
+  margin-top: 0;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.accordion-content p, .accordion-content ul {
+  margin: 10px 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+@keyframes borderColorChange {
+
+  0% {
+    border-color: var(--star-blue);
+  }
+  100% {
+    border-color: var(--star-gold);
+  }
+}
+
+.trainer-title{
+  display: flex;
+  justify-content: center;
+  color: var(--text-color);
+  width: 370px;
+}
+
+/* 🟣 mobile */
+@media (max-width: 768px) {
+  .main-trainers{
+    /*flex-direction: column; !* вероятно ще останат row, но всичко трябва да се преоразмери *!*/
+  }
+}
+/* ==================== 🔚 END: trainers ==================== */
+
+/*=============== 🟣 START fb-feed ===========================*/
+.main-fb-feed{
+  position: relative;
+  width: var(--main-width);
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.main-fb-feed img{
+  /*width: 900px;*/
+  width: 900px;
+  height: auto;
+  display: block;
+  z-index: 2;
+}
+
+.fb-box {
+  position: absolute;
+  top: 10%;
+  left: 25%;
+  transform: translate(-50%, 0);
+  z-index: 3;
+}
+
+.fb-page{
+  width: 600px;
+  height: 200px;
+}
+
+.acro-trails{
+  position: absolute;
+  z-index: 3;
+  top: 40%; left: 45%;
+
+
+  background: linear-gradient(
+    to right,
+    var(--text-color)20%,
+    #f3cf6e 40%,
+    #fff 60%,
+    #b89e4f 80%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shine 15s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+.pulse-hover {
+  animation: pulse 10s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+}
+
+.pulse-hover:hover {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.01);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* ==================== 🔚 END: fb-feed ====================== */
+
+/* ==================== 🤝 НАЧАЛО: partner-bar =============== */
+.partners-bar {
+  height: 200px;
+  width: var(--main-width);
+  display: flex;
+  flex-wrap: wrap; /*align-content: center;*/
+  align-content: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--body-bg);
+}
+
+.partners-track {
+  display: flex;
+  gap: 40px;
+  animation: scroll-logos 30s linear infinite;
+}
+
+.partners-bar:hover .partners-track {
+  animation-play-state: paused;
+}
+
+.partners-track img {
+  width: 100px;
+  height: auto;
+  flex-shrink: 0;
+  border-radius: 5px;
+  box-shadow: 0px 0.42vh 0.83vh 0px var(--star-blue);
+  transition: transform 0.5s ease;
+}
+
+.partners-track img:hover{
+  transform: scale(1.1);
+}
+
+.fade-left,
+.fade-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.fade-left {
+  left: 0;
+  background: linear-gradient(to right, var(--body-bg), transparent);
+}
+
+.fade-right {
+  right: 0;
+  background: linear-gradient(to left, var(--body-bg), transparent);
+}
+
+@keyframes scroll-logos {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* 🟣 mobile */
+@media (max-width: 768px) {
+  .partner-slider {
+    gap: 30px;
+    animation-duration: 30s; /* по-бавно въртене */
+  }
+
+  .partner-slider img {
+    height: 40px;
+  }
+}
+/* ==================== 🔚 КРАЙ: partner-bar ================= */
+
+/* ==================== 🔚 END: fb-feed ====================== */
+
+
+
+
+
+*, ::after, ::before{
+  box-sizing: border-box;
+}

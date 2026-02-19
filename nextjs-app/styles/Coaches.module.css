@@ -1,16 +1,28 @@
 /* Coaches page styles */
 
-.mainTitle {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.mainTitle h1 {
-  font-size: 32px;
-  color: var(--text-color);
-}
+/*.titleShiny {*/
+/*  background: linear-gradient(*/
+/*    to right,*/
+/*    var(--text-color) 20%,*/
+/*    var(--star-yellow) 40%,*/
+/*    #fff 60%,*/
+/*    var(--star-gold) 80%*/
+/*  );*/
+/*  background-size: 200% auto;*/
+/*  background-clip: text;*/
+/*  -webkit-background-clip: text;*/
+/*  color: transparent;*/
+/*  animation: shine 15s linear infinite !important;*/
+/*  will-change: background-position;*/
+/*  display: inline-block; !* Ensure the element has layout *!*/
+/*}*/
 
 .titleShiny {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  margin-bottom: 20px;
   background: linear-gradient(
     to right,
     var(--text-color) 20%,
@@ -24,6 +36,39 @@
   color: transparent;
   animation: shine 15s linear infinite;
 }
+
+@keyframes shine {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+.teamIntro {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  padding: 20px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.teamIntro p {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.mainTitle {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.mainTitle h1 {
+  font-size: 32px;
+  color: var(--text-color);
+}
+
 
 .mainTrainers {
   display: flex;
@@ -103,29 +148,51 @@
   width: 370px;
 }
 
+.coachInfoContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  transition: all 0.5s ease-in-out;
+}
+
 .accordionContent {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto 40px;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  height: 0;
+  opacity: 0.7; /* Default visible state with reduced opacity */
+  max-height: 1500px; /* Always visible */
   overflow: hidden;
-  transition: all 0.5s ease;
+  transition: all 0.4s ease-in-out, order 0.5s ease-in-out;
+  position: relative;
+  border-left: 4px solid transparent;
 }
 
-.accordionContent.open {
+/* Highlighted state for coach info */
+.accordionContent.highlighted {
   opacity: 1;
-  height: auto;
-  padding: 20px;
-  margin-bottom: 40px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-left: 4px solid var(--star-gold);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
 }
 
+/* Special style for Gergana's info */
+.accordionContent[id="gergana-info"] {
+  transition: all 0.5s ease-in-out;
+}
 
+/* Special style for Gergana's info when highlighted */
+.accordionContent[id="gergana-info"].highlighted {
+  transition-delay: 0.05s; /* Slight delay for smoother appearance */
+}
+
+/* For backward compatibility */
 .accordionContent.open {
-  max-height: 500px;
+  opacity: 0.7; /* Same as default state */
+  max-height: 1500px;
   padding: 20px;
   margin-bottom: 40px;
 }
@@ -133,6 +200,13 @@
 .accordionContent h2 {
   font-size: 24px;
   margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+.accordionContent h3 {
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
   color: var(--text-color);
 }
 
@@ -221,14 +295,6 @@
   z-index: 2;
 }
 
-@keyframes shine {
-  0% {
-    background-position: 200% center;
-  }
-  100% {
-    background-position: -200% center;
-  }
-}
 
 @keyframes moveOnAngleLeft {
   from {
@@ -263,6 +329,18 @@
 
 /* Responsive styles */
 @media only screen and (max-width: 768px) {
+  .teamIntro {
+    padding: 15px;
+  }
+
+  .teamIntro h2 {
+    font-size: 24px;
+  }
+
+  .teamIntro p {
+    font-size: 15px;
+  }
+
   .mainTrainers {
     flex-direction: column;
     align-items: center;
@@ -273,7 +351,34 @@
     max-width: 300px;
   }
 
+  /* Mobile styles for coach info container */
+  .coachInfoContainer {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* Mobile styles for accordion content */
+  .accordionContent {
+    max-height: 2000px; /* Increased for mobile to ensure all content is visible */
+    padding: 15px;
+    margin-bottom: 30px;
+  }
+
+  /* Mobile styles for highlighted state */
+  .accordionContent.highlighted {
+    transform: translateY(-3px); /* Smaller shift on mobile */
+    border-left-width: 3px; /* Slightly thinner border on mobile */
+  }
+
   .accordionContent h2 {
     font-size: 20px;
+  }
+
+  .accordionContent h3 {
+    font-size: 18px;
+  }
+
+  .accordionContent p {
+    font-size: 15px;
   }
 }

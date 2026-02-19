@@ -1,0 +1,214 @@
+.path-container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+
+.thunder-container {
+  position: relative;
+  width: 800px;
+  height: 800px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: gold;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: moveOnAngle 2s linear infinite;
+}
+
+.thunder {
+  /*width: 10px;*/
+  /*height: 10px;*/
+  /*background-color: gold;*/
+  /*border-radius: 50%;*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: moveOnAngle 2s linear infinite;
+}
+
+@keyframes moveOnAngle {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(200px, 200px); /* 346px ≈ 200 * tan(60°) */
+  }
+}
+
+
+
+
+.lightning-wrapper{
+  position: relative;
+  width: 50px; /* реален */
+  height: 800px;
+  overflow: visible;
+}
+
+.lightning {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-origin: center center; /* или top left – зависи как е ориентирана чертичката */
+  animation: slideOnAngle 6s linear infinite;
+}
+
+@keyframes slideOnAngle {
+  0% {
+    transform: rotate(-36deg) translate(0px, 0px);
+  }
+  100% {
+    transform: rotate(-36deg) translateX(0) translateY(220px); /* работи прилично */
+  }
+}
+
+
+/*анимация border*/
+.main-trainers{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  gap: 80px; /*100 - 10px outside every circle*/
+  margin-top: 50px;
+}
+
+.trainer-block{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  width: 370px;
+  position: relative;
+}
+
+.trainer-img-wrapper{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 20px;
+  /*background-color: pink;*/
+}
+
+.trainer-circle{
+  border-width: 8px;
+  border-style: solid;
+  border-color: #333366;
+  border-image: initial;
+  animation: borderColorChange 2s infinite alternate;
+}
+
+.trainer-img{
+  position: relative;
+  padding: 12px;
+  border-radius: 100%;
+  transition: 0.2s cubic-bezier(0.98, 0.57, 1, 1);
+  width: 350px;
+  height: auto;
+}
+
+.trainer-img img:hover{
+  transform: scale(1.1);
+}
+
+*, ::after, ::before{
+  box-sizing: border-box;
+}
+
+.trainer-title{
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes border-color-change {
+
+  0%{
+    border-color: var(--star-blue);
+  }
+  /*90%{*/
+  /*  border-color: var(--star-silver);*/
+  /*}*/
+  /*70%{*/
+  /*  border-color: var(--star-yellow);*/
+  /*}*/
+  100%{
+    border-color: var(--star-gold);
+  }
+}
+/* 🔚 END анимация border */
+
+
+/*  BEGIN анимация завъртане */
+.rotating-png {
+  width: 350px; /* ако няма размер - обикаля в екрана*/
+  animation: rotateme 3s infinite linear;
+}
+
+@keyframes rotateme {
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: rotate(180deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+/* 🔚 END анимация завъртане */
+
+
+.rotating-png-to-circle-border {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  padding: 8px; /* дебелината на бордъра */
+  background: conic-gradient(#a07c30, #21213d); /* градиент по избор */
+  -webkit-mask:
+    radial-gradient(farthest-side, transparent calc(100% - 8px), black 0);
+  mask:
+    radial-gradient(farthest-side, transparent calc(100% - 8px), black 0);
+}
+
+.rotating-png-to-circle-border-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: white; /* или картинка, ако искаш */
+  animation: rotateme 3s infinite linear;
+}
+
+@keyframes font-color-change {
+
+  0%{
+    color: var(--star-blue);
+  }
+  /*90%{*/
+  /*  border-color: var(--star-silver);*/
+  /*}*/
+  /*70%{*/
+  /*  border-color: var(--star-yellow);*/
+  /*}*/
+  100%{
+    color: var(--star-gold);
+  }
+}
+
+
+
+
+

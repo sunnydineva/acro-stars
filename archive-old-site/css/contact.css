@@ -1,0 +1,300 @@
+.contact-wrapper {
+  display: flex;
+  justify-content: center; /* Центрираме съдържанието в контейнера */
+  align-items: center;
+  width: 80%;  /* Пълна ширина на контейнера */
+  max-width: 1400px;  /* Ограничаваме максималната ширина на .schedule-container */
+  min-height: 100vh; /* гарантира, че винаги заема поне височината на екрана */
+  margin: 0 auto;  /* Центрираме .schedule-container по същия начин, както .main-content */
+  padding-top: 150px;  /* Разстояние отгоре */
+  box-sizing: border-box;
+  position: relative;
+ /* background: red; /* Примерен цвят, може да се премахне*/
+ z-index: 1;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;  /* Подреждаме формата вертикално */
+  justify-content: flex-start;
+  align-items: center;
+  transform: none;
+  background-color: rgba(202, 202, 203, 0.6); /* същият цвят, но с прозрачност */
+  backdrop-filter: blur(5px); /* по избор: замъгляване за по-як ефект */
+  width: 48%;  /* Занимаваме се с пълната ширина на контейнера */
+  max-width: 1400px;  /* Ограничаваме максималната ширина на формата */
+  padding: 30px;  /* Отстояние около формата */
+  /*background-color: #cacacb;  /* фон на контейнера */
+  border-radius: 8px;  /* Закръглени ръбове */
+  box-shadow: 0 4px 10px var(--star-blue);  /* Лека сянка за по-добър контраст */
+  margin-bottom: 40px;  /* Отстояние от долната част на контейнера */
+  box-sizing: border-box;  /* Уверяваме се, че padding-а не променя ширината */
+  z-index: 2;
+  position: relative;
+}
+
+/* Допълнителни стилове за елементите вътре в контейнера */
+.contact-container label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #21213d;  /* Цвят на текста */
+}
+
+.contact-container input, .contact-container textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;  /* Отстояние между полетата */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #21213d;
+  background-color: #ccc;
+  box-sizing: border-box;  /* Уверяваме се, че padding не променя ширината */
+}
+
+.contact-container input[type="date"] {
+  padding: 10px;  /* Малко по-малко падинг за date полето */
+}
+
+/* Стил за бутона */
+.contact-container button {
+   display: block; /* за да работи margin: auto */
+    margin: 40px auto; /* центрира хоризонтално */
+    width: 140px; /* или каквото искаш */
+    background-color: var(--star-blue);
+    color: var(--star-silver);
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+.contact-container:hover {
+   /* transform: scale(1.03); /* Увеличаваме малко размера на формата */
+    /*box-shadow: 0 8px 20px var(--star-blue);  /* Добавяме по-голяма сянка */
+   /* background-color: #cacacb;  /* Променяме фона при hover (може да промениш цвета) */
+   /* transition: all 0.3s ease-in-out;  /* Гладка анимация за трансформациите */
+    /*color: var(--nav-hover-color);*/
+}
+
+.contact-container button:hover {
+    color: var(--nav-hover-color);
+    transform: scale(1.05);
+   /* box-shadow: 0px 8px 15px var(--star-blue);*/
+
+}
+
+/* Промяна на текста в input полета и textarea при ховър върху формата */
+.contact-container input:hover,
+.contact-container textarea:hover {
+   color: var(--nav-hover-color); /* Променяме цвета на текста на input полетата и textarea на например червено */
+}
+/* Ховър ефект за лейбълите */
+.contact-container label:hover {
+    color: var(--nav-hover-color);  /* Променяме цвета на текста на лейбълите при ховър на червено (или друг цвят) */
+    cursor: pointer; /* Променяме курсора при ховър върху лейбълите */
+}
+
+/* Промяна на цвета на плейсхолдърите при ховър върху input и textarea */
+.contact-container input:hover::placeholder,
+.contact-container textarea:hover::placeholder {
+    color: var(--nav-hover-color); /* Променяме цвета на плейсхолдъра на червено (може да е друг цвят) */
+}
+
+/* Промяна на плейсхолдър при фокус */
+.contact-container input:focus::placeholder,
+.contact-container textarea:focus::placeholder {
+    color: var(--nav-hover-color); /* Променяме цвета на плейсхолдъра при фокус (когато полето е активно) */
+}
+
+/* Промяна на фона на input и textarea при фокус */
+.contact-container input:focus,
+.contact-container textarea:focus {
+    background-color: #cacacb; /* Променяме на желан цвят (може да е #f0f0f0 или какъвто и да е твой цвят) */
+    border-color: #cacacb; /* Променяме рамката при фокус, може да е твоят желан цвят */
+    outline: none; /* Премахваме синия контур на фокус */
+}
+
+.thank-you-message-container {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--star-blue);
+  color: var(--star-silver);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  z-index: 3;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.background-underlay {
+  position: absolute;
+  top: 100px; /* леко по-високо */
+  left: 50%; /* центрирано спрямо родителя */
+  transform: translateX(-50%) rotate(-4deg); /* малък наклон */
+  width: 62%; /* да не излиза извън формата */
+  height: 85%;
+  z-index: 0; /* стои зад формата */
+  pointer-events: none;
+}
+
+
+.contact-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px; /* вместо top: 30px */
+  width: 100%;
+  text-align: center;
+}
+
+.acro-contact {
+  background: linear-gradient(
+    to right,
+    var(--text-color) 20%,
+    #f3cf6e 40%,
+    #fff 60%,
+    #b89e4f 80%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shine 15s linear infinite;
+  font-size: 2.5rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.map-container {
+  margin-top: 100px;
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.map-title {
+   font-size: 18px;
+   font-weight: 600;
+   color: #21213d;
+   text-align: center;
+   margin-top: 100px;
+   margin-bottom: 8px;
+   font-family: 'Montserrat', sans-serif;
+ }
+
+
+.map-description {
+  font-size: 20px;
+  font-weight: 400;
+  color: #555;
+  text-align: center;
+  margin-bottom: 25px;
+  line-height: 1.5;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.thunder-animations-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1400px;
+    height: 100%;
+    pointer-events: none;
+    overflow: visible;
+}
+
+/* === ЛЕВИ ЛИНИИ === */
+.left-lines {
+    position: absolute;
+    left: -110px;
+    top: -33px;
+    width: 40px;
+    opacity: 0;
+    transform-origin: left center;
+    /*transform: rotate(-38.67deg);*/
+    animation: moveOnAngleLeft 0.7s linear forwards;
+    z-index: 1;
+}
+
+.left-lines.second {
+    left: -260px;
+    top: -23px;
+    width: 40px;
+    opacity: 0;
+    transform-origin: left center;
+    /*transform: rotate(-35.64deg);*/
+    animation: moveOnAngleLeft 0.7s linear forwards;
+    animation-delay: 0.3s;
+}
+
+/* === ДЕСНИ ЛИНИИ === */
+.right-lines {
+    position: absolute;
+    right: -300px; /* променено от -40px → вътре в екрана */
+    top: -250px;
+    width: 40px;
+    height: 1000px;
+    opacity: 0;
+    transform-origin: right center;
+    /*transform: rotate(44.09deg);*/
+    animation: moveOnAngleRight 0.7s linear forwards;
+    z-index: 1;
+}
+
+.right-lines.second {
+    right: -200px; /* променено от -180px → вътре в екрана */
+    top: -40px;
+    width: 40px;
+    opacity: 0;
+    transform-origin: right center;
+    /*transform: rotate(43.92deg);*/
+    animation: moveOnAngleRight 0.7s linear forwards;
+    animation-delay: 0.3s;
+    z-index: 2;
+}
+
+/* === АНИМАЦИИ === */
+@keyframes moveOnAngleLeft {
+  from {
+    opacity: 0;
+    transform: translate(0px, 0px) rotate(-38.67deg);
+  }
+  to {
+    opacity: 1;
+    transform: translate(90px, 110px) rotate(-38.67deg);
+  }
+}
+
+@keyframes moveOnAngleRight {
+  from {
+    opacity: 0;
+    transform: translate(0px, 0px) rotate(42.61deg);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-60px, 110px) rotate(42.61deg); /* беше -90px → вече -60px */
+  }
+}
+
+
+.footer-line {
+  margin-top: 290px; /* или колкото трябва, за да не се застъпва */
+}

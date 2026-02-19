@@ -1,0 +1,161 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/thunders.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/animation-general.css">
+  <meta name="description" content="">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:image:alt" content="">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#fafafa">
+
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+<!--background-image: url("../img/background.png");-->
+<!--background-size: cover;-->
+<script src="js/app.js"></script>
+<script src="js/header.js"></script>
+
+<header>
+  <div id="header" class="header-wrapper">
+    <!-- съдържание на хедъра -->
+  </div>
+</header>
+
+<div class="main-bar-gradient"></div>
+
+<main>
+  <div class="main-content">
+
+    <!--     Секция 1: Начално представяне -->
+    <!--    <section class="hero-section"  STYLE="background-image: url(resources/gallery/heroes/as.jpg); opacity: 0.21">-->
+    <!--    <section class="hero-section"  >-->
+    <!--      <div class="hero-background">-->
+    <!--        <div class="hero-content">-->
+    <!--          <h1 class="montserrat-ExtraBold-title">Акро Старс – Варна</h1>-->
+    <!--          <p class="subtitle">Клуб по спортна акробатика с голямо сърце</p>-->
+    <!--          <p class="tagline">Тук децата се учат да летят – с усмивка, дисциплина и вдъхновение.</p>-->
+    <!--          <a href="#about" class="fancy-btn">Научи повече <span>→</span></a>-->
+    <!--        </div>-->
+    <!--      </div>-->
+
+    <!--    </section>-->
+
+    <!--     Секция 2: Нашият екип-->
+    <section class="">
+      <div class="main-title">
+        <h1 class="montserrat-SemiBold-500">Сърцата зад успеха:</h1>
+      </div>
+
+      <div class="main-trainers">
+        <div class="trainer-block" onclick="toggleAccordion('gergana-info')">
+          <div class="trainer-img-wrapper">
+            <div class="trainer-img-inner">
+              <img alt="Гергана Калоянова" class="trainer-img" src="resources/draft/geri.jpg" />
+            </div>
+          </div>
+          <div class="trainer-title montserrat-Caption">Гери</div>
+          <div class="trainer-title montserrat-Caption">Треньор. Ментор. Вдъхновител.</div>
+        </div>
+
+        <div class="trainer-block" onclick="toggleAccordion('desi-info')">
+          <div class="trainer-img-wrapper">
+            <div class="trainer-img-inner">
+              <img alt="Десислава Иванова" class="trainer-img" src="resources/draft/desi.jpg" />
+            </div>
+          </div>
+          <div class="trainer-title montserrat-Caption">Деси</div>
+          <div class="trainer-title montserrat-Caption">Ритъм. Стил. Дисциплина.</div>
+        </div>
+      </div>
+
+      <!-- Accordion content -->
+      <div id="gergana-info" class="accordion-content">
+        <h2>👩‍🏫 Гергана Неделчева Калоянова – Треньор</h2>
+        <p><em>"Когато децата се усмихват след всяка тренировка – знам, че съм си свършила работата."</em></p>
+        <ul>
+          <li>📍 Родом от Ямбол, състезател в клуб „Тунджа“</li>
+          <li>🎓 НСА „Васил Левски“, специалност треньор</li>
+          <li>🎓 Магистър по начална педагогика – Шумен</li>
+          <li>🥇 Многократен медалист от републикански първенства</li>
+          <li>🚀 Основател на Клуб „Акро Старс“ от 2019 г.</li>
+        </ul>
+      </div>
+
+      <div id="desi-info" class="accordion-content">
+        <h2>💃 Десислава Иванова – Хореограф</h2>
+        <p><em>"Танцът е начин децата да разкажат своята история – без думи, но с цялото си сърце."</em></p>
+        <ul>
+          <li>📍 Родена в Пазарджик, започва с гимнастика и танци</li>
+          <li>🎭 Солистка в ансамбъл „Албена“</li>
+          <li>🌟 Балет „Diva“ – участия в концерти и ТВ</li>
+          <li>🏆 Хореограф с награди от танцови конкурси</li>
+          <li>👩‍👧‍👦 Майка на три деца, вдъхновена от танца</li>
+        </ul>
+      </div>
+    </section>
+
+
+    <div class="main-bar-gradient"></div>
+  </div>
+</main>
+
+<div class="thunder-animation-wrapper">
+  <div class="thunder-animations-container">
+    <img src="resources/resourcesWeb2/thunder-left-first-web2.png" class="left-lines" alt="Left Lines"/>
+    <img src="resources/resourcesWeb2/thunder-left-second-web2.png" class="left-lines second"
+         alt="Left Lines Second"/>
+    <img src="resources/resourcesWeb2/thunder-right-first-web2.png" class="right-lines" alt="Right Lines">
+    <img src="resources/resourcesWeb2/thunder-right-second-web2.png" class="right-lines second"
+         alt="Right Lines Second">
+  </div>
+</div>
+
+<script>
+  function toggleAccordion(id) {
+    const el = document.getElementById(id);
+    const isOpen = el.classList.contains('open');
+
+    // Затвори всички отворени акордеони
+    document.querySelectorAll('.accordion-content').forEach(item => {
+      item.classList.remove('open');
+    });
+
+    // Ако не е бил отворен, отвори го
+    if (!isOpen) {
+      el.classList.add('open');
+    }
+  }
+</script>
+
+
+<footer>
+  <div class="footer-wrapper">
+    <!-- съдържание на футъра -->
+    съдържание на футъра
+  </div>
+</footer>
+
+</body>
+</html>

@@ -8,16 +8,15 @@
   width: 80%;
   max-width: 1400px;
   margin: 0 auto;
-  padding-top: 150px;
+  padding-top: 40px;
   box-sizing: border-box;
   position: relative;
 }
 
 .tableWrapper {
   position: relative;
-  width: 78%;
-  max-width: 1200px;
-  height: 600px;
+  width: 95%;
+  max-width: 1400px;
   box-sizing: border-box;
   margin: 0 auto;
 }
@@ -33,23 +32,26 @@
 
 .scheduleTable {
   position: relative;
-  top: 85px;
   margin: 0 auto;
   border-collapse: separate;
   border-radius: 20px;
   border-spacing: 0;
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.15);
   overflow: hidden;
   z-index: 2;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  background: var(--accent-light);
+  border-top: 3px solid var(--accent-gold);
+  width: 100%;
 }
 
 .scheduleTable th,
 .scheduleTable td {
   border: 1px solid rgba(0,0,0,0.1);
-  padding: 8px;
+  padding: 12px;
   text-align: center;
   color: var(--text-color);
-  transition: color 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   word-break: break-word;
 }
 
@@ -57,15 +59,20 @@
 .scheduleTable td:first-child {
   width: 10%;
   white-space: nowrap;
+  font-weight: 600;
 }
 
 .scheduleTable tr:hover td,
 .scheduleTable tr:hover th {
-  color: var(--nav-hover-color);
+  color: var(--accent-gold-dark);
 }
 
 .scheduleTable th {
-  background-color: #9592a4;
+  background-color: var(--text-color);
+  color: white;
+  padding: 15px 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .scheduleTable tr:hover {
@@ -105,26 +112,32 @@
 /* Trainings title */
 .trainingsTitle {
   position: relative;
-  top: 70px;
+  top: 20px;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .acroTraining {
-  position: absolute;
+  position: relative;
   z-index: 3;
-  top: 30%;
-  left: 30%;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
   background: linear-gradient(
     to right,
     var(--text-color) 20%,
-    #f3cf6e 40%,
+    var(--accent-gold) 40%,
     #fff 60%,
-    #b89e4f 80%
+    var(--accent-gold-dark) 80%
   );
   background-size: 200% auto;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   animation: shine 15s linear infinite;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  display: inline-block;
+  border-bottom: 3px solid var(--accent-gold);
+  padding-bottom: 0.5rem;
 }
 
 /* Thunder animations */
@@ -213,48 +226,120 @@
 /* Categories section */
 .allCategories {
   display: flex;
-  flex-wrap: wrap;
-  margin-top: 120px;
-  margin-bottom: 120px;
-  justify-content: center;
-  gap: 20px;
+  flex-direction: column;
+  margin: 60px auto 80px;
+  max-width: 800px;
+  gap: 50px;
   box-sizing: border-box;
+  padding: 0 20px;
 }
 
 .category {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 300px;
-  background: rgba(255, 255, 255, 0.2);
-  padding: 15px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0px 4px 8px var(--star-blue);
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  background: var(--accent-light);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: left;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
   color: var(--text-color);
-  transition: color 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  border-top: 3px solid var(--accent-gold);
+  border-left: 1px solid rgba(255, 255, 255, 0.7);
+  border-right: 1px solid rgba(255, 255, 255, 0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease-in-out;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+.category:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.categoryContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .category:hover {
   color: var(--nav-hover-color);
-  transform: scale(1.02);
-  transition: transform 0.3s ease-in-out;
-  box-shadow: 0px 8px 15px var(--star-blue);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  border-top-color: var(--accent-gold-dark);
+  background: linear-gradient(to bottom, var(--accent-light), white);
+}
+
+.category::after {
+  content: "";
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(135deg, var(--accent-gold-light), var(--accent-gold));
+  border-radius: 50%;
+  opacity: 0.5;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.category:hover::after {
+  opacity: 0.8;
+  transform: scale(1.1);
 }
 
 .categoryImage {
-  width: 100%;
-  height: 280px;
-
-  /*object-fit: contain;*/
-  border-radius: 5px;
+  width: 300px;
+  height: 250px;
+  object-fit: contain;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  flex-shrink: 0;
 }
-.categoryImage image{
-  /*width: 100%;*/
-  /*height: 250px;*/
-  /*object-fit: contain;*/
-  border-radius: 5px;
+
+.category:hover .categoryImage {
+  transform: scale(1.03);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  border-color: var(--accent-gold-light);
+}
+
+.category h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.85rem;
+  color: var(--text-color);
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.category h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: var(--accent-gold);
+}
+
+.category:nth-child(even) h3 {
+  text-align: right;
+}
+
+.category:nth-child(even) h3::after {
+  left: auto;
+  right: 0;
+}
+
+.category p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-muted);
 }
 
 /* Signup button */
@@ -270,31 +355,43 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  top: 140px;
-  left: 480px;
+  margin: 40px auto;
   width: 100%;
   z-index: 10;
 }
 
 .signupButton {
-  background-color: var(--star-blue);
-  color: var(--star-silver);
-  padding: 0.75rem 1.5rem;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1rem;
-  transition: all 0.3s ease;
   display: inline-flex;
+  padding: 15px 30px;
+  background-color: var(--text-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
   align-items: center;
   gap: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   border: none;
   cursor: pointer;
+  border-top: 2px solid var(--accent-gold);
+  border-bottom: 2px solid var(--accent-gold);
 }
 
 .signupButton:hover {
-  transform: scale(1.05);
+  background-color: var(--star-gold);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.signupButton span {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.signupButton:hover span {
+  transform: translateX(5px);
 }
 
 /* Responsive styles */
@@ -315,9 +412,32 @@
   }
 }
 
+@media only screen and (max-width: 1024px) {
+  .allCategories {
+    gap: 45px;
+    padding: 0 15px;
+    max-width: 90%;
+  }
+
+  .category {
+    padding: 25px;
+    gap: 25px;
+  }
+
+  .categoryImage {
+    width: 250px;
+    height: 200px;
+  }
+
+  .category h3 {
+    font-size: 1.25rem;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .scheduleContainer {
-    padding-top: 50px;
+    padding-top: 20px;
+    width: 95%;
   }
 
   .acroTraining {
@@ -325,25 +445,77 @@
     top: 0;
     left: 0;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    padding: 1rem;
   }
 
   .tableWrapper {
     height: auto;
     overflow-x: auto;
+    width: 100%;
   }
 
   .scheduleTable {
-    top: 0;
     width: 100%;
+  }
+
+  .scheduleTable th,
+  .scheduleTable td {
+    padding: 8px;
+    font-size: 0.9rem;
   }
 
   .allCategories {
-    margin-top: 50px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    gap: 40px;
+    max-width: 90%;
   }
 
-  .category {
+  .category,
+  .category:nth-child(even) {
+    flex-direction: column;
     width: 100%;
-    max-width: 300px;
+    padding: 25px 20px;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .categoryContent {
+    align-items: center;
+  }
+
+  .categoryImage {
+    width: 85%;
+    height: 220px;
+  }
+
+  .category h3,
+  .category:nth-child(even) h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    text-align: center;
+  }
+
+  .category h3::after,
+  .category:nth-child(even) h3::after {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+
+  .category p {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .signupButtonWrapperCentered {
+    margin: 30px auto;
+  }
+
+  .signupButton {
+    padding: 12px 24px;
+    font-size: 1rem;
   }
 }

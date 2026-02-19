@@ -1,0 +1,615 @@
+/*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  /*color: #222;*/
+  font-size: 1em;
+  line-height: 1.4;
+  scroll-behavior: smooth;
+}
+
+h1{
+  font-size: 32px;
+  color:var(--text-color);
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background:var(--highlight-blue);
+  text-shadow: none;
+}
+
+::selection {
+  background: var(--highlight-blue);
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid var(--hr-line-color);
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .visually-hidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * The use of `table` rather than `block` is only necessary if using
+ * `::before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/*// <weight>: Use a value from 100 to 900*/
+/*// <uniquifier>: Use a unique and descriptive class name*/
+.montserrat-ExtraBold{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 650;
+  font-style: normal;
+  font-size: 36px;
+}
+
+.montserrat-SemiBold-500{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.montserrat-SemiBold-600-34{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 34px;
+}
+
+.montserrat-Regular{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+}
+
+.montserrat-Caption{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: italic;
+  font-size:20px;
+}
+
+.montserrat-Light{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  /*font-style: italic;*/
+  font-size: 20px;
+}
+
+.montserrat-ExtraBold-title{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 650;
+  font-style: italic;
+  font-size: 46px;
+  color: var(--text-color);
+}
+
+.montserrat-Caption .montserrat-Caption .montserrat-ExtraBold .montserrat-SemiBold-500 .montserrat-SemiBold-600 .montserrat-Regular .montserrat-Light .montserrat-ExtraBold-title{
+  color: var(--text-color);
+}
+
+/* Цялото тяло – фонов цвят за цял екран */
+body {
+  /*background-color: #342e48;*/
+
+  /*background-image: url("/resources/gallery/heroes/as.jpg");*/
+  /*background-position: center center;*/
+
+  background-color: var(--body-bg);
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  font-family: Montserrat, sans-serif;
+}
+/* Хедър и футър заемат цялата ширина */
+header, footer {
+  width: 100%;
+  background-color: var(--body-bg);
+  position: relative; /* thunders*/
+  z-index: 2; /* thunders*/
+}
+
+/* Вътрешният контейнер, който центрира съдържанието */
+.header-wrapper,
+.footer-wrapper {
+  display: flex;
+  align-items: flex-end;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-bottom: 16px;
+  z-index: 1;
+}
+
+.header-wrapper{
+  height: 138px;
+}
+
+.footer-wrapper{
+  height: 138px;
+}
+/* ==========================🔽🔽🔽🔽🔽 НАЧАЛО: НАВИГАЦИЯ 🔽🔽🔽🔽🔽========================== */
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav::before, /* clearfix - предпазва от пропадане на родителя nav, след който float-ват li-тата*/
+nav::after {
+  content: "";
+  display: table;
+}
+
+nav::after { /* clearfix - предпазва от пропадане на родителя nav, след който float-ват li-тата*/
+  clear: both;
+}
+
+nav li {
+  float: left;
+}
+
+nav li a { /* главно меню */
+  display: block; /* за да не е само текстът */
+  text-decoration: none;
+}
+
+nav li a:hover:not(.active) {
+  /*transform: scale(1.2);*/
+  /*transition: all 0.6s ease-in-out;*/
+}
+
+li a:hover, .dropdown:hover {
+  /*transform: scale(1.2);*/
+  /*transition: all 0.6s ease-in-out;*/
+}
+
+li.dropdown { /* главно меню - dropdown*/
+  /*display: inline-block;*/
+  /*position: relative;* остава само в рамките на менюто/
+  /*display: block;*/
+}
+
+.dropdown{
+  position: relative;
+}
+
+.dropdown-wrapper{
+  /*border-radius: 10px;*/
+  position: relative;
+}
+
+.dropdown-content-inner{
+  /*width: auto;*/
+  /*padding-left: 10px;*/
+  /*padding-right: 10px;*/
+  position: relative;
+  background-color: var(--dropdown-bg);
+  border-radius: 10px;
+}
+
+.dropdown-content-wrapper { /* главно меню - съдържание на dropdown*/
+  display: none;
+  position: absolute;     /* 🟢 това е ключово — не измества околните */
+  top: 100%;              /* поставя го точно под бутона */
+  /*margin-top: 18px; !* = header-gradient = 16px + 2px ~white*!*/
+  /*background-color: var(--dropdown-bg);*/
+  /*box-shadow: 0 0.42vh 0.83vh 0 rgba(0, 0, 0, 0.2);*/
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.dropdown-content-wrapper .dropdown-content-inner{
+  width: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  z-index: 3;
+}
+
+.dropdown-hover-bridge {
+  height: 17px;               /* дупката */
+  pointer-events: none;       /* мишката преминава през нея */
+}
+
+.dropdown-content-first{
+  border-radius: 5px;
+}
+
+.dropdown-content-wrapper a { /* главно меню - съдържание на dropdown - елементи */
+  text-decoration: none;
+  display: block;
+  border-radius: 10px;
+}
+
+.dropdown-content-wrapper a:hover {
+  /*text-decoration: underline;*/
+  /*background-color: var(--dropdown-hover-bg);*/  /* FE препоръка */
+  /*color: var(--dropdown-hover-text);*/
+}
+
+.dropdown:hover .dropdown-content-wrapper {
+  display: block;
+}
+
+/* all = 1400 */
+
+.main-nav {
+  display: flex;
+  align-items: flex-end;
+}
+
+.main-nav a{   /* шрифт главно меню   */
+  color: var(--text-color);
+  /*text-shadow: 2px -2px 2px var(--star-gold);  !* x, y, blur, color *!*/
+  transition: color 0.3s ease-in-out;, box-shadow 0.4s ease-in-out;;
+}
+
+.main-nav a:hover{
+  color: var(--nav-hover-color);
+  /*text-shadow: 1px -1px 1px var(--nav-hover-shadow);  !* x, y, blur, color *!*/
+  transition: all 0.3s ease-in-out;
+  /*border-radius: 5px;*/
+}
+
+.nav-logo {
+  width: 200px;
+  box-sizing: border-box;/* да не добавя падинга */
+  height: 139px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  padding-top: 8px; /* за да запазя квадратно логото, но да подравня с линията на менюто */
+}
+
+.nav-logo-img {
+  width:auto;
+  height: 138px;
+  transition: transform 0.5s ease;
+}
+
+.nav-logo-img:hover{
+  opacity: 0.8;
+}
+
+.nav-item {
+  text-align: center;
+}
+
+/*Ема*/
+/*.nav-item:hover{*/
+/*background-color: var(--dropdown-bg);*/
+/*border-radius: 5px}*/
+
+.item-1 {
+  width: 214px;
+}
+
+.item-2 {
+  width: 353px;
+}
+.item-3 {
+  width: 272px;
+}
+
+.item-4 {
+  width: 214px;
+}
+
+/* ==================== 📱 START: МОБИЛНА НАВИГАЦИЯ ==================== */
+.hamburger {
+  display: none; /* скрита икона, тъй като на мобилен ще има нормално меню */
+}
+
+.hamburger:visited {
+  color: inherit; /* лилавия цвят на посетените линкове */
+}
+
+/* ==================== 🔚 END: МОБИЛНА НАВИГАЦИЯ ==================== */
+
+/* ============= 🔼🔼🔼🔼🔼 КРАЙ: НАВИГАЦИЯ 🔼🔼🔼🔼🔼 =============*/
+
+/* ==================== 🟣 START: main-content ==================== */
+/* Основната част – wrapper с ширина 100% - todo .wrapper ???*/
+{
+  width: 100%;
+}
+
+.main-content {
+  position: relative;
+  max-width: 1400px;
+  /*padding: 20px 20px;*/
+  /*background-color: #982398;*/
+  /*outline: 1px solid red !important;*/
+  margin: 0 auto;
+}
+
+.title-padding{
+  padding-left: 100px;
+}
+
+/* ==================== 🔚 END: main-content ====================== */
+
+/*todo Гери*/
+.main-bar-gradient {
+  height: 16px;
+  width: 100%;
+  /*background: linear-gradient(to bottom, #beaf8d, var(--nav-hover-shadow));*/
+  /*background: linear-gradient(to bottom, #a07c30, var(--nav-hover-shadow));*/
+  background: linear-gradient(to bottom,var(--gradient-mid),var(--gradient-dark));
+  position: relative; /* thunders*/
+  z-index: 1; /* thunders*/
+
+
+  /*background: linear-gradient(*/
+  /*  to right,*/
+  /*  var(--text-color)20%,*/
+  /*  #f3cf6e 40%,*/
+  /*  #fff 60%,*/
+  /*  #b89e4f 80%*/
+  /*);*/
+  /*background-size: 200% auto;*/
+  /*background-clip: text;*/
+  /*-webkit-background-clip: text;*/
+  /*color: transparent;*/
+  /*animation: shine 15s linear infinite;*/
+}
+
+@keyframes shine {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+/*todo Гери*/
+.partners-bar-gradient {
+  height: 8px;
+  width: 100%;
+  /*background: linear-gradient(to bottom, #beaf8d, var(--nav-hover-shadow));*/
+  /*background: linear-gradient(to bottom, #a07c30, var(--nav-hover-shadow));*/
+  background: linear-gradient(to bottom, var(--gradient-mid), var(--gradient-dark));
+  position: relative; /* thunders*/
+  z-index: 2; /* thunders*/
+}
+
+
+
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and
+(min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    /*text-decoration: underline;*/
+    color: transparent;
+    text-decoration: none;
+    outline: none;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+}
+
+
+ /*=================== debug helper =======================*/
+/** {*/
+/*    outline: 1px solid red !important;*/
+/*}*/
+
+
