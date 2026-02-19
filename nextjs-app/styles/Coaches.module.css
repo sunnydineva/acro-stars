@@ -348,7 +348,25 @@
 
   .trainerBlock {
     width: 100%;
-    max-width: 300px;
+    max-width: 280px;
+  }
+
+  .trainerImgWrapper {
+    width: 240px;
+    height: 240px;
+    padding: 10px;
+    border-width: 6px;   /* да не е дебел на малък екран */
+    margin-bottom: 14px;
+  }
+
+  .trainerImg {
+    width: 240px;        /* важно: иначе остава 350px */
+    height: 240px;       /* по-стабилно за кръг */
+    object-fit: cover;
+  }
+
+  .trainerTitle {
+    width: 100%;         /* да не дърпа 370px */
   }
 
   /* Mobile styles for coach info container */
