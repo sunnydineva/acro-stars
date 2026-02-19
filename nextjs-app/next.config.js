@@ -1,15 +1,13 @@
-const isProd = process.env.NODE_ENV === "production";
+const isGithubPages = process.env.DEPLOY_TARGET === "gh-pages";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",          // казваме на Next да прави статичен export в ./out
-  images: {
-    unoptimized: true,       // нужно за GitHub Pages (без image optimization)
-  },
-  // repo-то ти в GitHub  URL ще е https://username.github.io/acro-stars/
-  // тогава basePath и assetPrefix трябва да са "/acro-stars"
-  basePath: isProd ? "/acro-stars" : "",
-  assetPrefix: isProd ? "/acro-stars" : "",
+  output: "export",
+  images: { unoptimized: true },
+
+  ...(isGithubPages
+    ? { basePath: "/acro-stars", assetPrefix: "/acro-stars" }
+    : {}),
 };
 
 module.exports = nextConfig;
