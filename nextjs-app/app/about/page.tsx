@@ -20,9 +20,9 @@ export default function AboutPage() {
                     loop
                     playsInline
                     preload="metadata"
-                    poster="/images/about/about-fallback.jpg"
+                    poster="/images/about/about-fallback-v2.jpg"
                   >
-                    <source src="/videos/about/about-video.mp4" type="video/mp4" />
+                    <source src="/videos/about/about-video-v3.mp4" type="video/mp4" />
                     {/* Fallback image if video can't play */}
                   </video>
 
