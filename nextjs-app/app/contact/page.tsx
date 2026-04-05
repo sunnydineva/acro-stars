@@ -43,7 +43,7 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.name || !formData.message || !formData.date) {
+    if (!formData.name || !formData.message || !formData.email) {
       alert('Моля, попълнете всички полета преди да изпратите формата.');
       return;
     }

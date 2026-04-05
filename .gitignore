@@ -10,6 +10,7 @@ out/
 dist/
 .idea
 /nextjs-app/.next/
+/nextjs-app/out
 /.contentlayer/
 /.gitignore
 /.env.local
