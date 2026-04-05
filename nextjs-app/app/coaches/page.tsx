@@ -4,13 +4,6 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import styles from '../../styles/Coaches.module.css';
 
-// import GeriImg from "@/public/images/draft/geri.jpg";
-// import DesiImg from "@/public/images/draft/desi.jpg";
-import ThunderLeftFirst from "@/public/images/resourcesWeb2/thunder-left-first-web2.png";
-import ThunderLeftSecond from "@/public/images/resourcesWeb2/thunder-left-second-web2.png";
-import ThunderRightFirst from "@/public/images/resourcesWeb2/thunder-right-first-web2.png";
-import ThunderRightSecond from "@/public/images/resourcesWeb2/thunder-right-second-web2.png";
-
 export default function CoachesPage() {
   // State to track which coach info is being hovered
   const [hoveredCoach, setHoveredCoach] = useState<string | null>(null);
@@ -64,7 +57,7 @@ export default function CoachesPage() {
                 <Image
                   alt="Гергана Калоянова"
                   className={styles.trainerImg}
-                  src="/images/draft/geri.jpg"
+                  src="/images/heroes/geri.jpg"
                   width={250}
                   height={250}
                 />
@@ -84,7 +77,7 @@ export default function CoachesPage() {
                 <Image
                   alt="Десислава Иванова"
                   className={styles.trainerImg}
-                  src="/images/draft/desi.jpg"
+                  src="/images/heroes/desi.jpg"
                   width={250}
                   height={250}
                 />
