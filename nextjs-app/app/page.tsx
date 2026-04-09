@@ -28,10 +28,16 @@ const PARTNER_IMAGES = [
 // Например в Home.tsx
 const announcements = [
   {
-    id: 1,
-    title: 'Пролетна ваканция 2026 - 4 април',
-    text: ' тренировка за всички желаещи от 10 до 12ч',
-    isImportant: false
+  //   id: 1,
+  //   title: 'Пролетна ваканция 2026 - 4 април',
+  //   text: ' тренировка за всички желаещи от 10 до 12ч',
+  //   isImportant: false
+
+  id: 1,
+  title: 'Държавен отборен шампионат в гр. Кранево',
+  text: 'Състезанието ще се проведе на 22-26.04-2026. На 20.04 - от 16 ч Ви каним КВАДРАТ парти!',
+  isImportant: true,
+  href: '/contacts', // по желание
   },
   {
     id: 2,
@@ -54,11 +60,7 @@ const announcements = [
     href: '/trainings', // по желание
   },
   {
-    id: 5,
-    title: 'Държавен отборен шампионат в гр. Кранево',
-    text: 'Състезанието ще се проведе на 22-26.04-2026. На 20.04 - от 16 ч Ви каним КВАДРАТ парти!',
-    isImportant: false,
-    href: '/contacts', // по желание
+
   },
   // {
   //   id: 4,
@@ -134,9 +136,9 @@ export default function Home() {
               Научи повече <span>→</span>
             </Link>
 
-            <Link href="#facebook" className={styles.heroSecondaryBtn}>
-              Facebook <span>→</span>
-            </Link>
+            {/*<Link href="#facebook" className={styles.heroSecondaryBtn}>*/}
+            {/*  Facebook <span>→</span>*/}
+            {/*</Link>*/}
 
           </div>
 
