@@ -148,7 +148,11 @@
   width: 370px;
 }
 
-.coachInfoContainer {
+.mobileCoachInfo {
+  display: none;
+}
+
+.desktopCoachInfo {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -369,10 +373,40 @@
     width: 100%;         /* да не дърпа 370px */
   }
 
-  /* Mobile styles for coach info container */
-  .coachInfoContainer {
-    flex-direction: column;
+  .mobileCoachInfo {
+    display: block;
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-left: 3px solid var(--star-gold);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .mobileCoachInfo h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--text-color);
+  }
+
+  .mobileCoachInfo h3 {
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: var(--text-color);
+  }
+
+  .mobileCoachInfo p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    font-size: 15px;
+  }
+
+  /* Mobile styles for coach info container */
+  .desktopCoachInfo {
+    display: none;
   }
 
   /* Mobile styles for accordion content */

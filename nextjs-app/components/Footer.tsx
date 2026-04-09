@@ -11,12 +11,48 @@ const Footer: React.FC = () => {
         <div className={styles.footerContent}>
           <div className={styles.footerSection}>
             <h3 className="montserrat-SemiBold-500">Контакти</h3>
-            <p className="montserrat-Regular">
-              <strong>Адрес:</strong> Варна, спортен комплекс „Простор“<br />
-              ул. "Селиолу" №39А<br />
-              <strong>Телефон:</strong> +359 87 878 5785<br />
-              <strong>Email:</strong> acrostars.varna@gmail.com
-            </p>
+            <div className={styles.contactList}>
+              <div className={styles.contactItem}>
+                <span className={styles.contactIcon} aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </span>
+                <div className={styles.contactText}>
+                  <span className={styles.contactLabel}>Адрес</span>
+                  <span className={styles.contactValue}>Варна, спортен комплекс „Простор“</span>
+                  <span className={styles.contactValue}>ул. &quot;Селиолу&quot; №39А</span>
+                </div>
+              </div>
+
+              <div className={styles.contactItem}>
+                <span className={styles.contactIcon} aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.63 2.62a2 2 0 0 1-.45 2.11L8 9.91a16 16 0 0 0 6.09 6.09l1.46-1.29a2 2 0 0 1 2.11-.45c.84.3 1.72.51 2.62.63A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                </span>
+                <div className={styles.contactText}>
+                  <span className={styles.contactLabel}>Телефони</span>
+                  <a href="tel:+359883338118" className={styles.contactLink}>+359 883 338 118</a>
+                  <a href="tel:+359898582735" className={styles.contactLink}>+359 898 582 735</a>
+                </div>
+              </div>
+
+              <div className={styles.contactItem}>
+                <span className={styles.contactIcon} aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M4 4h16v16H4z" stroke="none" />
+                    <path d="M4 6l8 7 8-7" />
+                    <rect x="3" y="5" width="18" height="14" rx="2" ry="2" />
+                  </svg>
+                </span>
+                <div className={styles.contactText}>
+                  <span className={styles.contactLabel}>Email</span>
+                  <a href="mailto:acrostars.varna@gmail.com" className={styles.contactLink}>acrostars.varna@gmail.com</a>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className={styles.footerSection}>
@@ -41,6 +77,11 @@ const Footer: React.FC = () => {
               <a href="https://www.instagram.com/acrostars.varna/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153.509.5.902 1.105 1.153 1.772.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 01-1.153 1.772c-.5.508-1.105.902-1.772 1.153-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 01-1.772-1.153 4.904 4.904 0 01-1.153-1.772c-.247-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 011.153-1.772A4.897 4.897 0 015.45 2.525c.638-.247 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 1.802c-2.67 0-2.986.01-4.04.059-.976.045-1.505.207-1.858.344-.466.181-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.055-.059 1.37-.059 4.04 0 2.67.01 2.986.059 4.04.045.976.207 1.505.344 1.858.181.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.047 1.37.059 4.04.059 2.67 0 2.987-.01 4.04-.059.976-.045 1.505-.207 1.858-.344.466-.181.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.047-1.055.059-1.37.059-4.04 0-2.67-.01-2.986-.059-4.04-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.055-.047-1.37-.059-4.04-.059zm0 3.063A5.135 5.135 0 1117.135 12 5.135 5.135 0 0112 6.865zm0 8.468A3.333 3.333 0 1115.333 12 3.333 3.333 0 0112 15.333zm6.538-8.671a1.2 1.2 0 11-2.4 0 1.2 1.2 0 012.4 0z"/>
+                </svg>
+              </a>
+              <a href="https://www.tiktok.com/@acrostars_varna?_r=1" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.24V2h-3.295v13.19a2.872 2.872 0 1 1-2.883-2.87c.244 0 .48.028.709.08V9.055a6.16 6.16 0 0 0-.709-.041A6.177 6.177 0 1 0 15.819 15.2V8.516a8.07 8.07 0 0 0 4.73 1.526V6.686h-.96z"/>
                 </svg>
               </a>
             </div>
